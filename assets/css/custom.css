@@ -182,3 +182,11 @@ body {
 .main-menu {
     height: 100px;
 }
+
+.block {
+    background: linear-gradient(
+            rgba(0, 184, 255, 0.45),
+            rgba(0, 184, 255, 0.45)
+
+    );
+}
