@@ -15198,7 +15198,7 @@ textarea {
 .nav-pills.nav-pills-rose .nav-item .nav-link.active,
 .nav-pills.nav-pills-rose .nav-item .nav-link.active:focus,
 .nav-pills.nav-pills-rose .nav-item .nav-link.active:hover {
-    /*background-color: #e91e63;*/
+    background-color: #2284a2;
     box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 0, 0, 0.6);
     color: #fff;
 }

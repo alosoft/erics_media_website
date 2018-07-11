@@ -17,8 +17,8 @@
 
 .nav-pills .nav-item .nav-link.active {
     color: #fff;
-    background-color: #2284A2;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6);
+    background-color: #c13744;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(6, 6, 6, 0.6);
 }
 
 .yfont {
@@ -80,9 +80,9 @@
     /*overflow: hidden;*/
 }
 
-body {
-    background-color: #000;
-}
+/*body {*/
+    /*background-color: #000;*/
+/*}*/
 
 #landing-header {
     z-index: 1;
@@ -175,7 +175,7 @@ body {
 .dropdown-menu a:focus,
 .dropdown-menu a:active {
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(0, 0, 0);
-    background-color: #2284a2;
+    background-color: #c13744;
     color: #FFFFFF;
 }
 
@@ -189,4 +189,59 @@ body {
             rgba(0, 184, 255, 0.45)
 
     );
+}
+
+.my_price {
+    background-image: url('../img/package2.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.background_personal {
+    background: rgba(34, 132, 162, 0.3);
+}
+
+.background_commercial {
+    background: rgba(151, 52, 176, 0.28);
+}
+
+/*.price_button {*/
+    /*background: white;*/
+/*}*/
+
+.col-md-4 h2 {
+    color: white;
+}
+
+.card-body h6 {
+    font-size: x-large;
+    color: white;
+}
+
+.card-pricing ul li, b {
+    color: white;
+    font-family: Roboto, serif;
+    font-weight: bold;
+    font-size: initial;
+}
+
+.violet_button {
+    background: #9a1c9dcc;
+}
+
+.material-icons {
+    color: #2284a2;
+}
+
+.btn.btn-primary.btn-round {
+    background: #2284a2;
+}
+
+.text_shadow h2 {
+    color: #2284a2;
+    font-weight: bolder;
+}
+
+.dropdown-menu.dropdown-with-icons.main-menu.show {
+    height: 100px;
 }
