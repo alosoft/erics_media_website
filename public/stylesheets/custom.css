@@ -118,27 +118,28 @@
 }
 
 .slideshow li:nth-child(1) {
-    background-image: url('/assets/img/fold/sample.jpg')
+    background-image: url('/images/animation/1.jpg');
+    animation-delay: 3s;
 }
 
 .slideshow li:nth-child(2) {
-    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
-    animation-delay: 10s;
+    background-image: url(https://pixabay.com/get/eb31b70720f3053ed1584d05fb094f93e175e2d01aac104496f1c579a6ecb5ba/abstract-2468874_1280.jpg);
+    animation-delay: 8s;
 }
 
 .slideshow li:nth-child(3) {
-    background-image: url(http://i.imgur.com/emvhOnb.jpg);
-    animation-delay: 20s;
+    background-image: url(https://pixabay.com/get/eb30b10920f7013ed1584d05fb094f93e175e2d01aac104496f1c579a6ecb3bc/fantasy-2506830_1280.jpg);
+    animation-delay: 13s;
 }
 
 .slideshow li:nth-child(4) {
-    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
-    animation-delay: 30s;
+    background-image: url(https://pixabay.com/get/e831b2082bf01c22d2524518a3454394e177e7d604b0144294f4c178a4edb3/blue-143734_1280.jpg);
+    animation-delay: 18s;
 }
 
 .slideshow li:nth-child(5) {
-    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
-    animation-delay: 40s;
+    background-image: url(https://pixabay.com/get/ea31b2092ff01c22d2524518a3454394e177e7d604b0144294f4c178a4e9b6/man-343674_1280.jpg);
+    animation-delay: 23s;
 }
 
 @keyframes imageAnimation {
@@ -192,7 +193,7 @@
 }
 
 .my_price {
-    background-image: url('../../assets/img/package2.jpg');
+    background-image: url('/images/package2.jpg');
     -webkit-background-size: cover;
     background-size: cover;
 }

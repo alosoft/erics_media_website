@@ -1,11 +1,438 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% include partials/header.ejs %>
+
+
+
+
+<div class="page-header clear-filter block" data-parallax="true"
+     style="background-image: url('/images/city.jpg');" id="erics_media">
+    <!--landing page slideshow-->
+
+    <ul class="slideshow">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <div class="brand">
+                    <h1 style="font-family: 'Ubuntu', cursive;" id="logo_color"
+                        class="text_shadow align-content-center ">Erics Media</h1>
+                    <hr id="hr">
+                    <h3 class="yfont">We are at Your Service. </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main main-raised">
+    <div class="section section-white">
+        <div class="container" id="gallery">
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                    <div class="profile-tabs">
+                        <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#studio" role="tab" data-toggle="tab">
+                                    <i class="material-icons" style="font-size: large;">camera</i> Studio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#works" role="tab" data-toggle="tab">
+                                    <i class="material-icons" style="font-size: large;">work</i> Works
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#painting" role="tab" data-toggle="tab">
+                                    <i class="material-icons" style="font-size: large;">format_paint</i> Digital
+                                    Painting
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content tab-space">
+                <div class="tab-pane text-center gallery" id="studio">
+                    <div class="row">
+                        <div class="col-md-3 ml-auto">
+                            <!--studio = right side pictures with class="rounded-->
+                            <img src="/images/fold/wed.jpg" class="rounded round_image"/>
+                            <div class="col-md-12 ml-auto">
+                                <!--studio = right side pictures with class="rounded-->
+                                <img src="/images/fold/wed.jpg" class="rounded round_image"/>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mr-auto">
+                            <!--studio = right side pictures with class="rounded-->
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane active text-center gallery" id="works">
+                    <div class="row">
+                        <div class="col-md-3 ml-auto">
+                            <!--work = left side pictures with class="rounded"-->
+                            <img src="/images/fold/3x4.jpg" class="rounded round_image"/>
+                            <img src="/images/fold/IMG_7578.JPG" class="rounded round_image"/>
+                        </div>
+                        <div class="col-md-3">
+                            <!--work = right side pictures with class="rounded-->
+                            <img src="/images/fold/DSC_0448.JPG" class="rounded round_image"/>
+                            <img src="/images/fold/IMG_9239.JPG" class="rounded round_image"/>
+                        </div>
+                        <div class="col-md-3 mr-auto">
+                            <!--work = right side pictures with class="rounded-->
+                            <img src="/images/fold/DSC_0448.JPG" class="rounded round_image"/>
+                            <img src="/images/fold/IMG_9239.JPG" class="rounded round_image"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane text-center gallery" id="painting">
+                    <div class="row">
+                        <div class="col-md-3 ml-auto">
+                            <!--painting = right side pictures with class="rounded-->
+                            <img src="/images/fold/pip.jpg" class="rounded round_image"/>
+                            <img src="/images/fold/justice.jpg" class="rounded round_image"/>
+                        </div>
+                        <div class="col-md-3">
+                            <!--painting = right side pictures with class="rounded-->
+                            <img src="/images/fold/PRINT.jpg" class="rounded round_image"/>
+                            <img src="/images/fold/pipp girl.jpg" class="rounded round_image"/>
+                        </div>
+                        <div class="col-md-3 mr-auto">
+                            <!--painting = right side pictures with class="rounded-->
+                            <img src="/images/fold/pip.jpg" class="rounded round_image"/>
+                            <img src="/images/fold/edeq.jpg" class="rounded round_image"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <br>
+            <br>
+            <div class="title text_shadow" id="package" style="text-align: center">
+                <h2>Packages</h2>
+            </div>
+            <div class="pricing-5 my_price" id="pricing-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="title">Choose a plan for your next project</h2>
+                            <ul class="nav nav-pills nav-pills-primary">
+                                <li class="nav-item">
+                                    <a class="nav-link active show" href="#personal" data-toggle="tab">Personal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#commercial" data-toggle="tab">Commercial</a>
+                                </li>
+                            </ul>
+                            <p class="text-gray">You have Free Unlimited Updates and Premium Support on each package.
+                                You also have 20 days to request a refund if you're not happy with your purchase.</p>
+                        </div>
+                        <div class="col-md-7 ml-auto mr-auto">
+                            <div class="tab-content tab-space">
+                                <div class="tab-pane active show" id="personal">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="card card-pricing card-raised background_personal">
+                                                <div class="card-body ">
+                                                    <h6 class="card-category">HTML Package</h6>
+                                                    <h1 class="card-title">
+                                                        <small>$</small>
+                                                        0
+                                                    </h1>
+                                                    <ul>
+                                                        <li>
+                                                            <b>##</b> ######
+                                                        </li>
+                                                        <li>
+                                                            <b>##</b> ######
+                                                        </li>
+                                                        <li>
+                                                            <b>##</b> #######
+                                                        </li>
+                                                        <li>
+                                                            <b>##</b> #######
+                                                        </li>
+                                                    </ul>
+                                                    <a href="#pablo"
+                                                       class="btn btn-primary btn-round price_button">
+                                                        Read More
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="commercial">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="card card-pricing card-raised background_commercial">
+                                                <div class="card-body ">
+                                                    <h6 class="card-category">HTML Package</h6>
+                                                    <h1 class="card-title">
+                                                        <small>$</small>
+                                                        159
+                                                    </h1>
+                                                    <div class="white">
+                                                        <ul>
+                                                            <li>
+                                                                <b>##</b> ######
+                                                            </li>
+                                                            <li>
+                                                                <b>##</b> ######
+                                                            </li>
+                                                            <li>
+                                                                <b>##</b> #######
+                                                            </li>
+                                                            <li>
+                                                                <b>##</b> #######
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <a href="#pablo" class="btn btn-primary btn-round">
+                                                        Buy Now!
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <div id="cards"></div>
+        </div>
+
+    </div>
+
+    <div class="cards" id="">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="rotating-card-container" style="margin-bottom: 30px;">
+                        <div class="card card-rotate card-background">
+                            <div class="front front-background"
+                                 style="background-image: url(&quot;../examples/card-blog5.jpg&quot;); width: 330px;">
+                                <div class="card-body">
+                                    <h6 class="card-category">Full Background Card</h6>
+                                    <a href="#pablo">
+                                        <h3 class="card-title">This Background Card Will Rotate on Hover</h3>
+                                    </a>
+                                    <p class="card-description">
+                                        Don't be scared of the truth because we need to restart the human foundation
+                                        in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design
+                                        but the back is...
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="back back-background"
+                                 style="background-image: url(&quot;../examples/card-blog5.jpg&quot;); width: 330px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Manage Post
+                                    </h5>
+                                    <p class="card-description">As an Admin, you have shortcuts to edit, view or
+                                        delete the posts.</p>
+                                    <div class="footer text-center">
+                                        <a href="#pablo" class="btn btn-info btn-just-icon btn-fill btn-round">
+                                            <i class="material-icons">subject</i>
+                                        </a>
+                                        <a href="#pablo"
+                                           class="btn btn-success btn-just-icon btn-fill btn-round btn-wd">
+                                            <i class="material-icons">mode_edit</i>
+                                        </a>
+                                        <a href="#pablo" class="btn btn-danger btn-just-icon btn-fill btn-round">
+                                            <i class="material-icons">delete</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="rotating-card-container" style="margin-bottom: 30px;">
+                        <div class="card card-rotate">
+                            <div class="front" style="width: 330px;">
+                                <div class="card-body">
+                                    <h5 class="card-category card-category-social text-success">
+                                        <i class="fa fa-newspaper-o"></i> TechCrunch
+                                    </h5>
+
+                                    <h4 class="card-title">
+                                        <a href="#pablo">This Card is Doing a Full Rotation on Hover...</a>
+                                    </h4>
+                                    <p class="card-description">
+                                        Don't be scared of the truth because we need to restart the human foundation
+                                        in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design
+                                        but the back is...
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <div class="back" style="width: 330px;">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        Do more...
+                                    </h5>
+                                    <p class="card-description">
+                                        You can read this article or share it with your friends and family on
+                                        different networks...
+                                    </p>
+                                    <div class="footer text-center">
+                                        <a href="#pablo" class="btn btn-rose btn-round">
+                                            <i class="material-icons">subject</i> Read
+                                        </a>
+                                        <a href="#pablo" class="btn btn-just-icon btn-round btn-twitter">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                        <a href="#pablo" class="btn btn-just-icon btn-round btn-dribbble">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                        <a href="#pablo" class="btn btn-just-icon btn-round btn-facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="rotating-card-container" style="margin-bottom: 30px;">
+                        <div class="card card-rotate bg-rose">
+                            <div class="front" style="width: 330px;">
+                                <div class="card-body">
+                                    <h5 class="card-category card-category-social">
+                                        <i class="fa fa-dribbble"></i> Dribbble
+                                    </h5>
+                                    <h4 class="card-title">
+                                        <a href="#pablo">"Dribbble just acquired Crew, a very interesting
+                                            startup..."</a>
+                                    </h4>
+                                    <p class="card-description">
+                                        Don't be scared of the truth because we need to restart the human foundation
+                                        in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design
+                                        but the back is...
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="author">
+                                        <a href="#pablo">
+                                            <img src="/images/eric.jpg" alt="..."
+                                                 class="avatar img-raised">
+                                            <span>Tania Andrew</span>
+                                        </a>
+                                    </div>
+                                    <div class="stats ml-auto">
+                                        <i class="material-icons">favorite</i> 2.4K ·
+                                        <i class="material-icons">share</i> 45
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="back" style="width: 330px;">
+                                <div class="card-body">
+                                    <h5 class="card-category card-category-social">
+                                        <i class="fa fa-dribbble"></i> Dribbble
+                                    </h5>
+                                    <h4 class="card-title">
+                                        <a href="#pablo">"Dribbble just acquired Crew, a very interesting
+                                            startup..."</a>
+                                    </h4>
+                                    <div class="stats">
+                                        <button type="button" name="button"
+                                                class="btn btn-white btn-fill btn-round">
+                                            <i class="material-icons">subject</i> Read
+                                        </button>
+                                        <button type="button" name="button"
+                                                class="btn btn-white btn-round btn-link">
+                                            <i class="material-icons">bookmark</i> Bookmark
+                                        </button>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<br>
+<br>
+
+<nav id="cd-vertical-nav">
+    <ul>
+        <li>
+            <a href="#erics_media" data-number="1" class="">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Home</span>
+            </a>
+        </li>
+        <li>
+            <a href="#gallery" data-number="2" class="">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Gallery</span>
+            </a>
+        </li>
+        <li>
+            <a href="#package" data-number="3" class="">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Package</span>
+            </a>
+        </li>
+        <li>
+            <a href="#cards" data-number="4">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Cards</span>
+            </a>
+        </li>
+        <li>
+            <a href="#footer" data-number="5" class="">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Footer</span>
+            </a>
+        </li>
+        <li>
+
+        </li>
+        <li>
+
+        </li>
+        <li>
+            <a href="#c" data-number="6">
+                <!--<span class="cd-dot"></span>-->
+                <span class="cd-label">Morphing Cards</span>
+            </a>
+        </li>
+        <li>
+
+        </li>
+    </ul>
+</nav>
+
+
+<% include partials/footer.ejs %>
