@@ -1,6 +1,6 @@
 <% include partials/header.ejs %>
 
-
+<% include partials/nav.ejs %>
 
 
 <div class="page-header clear-filter block" data-parallax="true"
@@ -8,6 +8,7 @@
     <!--landing page slideshow-->
 
     <ul class="slideshow">
+        <li></li>
         <li></li>
         <li></li>
         <li></li>
@@ -111,23 +112,27 @@
                 </div>
             </div>
 
+
             <hr>
             <br>
             <br>
             <div class="title text_shadow" id="package" style="text-align: center">
-                <h2>Packages</h2>
+                <h2>Wedding Packages</h2>
             </div>
             <div class="pricing-5 my_price" id="pricing-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
-                            <h2 class="title">Choose a plan for your next project</h2>
+                            <h2 class="title">Choose a plan</h2>
                             <ul class="nav nav-pills nav-pills-primary">
                                 <li class="nav-item">
-                                    <a class="nav-link active show" href="#personal" data-toggle="tab">Personal</a>
+                                    <a class="nav-link active show" href="#silver" data-toggle="tab" id="silver1">Silver</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#commercial" data-toggle="tab">Commercial</a>
+                                    <a class="nav-link" href="#diamond" data-toggle="tab" id="diamond1">Diamond</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#gold" data-toggle="tab" id="gold1">Gold</a>
                                 </li>
                             </ul>
                             <p class="text-gray">You have Free Unlimited Updates and Premium Support on each package.
@@ -135,12 +140,12 @@
                         </div>
                         <div class="col-md-7 ml-auto mr-auto">
                             <div class="tab-content tab-space">
-                                <div class="tab-pane active show" id="personal">
+                                <div class="tab-pane active show" id="silver">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <div class="card card-pricing card-raised background_personal">
+                                            <div class="card card-pricing card-raised background_silver">
                                                 <div class="card-body ">
-                                                    <h6 class="card-category">HTML Package</h6>
+                                                    <h6 class="card-price">HTML Package</h6>
                                                     <h1 class="card-title">
                                                         <small>$</small>
                                                         0
@@ -169,12 +174,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="commercial">
+                                <div class="tab-pane" id="diamond">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <div class="card card-pricing card-raised background_commercial">
+                                            <div class="card card-pricing card-raised background_diamond">
                                                 <div class="card-body ">
-                                                    <h6 class="card-category">HTML Package</h6>
+                                                    <h6 class="card-price">HTML Package</h6>
                                                     <h1 class="card-title">
                                                         <small>$</small>
                                                         159
@@ -204,6 +209,40 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tab-pane show" id="gold">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="card card-pricing card-raised background_gold">
+                                                <div class="card-body ">
+                                                    <h6 class="card-price">HTML Package</h6>
+                                                    <h1 class="card-title">
+                                                        <small>$</small>
+                                                        0
+                                                    </h1>
+                                                    <ul>
+                                                        <li>
+                                                            <b>##</b> ######
+                                                        </li>
+                                                        <li>
+                                                            <b>##</b> ######
+                                                        </li>
+                                                        <li>
+                                                            <b>##</b> #######
+                                                        </li>
+                                                        <li>
+                                                            <b>##</b> #######
+                                                        </li>
+                                                    </ul>
+                                                    <a href="#pablo"
+                                                       class="btn btn-primary btn-round price_button">
+                                                        Read More
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,9 +264,9 @@
                     <div class="rotating-card-container" style="margin-bottom: 30px;">
                         <div class="card card-rotate card-background">
                             <div class="front front-background"
-                                 style="background-image: url(&quot;../examples/card-blog5.jpg&quot;); width: 330px;">
+                                 style="width: 330px;">
                                 <div class="card-body">
-                                    <h6 class="card-category">Full Background Card</h6>
+                                    <h6 class="card-price">Full Background Card</h6>
                                     <a href="#pablo">
                                         <h3 class="card-title">This Background Card Will Rotate on Hover</h3>
                                     </a>
@@ -240,7 +279,7 @@
                             </div>
 
                             <div class="back back-background"
-                                 style="background-image: url(&quot;../examples/card-blog5.jpg&quot;); width: 330px;">
+                                 style="width: 330px;">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         Manage Post
@@ -270,7 +309,7 @@
                         <div class="card card-rotate">
                             <div class="front" style="width: 330px;">
                                 <div class="card-body">
-                                    <h5 class="card-category card-category-social text-success">
+                                    <h5 class="card-price card-price-social text-success">
                                         <i class="fa fa-newspaper-o"></i> TechCrunch
                                     </h5>
 
@@ -320,7 +359,7 @@
                         <div class="card card-rotate bg-rose">
                             <div class="front" style="width: 330px;">
                                 <div class="card-body">
-                                    <h5 class="card-category card-category-social">
+                                    <h5 class="card-price card-price-social">
                                         <i class="fa fa-dribbble"></i> Dribbble
                                     </h5>
                                     <h4 class="card-title">
@@ -350,7 +389,7 @@
 
                             <div class="back" style="width: 330px;">
                                 <div class="card-body">
-                                    <h5 class="card-category card-category-social">
+                                    <h5 class="card-price card-price-social">
                                         <i class="fa fa-dribbble"></i> Dribbble
                                     </h5>
                                     <h4 class="card-title">

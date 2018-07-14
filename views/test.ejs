@@ -1,0 +1,31 @@
+<% campgrounds.forEach(function(camp){ %>
+<div class="tab-content tab-space">
+    <div class="tab-pane text-center gallery" id="studio">
+        <div class="row">
+            <% if (camp.category === 'studio' ) { %>
+            <div class="col-md-3 ml-auto">
+                <img src="<%= camp.image %>" class="rounded round_image"/>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="tab-pane active text-center gallery" id="works">
+        <div class="row">
+            <% if (camp.category === 'works' ) { %>
+            <div class="col-md-3 ml-auto">
+                <img src="<%= camp.image %>" class="rounded round_image"/>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="tab-pane text-center gallery" id="painting">
+        <div class="row">
+            <% if (camp.category === 'painting' ) { %>
+            <div class="col-md-3 ml-auto">
+                <img src="<%= camp.image %>" class="rounded round_image"/>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+<% }) %>

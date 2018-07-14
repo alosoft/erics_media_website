@@ -1,0 +1,42 @@
+<% include ../partials/header.ejs %>
+
+<% include ../partials/nav.ejs %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <p class="lead">Yelp Camp</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </div>
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+        <div class="col-md-9">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= picture.image %>">
+                <div class="caption-full">
+                    <h4><a href=""><%= picture.name %></a></h4>
+                    <a class="btn btn-primary" style="margin: 10px"
+                       href="/gallery/<%= picture._id %>/edit">Edit
+                    </a>
+                    <form id="form" action="/gallery/<%= picture._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>

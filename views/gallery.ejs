@@ -1,0 +1,63 @@
+<% include partials/new_header.ejs %>
+<!--================Header Menu Area =================-->
+
+<!--================Home Banner Area =================-->
+
+
+<section class="banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0"
+             data-background=""></div>
+        <div class="container">
+            <div class="banner_content text-center">
+                <h2>Gallery</h2>
+                <div class="page_link">
+                    <a href="index.html">Home</a>
+                    <a href="gallery.html">Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<!--================Home Gallery Area =================-->
+<section class="home_gallery_area p_120">
+    <div class="container">
+        <% if(activeUser){ %>
+        <a href="/gallery/new" class="button">
+            <p>add new picture</p>
+        </a>
+        <% } %>
+        <div class="isotope_fillter">
+            <ul class="gallery_filter list">
+                <li class="active" data-filter="*"><a href="#">All</a></li>
+                <li data-filter=".ap"><a href="#">Approved</a></li>
+                <li data-filter=".unp"><a href="#">Unapproved</a></li>
+                <li data-filter=".unv"><a href="#">Unviewed</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container box_1620">
+        <div class="gallery_f_inner row imageGallery1">
+            <% picture.forEach(function(pic){ %>
+            <div class="col-lg-4 col-md-4 col-sm-6 <%= pic.type %>">
+                <div class="h_gallery_item">
+                    <img src="<%= pic.image %>" alt="" class="rounded round_image "
+                         style="height: 300px; width: 400px; display: block;">
+                    <div class="hover">
+                        <a href="/gallery/<%= pic._id %>"><h4>More info</h4></a>
+                        <a class="light" href="<%= pic.image %>"><i class="fa fa-expand"></i></a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+        <div class="button_more">
+            <a class="btn theme_btn" href="#">Load More Images</a>
+        </div>
+    </div>
+</section>
+<!--================End Home Gallery Area =================-->
+
+<% include partials/footer.ejs %>
