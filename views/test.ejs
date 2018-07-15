@@ -1,31 +1,149 @@
-<% campgrounds.forEach(function(camp){ %>
-<div class="tab-content tab-space">
-    <div class="tab-pane text-center gallery" id="studio">
+<% include partials/header.ejs %>
+
+<%include partials/nav.ejs%>
+
+<div class="page-header"
+     style="background-image: url('/images/city.jpg'); background-size: cover; background-position: top center;">
+    <div class="container">
         <div class="row">
-            <% if (camp.category === 'studio' ) { %>
-            <div class="col-md-3 ml-auto">
-                <img src="<%= camp.image %>" class="rounded round_image"/>
+            <div class="col-lg-4 col-md-6 col-sm-5 ml-auto mr-auto">
+                <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+                <% } %>
+                <div class="card card-login">
+                    <form class="form" method="POST" action="/login" style="min-height: 250px;">
+                        <div class="card-header card-header-primary text-center" id="login_color">
+                            <h4 class="card-title">Login</h4>
+                        </div>
+                        <div class="card-body">
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <i class="material-icons">face</i>
+                                        </span>
+                                    </div>
+                                    <input name="username" class="form-control" placeholder="Username..." type="text"
+                                           required autofocus>
+                                </div>
+                            </span>
+                            <span class="bmd-form-group is-filled">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                          <i class="material-icons">lock_outline</i>
+                                        </span>
+                                    </div>
+                                    <input name="password" class="form-control" placeholder="Password..."
+                                           type="password" required>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="footer text-center">
+                            <button class="btn" style="color: white; background: #2284a2;" role="button">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <% } %>
-        </div>
-    </div>
-    <div class="tab-pane active text-center gallery" id="works">
-        <div class="row">
-            <% if (camp.category === 'works' ) { %>
-            <div class="col-md-3 ml-auto">
-                <img src="<%= camp.image %>" class="rounded round_image"/>
-            </div>
-            <% } %>
-        </div>
-    </div>
-    <div class="tab-pane text-center gallery" id="painting">
-        <div class="row">
-            <% if (camp.category === 'painting' ) { %>
-            <div class="col-md-3 ml-auto">
-                <img src="<%= camp.image %>" class="rounded round_image"/>
-            </div>
-            <% } %>
         </div>
     </div>
 </div>
-<% }) %>
+
+<script src="/javascripts/core/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/core/popper.min.js" type="text/javascript"></script>
+<script src="/javascripts/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="/javascripts/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="/javascripts/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="/javascripts/nouislider.min.js" type="text/javascript"></script>
+<!--	Plugin for Sharrre btn -->
+<script src="/javascripts/jquery.sharrre.js" type="text/javascript"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //init DateTimePickers
+        materialKit.initFormExtendedDatetimepickers();
+
+        // Sliders Init
+        materialKit.initSliders();
+    });
+
+
+    function scrollToDownload() {
+        if ($('.section-download').length != 0) {
+            $("html, body").animate({
+                scrollTop: $('.section-download').offset().top
+            }, 1000);
+        }
+    }
+
+
+    $(document).ready(function () {
+
+        $('#facebook').sharrre({
+            share: {
+                facebook: true
+            },
+            enableHover: false,
+            enableTracking: false,
+            enableCounter: false,
+            click: function (api, options) {
+                api.simulateClick();
+                api.openPopup('facebook');
+            },
+            template: '<i class="fab fa-facebook-f"></i> Facebook',
+            url: 'https://demos.creative-tim.com/material-kit/index.html'
+        });
+
+        $('#googlePlus').sharrre({
+            share: {
+                googlePlus: true
+            },
+            enableCounter: false,
+            enableHover: false,
+            enableTracking: true,
+            click: function (api, options) {
+                api.simulateClick();
+                api.openPopup('googlePlus');
+            },
+            template: '<i class="fab fa-google-plus"></i> Google',
+            url: 'https://demos.creative-tim.com/material-kit/index.html'
+        });
+
+        $('#twitter').sharrre({
+            share: {
+                twitter: true
+            },
+            enableHover: false,
+            enableTracking: false,
+            enableCounter: false,
+            buttons: {
+                twitter: {
+                    via: 'CreativeTim'
+                }
+            },
+            click: function (api, options) {
+                api.simulateClick();
+                api.openPopup('twitter');
+            },
+            template: '<i class="fab fa-twitter"></i> Twitter',
+            url: 'https://demos.creative-tim.com/material-kit/index.html'
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

@@ -19,14 +19,14 @@
                 <div class="card card-login">
                     <form class="form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT" style="min-height: 250px;">
                         <div class="card-header card-header-primary text-center" id="login_color">
-                            <h4 class="card-title">Login <%= picture.name %></h4>
+                            <h4 class="card-title">Edit <%= picture.name %></h4>
                         </div>
                         <div class="card-body">
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                          <i class="material-icons">face</i>
+                                            <i class="material-icons">face</i>
                                         </span>
                                     </div>
                                     <input class="form-control" type="text" name="picture[name]" value="<%= picture.image %>">

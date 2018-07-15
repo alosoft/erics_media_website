@@ -112,10 +112,11 @@
 
 </head>
 
-<% include partials/nav.ejs%>
 
 
 <body class="contact-page sidebar-collapse">
+
+
 
 <!-- Extra details for Live View on GitHub Pages -->
 <!-- Google Tag Manager (noscript) -->
@@ -124,6 +125,117 @@
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<nav class="navbar fixed-top navbar-expand-lg bg-dark" color-on-scroll="100"
+     id="sectionsNav" style="padding-bottom: 5px;">
+    <div class="container">
+        <a href="/">
+            <img id="svg" src="/images/logo.svg" alt="Logo">
+        </a>
+        <div class="navbar-translate">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="material-icons">
+                            home
+                        </i>
+                    </a>
+                </li>
+
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">apps</i> Menu
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 190px">
+                        <a href="/package" class="dropdown-item">
+                            <i class="material-icons">layers</i> Packages
+                        </a>
+                        <a href="/profile" class="dropdown-item">
+                            <i class="material-icons">content_paste</i> Profile
+                        </a>
+                        <a href="/gallery" class="dropdown-item">
+                            <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
+                        <a href="/contact" class="dropdown-item">
+                            <i class="material-icons">contact_mail</i> Contact Us
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Twitter">
+                        <button class="btn btn-just-icon btn-round btn-twitter">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Like us on Facebook">
+                        <button class="btn btn-just-icon btn-round btn-facebook">
+                            <i class="fa fa-facebook"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Google Plus">
+                        <button class="btn btn-just-icon btn-round btn-google">
+                            <i class="fa fa-google"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+                       data-original-title="Follow us on Instagram">
+                        <button class="btn btn-just-icon btn-round btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </button>
+                    </a>
+                </li>
+                <% if(activeUser){ %>
+                <li class="dropdown nav-item">
+                    <a class="profile-photo dropdown-toggle nav-link" href="/profile"
+                       data-toggle="dropdown">
+                        <div class="profile-photo-small">
+                            <img class="rounded-circle img-fluid" src="../images/eric.jpg" alt="Circle Image">
+                        </div>
+                        <div class="ripple-container"></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <!--<h6 class="dropdown-header">Dropdown header</h6>-->
+                        <a href="/profile" class="dropdown-item">Profile</a>
+                        <a href="/logout" class="dropdown-item">Sign out</a>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
 
 <div id="contactUsMap" class="big-map"></div>
 
@@ -299,8 +411,9 @@
         <div class="copyright pull-center">
             Copyright ©
             <script>document.write(new Date().getFullYear())</script>
-            2018 Creative Tim All Rights Reserved.
+            Alosoft Inc. All Rights Reserved.
         </div>
+
     </div>
 </footer>
 

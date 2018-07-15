@@ -15,21 +15,7 @@ router.use(methodOverride("_method"));
 // });
 
 
-//INDEX - route //show all campgrounds
-router.get("/", function (req, res) {
-    console.log(req.user);
-    // get all campgrounds from data base
-    Campground.find({}, function (err, allCampgrounds) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("home",
-                {
-                    campgrounds: allCampgrounds
-                });
-        }
-    })
-});
+
 
 //INDEX - route //show all campgrounds
 router.get("/campgrounds", function (req, res) {

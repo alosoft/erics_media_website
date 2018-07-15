@@ -1,7 +1,139 @@
-<% include partials/new_header.ejs %>
-<!--================Header Menu Area =================-->
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <title>Erics Media</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/test/css/bootstrap.css">
+    <link rel="stylesheet" href="/test/vendors/linericon/style.css">
+    <link rel="stylesheet" href="/test/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/test/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/test/vendors/lightbox/simpleLightbox.css">
+    <link rel="stylesheet" href="/test/vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="/test/vendors/animate-css/animate.css">
+    <!-- bitmap main css -->
+    <link rel="stylesheet" href="/test/css/style.css">
+    <link rel="stylesheet" href="/test/css/responsive.css">
+    <!-- material CSS Files -->
+    <link rel="stylesheet" href="/stylesheets/material-kit.min.css">
+    <link href="/stylesheets/material-kit.css?v=2.0.4" rel="stylesheet"/>
+    <!--custom css file-->
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+</head>
+<body>
 
-<!--================Home Banner Area =================-->
+
+<nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
+     id="sectionsNav" style="padding-bottom: 5px;">
+    <div class="container">
+        <a href="/">
+            <img id="svg" src="/images/logo.svg" alt="Logo">
+        </a>
+        <div class="navbar-translate">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="material-icons">
+                            home
+                        </i>
+                    </a>
+                </li>
+
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">apps</i> Menu
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 190px">
+                        <a href="/package" class="dropdown-item">
+                            <i class="material-icons">layers</i> Packages
+                        </a>
+                        <a href="/profile" class="dropdown-item">
+                            <i class="material-icons">content_paste</i> Profile
+                        </a>
+                        <a href="/gallery" class="dropdown-item">
+                            <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
+                        <a href="/contact" class="dropdown-item">
+                            <i class="material-icons">contact_mail</i> Contact Us
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Twitter">
+                        <button class="btn btn-just-icon btn-round btn-twitter">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Like us on Facebook">
+                        <button class="btn btn-just-icon btn-round btn-facebook">
+                            <i class="fa fa-facebook"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Google Plus">
+                        <button class="btn btn-just-icon btn-round btn-google">
+                            <i class="fa fa-google"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+                       data-original-title="Follow us on Instagram">
+                        <button class="btn btn-just-icon btn-round btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </button>
+                    </a>
+                </li>
+                <% if(activeUser){ %>
+                <li class="dropdown nav-item">
+                    <a class="profile-photo dropdown-toggle nav-link" href="/profile"
+                       data-toggle="dropdown">
+                        <div class="profile-photo-small">
+                            <img class="rounded-circle img-fluid" src="../images/eric.jpg" alt="Circle Image">
+                        </div>
+                        <div class="ripple-container"></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <!--<h6 class="dropdown-header">Dropdown header</h6>-->
+                        <a href="/profile" class="dropdown-item">Profile</a>
+                        <a href="/logout" class="dropdown-item">Sign out</a>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
 
 <section class="banner_area">
@@ -19,9 +151,7 @@
         </div>
     </div>
 </section>
-<!--================End Home Banner Area =================-->
 
-<!--================Home Gallery Area =================-->
 <section class="home_gallery_area p_120">
     <div class="container">
         <% if(activeUser){ %>
@@ -39,12 +169,15 @@
         </div>
     </div>
     <div class="container box_1620">
-        <div class="gallery_f_inner row imageGallery1">
+        <div class="gallery_f_inner row imageGallery1"
+             style="position: relative;
+             height: 743.234px;">
             <% picture.forEach(function(pic){ %>
+            <!--class="col-lg-4 col-md-4 col-sm-6 unv"-->
+            <!--class="col-lg-4 col-md-4 col-sm-6-->
             <div class="col-lg-4 col-md-4 col-sm-6 <%= pic.type %>">
                 <div class="h_gallery_item">
-                    <img src="<%= pic.image %>" alt="" class="rounded round_image "
-                         style="height: 300px; width: 400px; display: block;">
+                    <img src="<%= pic.image %>" alt="">
                     <div class="hover">
                         <a href="/gallery/<%= pic._id %>"><h4>More info</h4></a>
                         <a class="light" href="<%= pic.image %>"><i class="fa fa-expand"></i></a>
@@ -58,6 +191,132 @@
         </div>
     </div>
 </section>
-<!--================End Home Gallery Area =================-->
 
-<% include partials/footer.ejs %>
+
+
+<footer class="footer footer-white footer-big" id="footer">
+    <div class="container">
+
+        <div class="content">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="#pablo"><h5>Erics Media</h5></a>
+                    <p>##################<br>
+                        #################<br>
+                        #################<br>
+                        ##################</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>About</h5>
+                    <ul class="links-vertical">
+                        <li>
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#pablo">
+                                Presentation
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/profile">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Subscribe to Newsletter</h5>
+                    <p>
+                        Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about
+                        this.
+                    </p>
+                    <form class="form form-newsletter" method="" action="">
+
+                        <div class="form-group bmd-form-group">
+                            <input class="form-control" placeholder="Your Email..." type="email">
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-just-icon" name="button">
+                            <i class="material-icons">mail</i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+        <ul class="social-buttons">
+            <li>
+                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#pablo" class="btn btn-just-icon btn-link btn-facebook">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble">
+                    <i class="fa fa-dribbble"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#pablo" class="btn btn-just-icon btn-link btn-google">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#pablo" class="btn btn-just-icon btn-link btn-youtube">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="copyright pull-center">
+            Copyright ©
+            <script>document.write(new Date().getFullYear())</script>
+            Alosoft Inc. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/test/js/jquery-3.2.1.min.js"></script>
+<script src="/test/js/popper.js"></script>
+<script src="/test/js/bootstrap.min.js"></script>
+<script src="/test/js/stellar.js"></script>
+<script src="/test/vendors/lightbox/simpleLightbox.min.js"></script>
+<script src="/test/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="/test/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="/test/vendors/isotope/isotope-min.js"></script>
+<script src="/test/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/test/js/jquery.ajaxchimp.min.js"></script>
+<script src="/test/js/mail-script.js"></script>
+<script src="/test/js/theme.js"></script>
+
+<!--Core JS Files-->
+<script src="/javascripts/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="/javascripts/moment.min.js"></script>
+<script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
+
+
+
+
+</body>
+
+</html>

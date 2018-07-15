@@ -165,9 +165,13 @@
 }
 
 .slideshow li:nth-child(1) {
-    background-image: url(https://uc491c2d054c65033b8c6b83c394.dl.dropboxusercontent.com/cd/0/get/ALRXzZGaqQ2ERsWuvg4-jyqXkf6llKDqeGJ3vDMDkl07-rbtdRg9BaYy4wwi9zkYfLZCp3tEyTeZa-jzsLayVwnUlis3WVlbb-2KCaMBC3C_XmnciFOij74aQ4GdblXgGPCC--hkSHfxaweIgZ5C44McBUt4PnbWRfW-SLvsR87C__R9zNl9_LIb__CONnKCiqU/file?dl=1);
+    background-image: url('/images/bg7.jpg');
     animation-delay: 2s;
 }
+
+/*.red {*/
+    /*background: #c13744;*/
+/*}*/
 
 .slideshow li:nth-child(2) {
     background-image: url(https://uc4fdf936b609385173cec456551.dl.dropboxusercontent.com/cd/0/get/ALRpTxCE881braeeh3Ci7uDKYiTwioJv7NwexBwV5MprmwJnz24NVveSf3DXEqHkpv5ow05W_P3vJG5z_ZlBWP2asjXRnti-xKg7QB9zKMSAqHNFWY77y7M6jQmB9AXlfTKb2LFDy-M9tURaLkqHjD4KDi_-XCx6y3LwUl-ffNz_65DcNu5LDIzSE6QCvPjEsL4/file?dl=1haz);
