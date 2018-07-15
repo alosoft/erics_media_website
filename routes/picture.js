@@ -19,7 +19,7 @@ router.get("/gallery", function (req, res) {
         if (err) {
             console.log(err);
         } else {
-            console.log(picture);
+            // console.log(picture);
             res.render("gallery",
                 {
                     picture: picture
@@ -35,7 +35,9 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     let image = req.body.image;
     let type = req.body.type;
     let id = req.body._id;
-    let newPicture = {image: image, type: type, id: id};
+    let name = req.body.name;
+    let description = req.body.description;
+    let newPicture = {image: image, type: type, id: id, name: name, description: description};
     // console.log(req.user);
     //create a new campground and save to database
     Picture.create(newPicture, function (err, newlyCreated) {
@@ -99,7 +101,14 @@ router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
             console.log(err);
             res.redirect('/gallery');
         } else {
-            res.redirect('/gallery/' + req.params.id);
+            console.log(req.body.picture);
+            console.log(req.body.picture);
+            console.log(req.body.picture);
+            console.log(req.body.picture);
+            console.log(req.body.picture);
+            console.log(req.body.picture);
+            console.log(req.body.picture);
+            res.redirect('/gallery');
         }
     });
 });

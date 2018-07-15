@@ -17,7 +17,8 @@
                 </div>
                 <% } %>
                 <div class="card card-login">
-                    <form class="form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT" style="min-height: 250px;">
+                    <form class="form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT"
+                          style="min-height: 250px;">
                         <div class="card-header card-header-primary text-center" id="login_color">
                             <h4 class="card-title">Edit <%= picture.name %></h4>
                         </div>
@@ -26,26 +27,52 @@
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            <i class="material-icons">face</i>
+                                            <i class="material-icons">
+                                                perm_identity
+                                            </i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" name="picture[name]" value="<%= picture.image %>">
+                                    <input class="form-control" type="text" name="picture[name]"
+                                           value="<%= picture.name %>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">http</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[image]"
+                                           value="<%= picture.image %>">
                                 </div>
                             </span>
                             <span class="bmd-form-group is-filled">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                          <i class="material-icons">lock_outline</i>
+                                          <i class="material-icons">category</i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" name="picture[type]" value="<%= picture.type %>">
+                                    <input class="form-control" type="text" name="picture[type]"
+                                           value="<%= picture.type %>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">description</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[description]"
+                                           value="<%= picture.description %>">
                                 </div>
                             </span>
                         </div>
                         <div class="footer text-center">
                             <button class="btn" style="color: white; background: #2284a2;" role="button">
-                                Edit
+                                Save
                             </button>
                         </div>
                     </form>
@@ -144,3 +171,26 @@
 </body>
 
 </html>
+
+
+<!--<div class="single-element-widget">-->
+<!--<h3 class="mb-30 title_color">Selectboxes</h3>-->
+<!--<div class="default-select" id="default-select">-->
+<!--<select style="display: none;">-->
+<!--<option value="1">English</option>-->
+<!--<option value="1">Spanish</option>-->
+<!--<option value="1">Arabic</option>-->
+<!--<option value="1">Portuguise</option>-->
+<!--<option value="1">Bengali</option>-->
+<!--</select>-->
+<!--<div class="nice-select" tabindex="0"><span class="current">English</span>-->
+<!--<ul class="list">-->
+<!--<li data-value="1" class="option selected focus">English</li>-->
+<!--<li data-value="1" class="option">Spanish</li>-->
+<!--<li data-value="1" class="option">Arabic</li>-->
+<!--<li data-value="1" class="option">Portuguise</li>-->
+<!--<li data-value="1" class="option">Bengali</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

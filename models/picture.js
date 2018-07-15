@@ -2,8 +2,10 @@ let mongoose = require('mongoose');
 
 let pictureSchema = new mongoose.Schema({
     // title: String,
+    name: String,
     image: String,
     type: String,
+    description: String,
     // about: String,
     // comment: String,
     id: {
