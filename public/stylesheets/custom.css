@@ -303,3 +303,32 @@
 .dropdown-menu.dropdown-with-icons.main-menu.show {
     height: 190px;
 }
+
+.anime {
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 16.667%;
+    flex: 0 0 16.667%;
+    /*max-width: 16.667%;*/
+    display: block;
+    overflow: hidden;
+}
+
+
+.anime img {
+    width: 100%;
+    -webkit-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.anime:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
