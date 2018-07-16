@@ -47,17 +47,30 @@
                                            value="<%= picture.image %>">
                                 </div>
                             </span>
-                            <span class="bmd-form-group is-filled">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                          <i class="material-icons">category</i>
-                                        </span>
-                                    </div>
-                                    <input class="form-control" type="text" name="picture[type]"
-                                           value="<%= picture.type %>">
-                                </div>
-                            </span>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" value="work" name="picture[type]" type="checkbox"> Works
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" value="studio" name="picture[type]" type="checkbox"> Studio
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input"  value="painting" name="picture[type]" type="checkbox"> Digital Painting
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -65,8 +78,7 @@
                                             <i class="material-icons">description</i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" name="picture[description]"
-                                           value="<%= picture.description %>">
+                                    <textarea class="form-control" name="picture[description]"><%=picture.description%></textarea>
                                 </div>
                             </span>
                         </div>

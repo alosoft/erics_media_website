@@ -45,7 +45,12 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
             console.log(err);
         } else {
             //redirect back to campgrounds page
-            // console.log(newlyCreated);
+            console.log(newlyCreated);
+            console.log(newlyCreated);
+            console.log(newlyCreated);
+            console.log(newlyCreated);
+            console.log(newlyCreated);
+            console.log(newlyCreated);
             res.redirect("/gallery");
         }
     });
@@ -101,12 +106,6 @@ router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
             console.log(err);
             res.redirect('/gallery');
         } else {
-            console.log(req.body.picture);
-            console.log(req.body.picture);
-            console.log(req.body.picture);
-            console.log(req.body.picture);
-            console.log(req.body.picture);
-            console.log(req.body.picture);
             console.log(req.body.picture);
             res.redirect('/gallery');
         }

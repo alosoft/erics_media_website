@@ -44,16 +44,30 @@
                                     <input class="form-control" type="text" name="image" placeholder="image url">
                                 </div>
                             </span>
-                            <span class="bmd-form-group is-filled">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                          <i class="material-icons">category</i>
-                                        </span>
-                                    </div>
-                                    <input class="form-control" type="text" name="type" placeholder="category">
-                                </div>
-                            </span>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" value="work" name="type" type="checkbox"> Works
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" value="studio" name="type" type="checkbox"> Studio
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input"  value="painting" name="type" type="checkbox"> Digital Painting
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -61,8 +75,8 @@
                                             <i class="material-icons">description</i>
                                         </span>
                                     </div>
-                                    <input class="form-control" type="text" name="description"
-                                           placeholder="description">
+                                    <textarea class="form-control" name="description"
+                                              placeholder="description"></textarea>
                                 </div>
                             </span>
                         </div>
