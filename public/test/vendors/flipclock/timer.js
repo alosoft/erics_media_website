@@ -15,7 +15,7 @@ timer.init = function() {
   
   timer.getTimes();
   setInterval(function() { timer.update() }, 1000);
-}
+};
 
 /*
 * Save references of timer section
@@ -26,7 +26,7 @@ timer.getReferences = function() {
   timer.hours = timer.timer.querySelectorAll(".hours .timer__number")[0];
   timer.minutes = timer.timer.querySelectorAll(".minutes .timer__number")[0];
   timer.seconds = timer.timer.querySelectorAll(".seconds .timer__number")[0];
-}
+};
 
 /*
 * remember time units for later use
@@ -37,7 +37,7 @@ timer.getTimes = function() {
   timer.times.minute = timer.times.second * 60;
   timer.times.hour = timer.times.minute * 60;
   timer.times.day = timer.times.hour * 24;
-}
+};
 
 /*
 * Update the countdown
@@ -54,7 +54,7 @@ timer.update = function() {
   timer.hours.innerHTML = timer.getTimeRemaining(timer.times.hour, 24);
   timer.minutes.innerHTML = timer.getTimeRemaining(timer.times.minute, 60);
   timer.seconds.innerHTML = timer.getTimeRemaining(timer.times.second, 60);
-}
+};
 
 /*
 * calculate remaining time based on a unit of time
@@ -73,7 +73,7 @@ timer.getTimeRemaining = function( timeUnit, divisor ) {
   }
   
   return n;
-}
+};
 
 window.addEventListener("load", function() {
   timer.init();

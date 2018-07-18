@@ -15,8 +15,6 @@ let createError = require('http-errors'),
 // let seedDB = require('./seeds');
 let User = require('./models/user');
 let indexRouter = require('./routes/index');
-let campgroundRouter = require('./routes/campground');
-let commentRouter = require('./routes/comments');
 let pictureRouter = require('./routes/picture');
 let userRouter = require('./routes/users');
 
@@ -58,8 +56,6 @@ app.use(function (req, res, next) {
 //////********************************//
 // app.use('/', indexRouter);
 app.use(indexRouter);
-app.use(campgroundRouter);
-app.use(commentRouter);
 app.use(pictureRouter);
 app.use(userRouter);
 

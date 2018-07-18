@@ -44,6 +44,6 @@ hipster_cards = {
                 $header.css(new_css);                
             }              
         });
-        
-    },   
-}
+
+    },
+};

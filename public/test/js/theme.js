@@ -1,5 +1,5 @@
 ;(function($){
-    "use strict"
+    "use strict";
 	
 	/*----------------------------------------------------*/
     /*  Parallax Effect js
@@ -311,6 +311,6 @@
             ]
         });
     }
-	
 
-})(jQuery)
+
+})(jQuery);

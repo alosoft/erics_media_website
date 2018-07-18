@@ -2,7 +2,7 @@
 <% include ../partials/nav.ejs %>
 
 <div class="page-header"
-     style="background-image: url('/images/city.jpg'); background-size: cover; background-position: top center;">
+     style=" background-size: cover; background-position: top center;">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-5 ml-auto mr-auto">
@@ -106,103 +106,80 @@
 <script src="/javascripts/jquery.sharrre.js" type="text/javascript"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        //init DateTimePickers
-        materialKit.initFormExtendedDatetimepickers();
+<!--<script type="text/javascript">-->
+<!--$(document).ready(function () {-->
+<!--//init DateTimePickers-->
+<!--materialKit.initFormExtendedDatetimepickers();-->
 
-        // Sliders Init
-        materialKit.initSliders();
-    });
-
-
-    function scrollToDownload() {
-        if ($('.section-download').length != 0) {
-            $("html, body").animate({
-                scrollTop: $('.section-download').offset().top
-            }, 1000);
-        }
-    }
+<!--// Sliders Init-->
+<!--materialKit.initSliders();-->
+<!--});-->
 
 
-    $(document).ready(function () {
+<!--function scrollToDownload() {-->
+<!--if ($('.section-download').length != 0) {-->
+<!--$("html, body").animate({-->
+<!--scrollTop: $('.section-download').offset().top-->
+<!--}, 1000);-->
+<!--}-->
+<!--}-->
 
-        $('#facebook').sharrre({
-            share: {
-                facebook: true
-            },
-            enableHover: false,
-            enableTracking: false,
-            enableCounter: false,
-            click: function (api, options) {
-                api.simulateClick();
-                api.openPopup('facebook');
-            },
-            template: '<i class="fab fa-facebook-f"></i> Facebook',
-            url: 'https://demos.creative-tim.com/material-kit/index.html'
-        });
 
-        $('#googlePlus').sharrre({
-            share: {
-                googlePlus: true
-            },
-            enableCounter: false,
-            enableHover: false,
-            enableTracking: true,
-            click: function (api, options) {
-                api.simulateClick();
-                api.openPopup('googlePlus');
-            },
-            template: '<i class="fab fa-google-plus"></i> Google',
-            url: 'https://demos.creative-tim.com/material-kit/index.html'
-        });
+<!--$(document).ready(function () {-->
 
-        $('#twitter').sharrre({
-            share: {
-                twitter: true
-            },
-            enableHover: false,
-            enableTracking: false,
-            enableCounter: false,
-            buttons: {
-                twitter: {
-                    via: 'CreativeTim'
-                }
-            },
-            click: function (api, options) {
-                api.simulateClick();
-                api.openPopup('twitter');
-            },
-            template: '<i class="fab fa-twitter"></i> Twitter',
-            url: 'https://demos.creative-tim.com/material-kit/index.html'
-        });
+<!--$('#facebook').sharrre({-->
+<!--share: {-->
+<!--facebook: true-->
+<!--},-->
+<!--enableHover: false,-->
+<!--enableTracking: false,-->
+<!--enableCounter: false,-->
+<!--click: function (api, options) {-->
+<!--api.simulateClick();-->
+<!--api.openPopup('facebook');-->
+<!--},-->
+<!--template: '<i class="fab fa-facebook-f"></i> Facebook',-->
+<!--url: 'https://demos.creative-tim.com/material-kit/index.html'-->
+<!--});-->
 
-    });
-</script>
+<!--$('#googlePlus').sharrre({-->
+<!--share: {-->
+<!--googlePlus: true-->
+<!--},-->
+<!--enableCounter: false,-->
+<!--enableHover: false,-->
+<!--enableTracking: true,-->
+<!--click: function (api, options) {-->
+<!--api.simulateClick();-->
+<!--api.openPopup('googlePlus');-->
+<!--},-->
+<!--template: '<i class="fab fa-google-plus"></i> Google',-->
+<!--url: 'https://demos.creative-tim.com/material-kit/index.html'-->
+<!--});-->
+
+<!--$('#twitter').sharrre({-->
+<!--share: {-->
+<!--twitter: true-->
+<!--},-->
+<!--enableHover: false,-->
+<!--enableTracking: false,-->
+<!--enableCounter: false,-->
+<!--buttons: {-->
+<!--twitter: {-->
+<!--via: 'CreativeTim'-->
+<!--}-->
+<!--},-->
+<!--click: function (api, options) {-->
+<!--api.simulateClick();-->
+<!--api.openPopup('twitter');-->
+<!--},-->
+<!--template: '<i class="fab fa-twitter"></i> Twitter',-->
+<!--url: 'https://demos.creative-tim.com/material-kit/index.html'-->
+<!--});-->
+
+<!--});-->
+<!--</script>-->
 
 </body>
 
 </html>
-
-
-<!--<div class="single-element-widget">-->
-<!--<h3 class="mb-30 title_color">Selectboxes</h3>-->
-<!--<div class="default-select" id="default-select">-->
-<!--<select style="display: none;">-->
-<!--<option value="1">English</option>-->
-<!--<option value="1">Spanish</option>-->
-<!--<option value="1">Arabic</option>-->
-<!--<option value="1">Portuguise</option>-->
-<!--<option value="1">Bengali</option>-->
-<!--</select>-->
-<!--<div class="nice-select" tabindex="0"><span class="current">English</span>-->
-<!--<ul class="list">-->
-<!--<li data-value="1" class="option selected focus">English</li>-->
-<!--<li data-value="1" class="option">Spanish</li>-->
-<!--<li data-value="1" class="option">Arabic</li>-->
-<!--<li data-value="1" class="option">Portuguise</li>-->
-<!--<li data-value="1" class="option">Bengali</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->

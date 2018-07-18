@@ -337,3 +337,21 @@
     -o-transform: scale(1.05);
     transform: scale(1.05);
 }
+
+.page-header {
+    background-image: url('/images/city.jpg');
+}
+
+.page-header {
+    background-image: url('/images/city.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.page-header {
+    background-image: url('/images/city.jpg');
+}
+
+.page-header {
+    background-image: url('/images/background.jpg');
+}

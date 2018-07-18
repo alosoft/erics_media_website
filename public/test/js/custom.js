@@ -1,5 +1,5 @@
 ;(function($){
-    "use strict"
+    "use strict";
     var nav_offset_top = $('.header_area').height()+50; 
     /*-------------------------------------------------------------------------------
 	  Navbar 
@@ -16,8 +16,8 @@
                     $(".header_area").removeClass("navbar_fixed");
                 }
             });
-        };
-    };
+        }
+    }
     navbarFixed();
     
     function testimonialSlider(){
@@ -299,4 +299,4 @@
         });
     }
 
-})(jQuery)
+})(jQuery);

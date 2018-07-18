@@ -871,7 +871,7 @@
 
       if (!this.options.initInProcess || this.options.lazyLoadLiElements !== true) { // this is very expensive on IE and we haven;t really rendered the select if we are lazy loading, so hold off on this event
          this.$element.trigger('rendered.bs.select');
-      };
+      }
     },
 
     /**
@@ -962,7 +962,7 @@
             horiz: menuPadding.horiz +
                   parseInt(menuStyle ? menuStyle.marginLeft : $menu.css('marginLeft')) +
                   parseInt(menuStyle ? menuStyle.marginRight : $menu.css('marginRight')) + 2
-          }
+          };
 
       document.body.removeChild(newElement);
 

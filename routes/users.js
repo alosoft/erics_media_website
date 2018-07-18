@@ -1,5 +1,7 @@
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+console.log('routes users');
 
 // get home page
 router.get('/', function (req, res) {
@@ -26,5 +28,11 @@ router.get('/test', function (req, res) {
     res.render('test');
 });
 
+//handle unknown address
+router.get('/:id', function (req, res) {
+    // res.send('Unknown Address');
+    req.flash('error', 'Wrong Address');
+    res.redirect('/');
+});
 
 module.exports = router;

@@ -393,7 +393,7 @@
                     } :
                     function(datum) {
                         return datum;
-                    }
+                    };
                 $.fn.typeahead.apply(self.$input, typeaheadjs).on('typeahead:selected', $.proxy(function(obj, datum) {
                     self.add(f_datum(datum));
                     self.$input.typeahead('val', '');

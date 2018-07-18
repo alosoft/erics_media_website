@@ -213,7 +213,7 @@
                             itemsToScroll = responsivePoints[i].itemsToScroll;
                             break;
                         } else {
-                            continue;
+
                         }
                     }
                 }

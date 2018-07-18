@@ -64,14 +64,14 @@ $(document).ready(function(){
                         $('#contactForm').fadeTo( "slow", 1, function() {
                             $(this).find(':input').attr('disabled', 'disabled');
                             $(this).find('label').css('cursor','default');
-                            $('#success').fadeIn()
+                            $('#success').fadeIn();
                             $('.modal').modal('hide');
 		                	$('#success').modal('show');
                         })
                     },
                     error: function() {
                         $('#contactForm').fadeTo( "slow", 1, function() {
-                            $('#error').fadeIn()
+                            $('#error').fadeIn();
                             $('.modal').modal('hide');
 		                	$('#error').modal('show');
                         })
@@ -82,4 +82,4 @@ $(document).ready(function(){
     })
         
  })(jQuery)
-})
+});

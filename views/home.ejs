@@ -3,7 +3,7 @@
 
 <body class="index-page">
 
-<div class="page-header" data-parallax="true" style="background-image: url('/images/city.jpg');" id="erics_media">
+<div class="page-header" data-parallax="true" id="erics_media">
     <!--landing page slideshow-->
 
     <ul class="slideshow">
@@ -17,6 +17,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
+                <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+                <% } %>
                 <div class="brand">
                     <h1 style="font-family: 'Ubuntu', cursive;" id="logo_color"
                         class="text_shadow align-content-center ">Erics Media</h1>
