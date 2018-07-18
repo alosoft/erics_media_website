@@ -1,9 +1,9 @@
 # erics_media_website
 
 this is a photography website project
-it is built with google material theme and a little bit of from colorlib on the gallery page
+it is built with <b><i>google material theme</i></b> and a little bit from <b><i>colorlib</i></b> on the gallery page
 
 # implementations
 
-disquss
+disquss<br>
 mailchimp
