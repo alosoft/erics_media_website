@@ -26,8 +26,8 @@ let app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// mongoose.connect('mongodb://localhost/new');
-mongoose.connect('mongodb://alosoftinc:alosoft20@ds243441.mlab.com:43441/erics_media-website');
+mongoose.connect('mongodb://localhost/new');
+// mongoose.connect('mongodb://alosoftinc:alosoft20@ds243441.mlab.com:43441/erics_media-website');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(flash());
