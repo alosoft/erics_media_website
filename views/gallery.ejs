@@ -44,10 +44,14 @@
 <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
      id="sectionsNav" style="padding-bottom: 5px;">
     <div class="container">
-        <a href="/">
-            <img id="svg" src="/images/logo.svg" alt="Logo">
-        </a>
         <div class="navbar-translate">
+            <div data-turbolinks="false">
+                <a href="/" class="navbar-brand">
+                    <div class="logo">
+                        <img src="/images/logo.png" width="200" height="50">
+                    </div>
+                </a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
                     aria-label="Toggle navigation">
                 <span class="sr-only">Toggle navigation</span>
@@ -114,7 +118,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                       href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+                       href="#" target="_blank"
                        data-original-title="Follow us on Instagram">
                         <button class="btn btn-just-icon btn-round btn-instagram">
                             <i class="fa fa-instagram"></i>
@@ -140,9 +144,9 @@
         </div>
     </div>
 </nav>
-
-
 <section class="banner_area">
+
+
     <div class="banner_inner d-flex align-items-center">
         <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0"
              data-background=""></div>
@@ -150,8 +154,8 @@
             <div class="banner_content text-center">
                 <h2>Gallery</h2>
                 <div class="page_link">
-                    <a href="index.html">Home</a>
-                    <a href="gallery.html">Gallery</a>
+                    <a href="/">Home</a>
+                    <a href="#">Gallery</a>
                 </div>
             </div>
         </div>
@@ -192,7 +196,8 @@
                         <p class="description"><%= pic.description %></p>
                     </div>
                     <div class="footer text-center">
-                        <a href="/gallery/<%= pic._id %>" class="btn btn-fill btn-round" style="background-color: #2284a2">Read More</a>
+                        <a href="/gallery/<%= pic._id %>" class="btn btn-fill btn-round"
+                           style="background-color: #2284a2">Read More</a>
                     </div>
                     <!--<div class="filter"></div>-->
 

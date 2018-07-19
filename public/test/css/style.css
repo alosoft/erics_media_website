@@ -26,14 +26,14 @@ Table of Content:
 06/ breadcrumb
 07/ about
 08/ team
-09/ project 
-10/ price 
-11/ team 
-12/ blog 
-13/ video  
-14/ features  
-15/ career  
-16/ contact 
+09/ project
+10/ price
+11/ team
+12/ blog
+13/ video
+14/ features
+15/ career
+16/ contact
 17/ footer
 
 =====================================================================*/
@@ -393,8 +393,9 @@ button:focus {
 }
 
 .banner_area .banner_inner .overlay {
-  background: url(../img/banner/banner.jpg) no-repeat scroll center center;
+  background: url('/images/web.jpg') no-repeat scroll center center;
   position: absolute;
+  background-size: cover;
   left: 0;
   right: 0;
   top: 0;

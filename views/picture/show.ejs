@@ -1,23 +1,119 @@
 <% include ../partials/header.ejs %>
-<% include ../partials/nav.ejs %>
+
+<nav class="navbar navbar-expand-lg"
+     id="sectionsNav" style="padding-bottom: 5px;">
+    <div class="container">
+        <div class="navbar-translate">
+            <div data-turbolinks="false">
+                <a href="/" class="navbar-brand">
+                    <div class="logo">
+                        <img src="/images/logo.png" width="200" height="50">
+                    </div>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
+                <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
+                <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" style="width: 160px;">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="material-icons">
+                            home
+                        </i>
+                    </a>
+                </li>
+
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">apps</i> Menu
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 190px">
+                        <a href="/package" class="dropdown-item">
+                            <i class="material-icons">layers</i> Packages
+                        </a>
+                        <a href="/profile" class="dropdown-item">
+                            <i class="material-icons">content_paste</i> Profile
+                        </a>
+                        <a href="/gallery" class="dropdown-item">
+                            <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
+                        <a href="/contact" class="dropdown-item">
+                            <i class="material-icons">contact_mail</i> Contact Us
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Twitter">
+                        <button class="btn btn-just-icon btn-round btn-twitter">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Like us on Facebook">
+                        <button class="btn btn-just-icon btn-round btn-facebook">
+                            <i class="fa fa-facebook"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Google Plus">
+                        <button class="btn btn-just-icon btn-round btn-google">
+                            <i class="fa fa-google"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+                       data-original-title="Follow us on Instagram">
+                        <button class="btn btn-just-icon btn-round btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </button>
+                    </a>
+                </li>
+                <% if(activeUser){ %>
+                <li class="dropdown nav-item">
+                    <a class="profile-photo dropdown-toggle nav-link" href="/profile"
+                       data-toggle="dropdown">
+                        <div class="profile-photo-small">
+                            <img class="rounded-circle img-fluid" src="../images/alonso.jpg" alt="Circle Image">
+                        </div>
+                        <div class="ripple-container"></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <!--<h6 class="dropdown-header">Dropdown header</h6>-->
+                        <a href="/profile" class="dropdown-item">Profile</a>
+                        <a href="/logout" class="dropdown-item">Sign out</a>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
 <div class="container">
     <div class="row">
-        <% if(error && error.length > 0){ %>
-        <div class="alert alert-danger" role="alert">
-            <%= error %>
-        </div>
-        <% } %>
-        <% if(success && success.length > 0){ %>
-        <div class="alert alert-success" role="alert">
-            <%= success %>
-        </div>
-        <% } %>
-        <div class="col-md-9">
+        <div class="col-lg-4 col-md-4 col-sm-5">
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= picture.image %>">
                 <div class="caption-full">
                     <h4><a href=""><%= picture.name %></a></h4>
+                    <% if (activeUser){ %>
                     <a class="btn btn-primary" style="margin: 10px"
                        href="/gallery/<%= picture._id %>/edit">Edit
                     </a>
