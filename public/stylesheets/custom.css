@@ -292,7 +292,8 @@
     background: #9a1c9dcc;
 }
 
-.material-icons {
+.brand > a:nth-child(4) > i:nth-child(1) {
+    font-size: 40px;
     color: #2284a2;
 }
 
@@ -354,4 +355,29 @@
 
 .page-header {
     background-image: url('/images/background.jpg');
+}
+
+.img-raised {
+    box-shadow: 0 5px 15px -8px rgb(0, 0, 0), 0 8px 10px -5px rgb(0, 0, 0);
+}
+
+.card-body p {
+    font-family: 'Merienda', cursive;
+}
+
+h6 {
+    font-family: 'Chela One', cursive;
+}
+
+big {
+    font-size: 50px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+.arrow {
+    color: #2284a2;
+    font-size: 100px;
 }
