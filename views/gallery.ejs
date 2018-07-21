@@ -190,10 +190,8 @@
         <div class="gallery_f_inner row imageGallery1"
              style="position: relative;
              height: 743.234px;">
-
             <% picture.forEach(function(pic){ %>
-
-            <div class="card-box col-md-4 col-md-4 col-sm-6 <%= pic.type %>">
+            <div class="card-box col-md-4 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
                 <div class="card card-with-border anime" data-background="image" data-src="<%= pic.image %>"
                      style="height: 340px; width: 210px;">
                     <div class="header">
@@ -201,19 +199,13 @@
                             <%= pic.name %>
                         </h6>
                     </div>
-                    <div class="content text-center">
-                        <p class="description"><%= pic.description %></p>
-                    </div>
-                    <div class="footer text-center">
+                    <div class="footer text-center text-sm-center">
                         <a href="/gallery/<%= pic._id %>" class="btn btn-fill btn-round"
                            style="background-color: #2284a2">Read More</a>
                     </div>
-                    <!--<div class="filter"></div>-->
-
                 </div> <!-- end card -->
             </div>
             <% }) %>
-
         </div>
         <div class="button_more">
             <a class="btn theme_btn" href="#">Load More Images</a>
