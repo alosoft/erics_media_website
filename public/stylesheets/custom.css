@@ -11,6 +11,32 @@
     color: #2284A2;
 }
 
+.name-color {
+    color: white;
+}
+
+.text-info {
+    color: #c13744 !important;
+}
+
+#mc-embedded-subscribe {
+    background-color: #2284ae;
+}
+
+.collapse.navbar-collapse {
+    width: 160px;
+}
+
+.card-body .card-price {
+
+    /*border: 2px solid #2284ae;*/
+    background: #2233224d;
+    border-radius: 25px;
+    color: white;
+    margin: auto;
+    width: 230px;
+}
+
 .input_color {
     background-image: linear-gradient(0deg, #2284a2 2px, rgba(176, 58, 39, 0) 0),
     linear-gradient(0deg, #d2d2d2 1px, hsla(0, 0%, 82%, 0) 0);
@@ -388,4 +414,16 @@ h1 {
     color: #fff;
     background-color: #2284ae;
     border-color: #008697;
+}
+
+.silver a li p:hover {
+    color: yellow;
+}
+
+.diamond a li p:hover {
+    color: red;
+}
+
+.gold a li p:hover {
+    color: blue;
 }
