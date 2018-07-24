@@ -1,13 +1,10 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let pictureSchema = new mongoose.Schema({
-    // title: String,
+const pictureSchema = new mongoose.Schema({
     name: String,
     image: String,
     type: String,
     description: String,
-    // about: String,
-    // comment: String,
     id: {
         type: mongoose.Schema.Types.ObjectId,
     },

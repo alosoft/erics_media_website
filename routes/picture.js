@@ -5,7 +5,6 @@ let methodOverride = require('method-override');
 let middleware = require('../middleware');
 
 console.log('routes picture');
-
 router.use(methodOverride("_method"));
 
 
@@ -93,9 +92,9 @@ router.get('/gallery/:id/edit',middleware.isLoggedIn, function (req, res) {
     })
 });
 
+
 //UPDATE CAMPGROUND
 router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
-    // let data = {name: req.body.name, image: req.body.image, description: req.body.description};
     Picture.findByIdAndUpdate(req.params.id, req.body.picture, function (err) {
         if (err) {
             console.log(err);

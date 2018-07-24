@@ -36,6 +36,26 @@
 
 <div class="main main-raised">
     <div class="section section-white">
+        <%#= home %><br>
+        <a href="/new">
+            add new pic here
+        </a>
+        <div class="container">
+            <div class="row">
+                <% home.forEach((home) => { %>
+                <div class="col-lg-3">
+                    <div class="card-body">
+                        <img src="<%= home.pic %>" alt="">
+                        <a href="/<%= home._id %>/edit">Edit</a>
+                        <form id="form" action="/<%= home._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+
         <div class="container" id="gallery">
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto">
