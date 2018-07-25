@@ -106,6 +106,11 @@ router.get('/package', function (req, res) {
     res.render('package');
 });
 
+// about route
+router.get('/about', function (req, res) {
+    res.render('about');
+});
+
 // test route
 router.get('/test', function (req, res) {
     res.render('test');

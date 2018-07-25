@@ -108,7 +108,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-5">
+        <div class="col-lg-4 col-md-4 col-sm-5 mr-auto">
             <div class="thumbnail">
                 <img class="img-responsive" src="<%= picture.image %>">
                 <div class="caption-full">
@@ -123,21 +123,21 @@
                     <% } %>
                 </div>
             </div>
+            <div id="fb-root"></div>
+            <script>(function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+            <div class="fb-comments" data-href="http://localhost:3000/gallery/<%= picture._id %>" data-numposts="10"></div>
+
         </div>
     </div>
-
-    <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
-
-    <div class="fb-comments" data-href="http://localhost:3000/gallery/<%= picture._id %>" data-numposts="10"></div>
 
 </div>
 

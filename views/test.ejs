@@ -1,82 +1,41 @@
-<% include partials/header.ejs%>
+<form action="https://facebook.us18.list-manage.com/subscribe/post" method="POST">
+    <input type="hidden" name="u" value="40b35e1019fb0aa6f57c31a25">
+    <input type="hidden" name="id" value="a0b3fe9404">
+    <!-- people should not fill these in and expect good things -->
+    <div class="field-shift" aria-label="Please leave the following three fields empty">
+        <label for="b_name">Name: </label>
+        <input type="text" name="b_name" tabindex="-1" value="" placeholder="Freddie" id="b_name">
 
-<% include partials/nav.ejs%>
+        <label for="b_email">Email: </label>
+        <input type="email" name="b_email" tabindex="-1" value="" placeholder="youremail@gmail.com" id="b_email">
 
-
-<body class="profile-page sidebar-collapse">
-
-
-<div class="page-header" data-parallax="true"></div>
-<div class="main main-raised">
-    <div class="profile-content">
-        <div class="cards">
-
-            <div class="container">
-                <!--<div class="title">-->
-                    <!--<h3>Profile Cards</h3>-->
-                <!--</div>-->
-                <div class="row">
-                    <div class="col-md-5 ml-auto">
-
-                        <div class="card card-profile">
-                            <div class="card-header card-header-image">
-                                <a href="#">
-                                    <img class="img" src="/images/city.jpg">
-
-                                    <div class="card-title">
-                                        Raymond Adutwum Agyei
-                                    </div>
-                                </a>
-                                <div class="colored-shadow" style="background-image: url(&quot;./assets/img/examples/card-profile4.jpg&quot;); opacity: 1;"></div></div>
-                            <div class="card-body ">
-                                <h6 class="card-category text-info">Web Designer</h6>
-
-                                <p class="card-description">
-                                    ########################################################################
-                                </p>
-
-
-                            </div>
-                            <div class="card-footer justify-content-center">
-                                <a href="#" class="btn btn-just-icon btn-link btn-twitter anime">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="#" class="btn btn-just-icon btn-link btn-facebook anime">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#" class="btn btn-just-icon btn-link btn-instagram anime">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-5 mr-auto">
-                        <div class="card card-profile">
-                            <div class="card-avatar">
-                                <a href="#">
-                                    <img class="img" src="/images/eric.jpg">
-                                </a>
-                            </div>
-                            <div class="card-body ">
-                                <h6 class="card-category text-gray">CEO</h6>
-
-                                <h4 class="card-title">Eric Dankwa Owusu</h4>
-
-                                <p class="card-description">
-                                    ###################################################################
-                                </p>
-                                <a href="#" class="btn btn-info btn-round anime">Follow</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <label for="b_comment">Comment: </label>
+        <textarea name="b_comment" tabindex="-1" placeholder="Please comment" id="b_comment"></textarea>
+    </div>
+    <div id="mergeTable" class="mergeTable">
+        <div class="mergeRow dojoDndItem mergeRow-email" id="mergeRow-0">
+            <label for="MERGE0">Email Address <span class="req asterisk">*</span></label>
+            <div class="field-group">
+                <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="">
             </div>
-
+        </div>
+        <div class="mergeRow dojoDndItem mergeRow-text" id="mergeRow-1">
+            <label for="MERGE1">First Name</label>
+            <div class="field-group">
+                <input type="text" name="MERGE1" id="MERGE1" size="25" value="">
+            </div>
+        </div>
+        <div class="mergeRow dojoDndItem mergeRow-phone" id="mergeRow-2">
+            <label for="MERGE2">Phone Number</label>
+            <div class="field-group">
+                <input type="text" name="MERGE2" id="MERGE2" size="25" value="">
+            </div>
         </div>
     </div>
-</div>
 
-<% include partials/footer.ejs %>
+    <div class="submit_container clear">
+        <input type="submit" class="formEmailButton" name="submit" value="Subscribe to list">
+    </div>
+    <input type="hidden" name="ht" value="8ea8bdc8343e6f8d2a84e8fbf4d5479056e79c53:MTUzMjU0NTMyNi4yMTU1">
+    <input type="hidden" name="mc_signupsource" value="hosted">
+</form>
