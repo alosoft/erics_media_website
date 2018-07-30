@@ -52,18 +52,18 @@
             </div>
         </div>
 
-        <div class="container" id="gallery">
+        <div class="container-fluid" id="gallery">
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto">
                     <div class="profile-tabs">
                         <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link" href="#studio" role="tab" data-toggle="tab">
+                                <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
                                     <i class="material-icons" style="font-size: large;">camera</i> Studio
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#works" role="tab" data-toggle="tab">
+                                <a class="nav-link" href="#works" role="tab" data-toggle="tab">
                                     <i class="material-icons" style="font-size: large;">work</i> Works
                                 </a>
                             </li>
@@ -80,81 +80,224 @@
 
 
             <div class="tab-content tab-space">
-                <div class="tab-pane text-center gallery" id="studio">
-                    <div class="row">
-                        <div class="col-md-3 ml-auto">
-                            <!--studio = right side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/wed.jpg" class="rounded round_image"/>
+                <div class="tab-pane text-center gallery active" id="studio">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <div class="profile-tabs">
+                                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#portrait_studio" role="tab" data-toggle="tab">
+                                                <i class="material-icons" style="font-size: large;">camera</i> Portrait
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="#landscape_studio" role="tab" data-toggle="tab">
+                                                <i class="material-icons" style="font-size: large;">work</i> Landscape
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-
-                        </div>
-                        <div class="col-md-3 mr-auto">
-                            <!--studio = right side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/wed.jpg" class="rounded round_image"/>
+                            <div class="col-lg-10">
+                                <div class="container">
+                                    <div class="row justify-content-between">
+                                        <div class="tab-content tab-space">
+                                            <div class="tab-pane text-center active gallery" id="portrait_studio">
+                                                <!--portrait items-->
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/IMG_7578.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                    <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/DSC_0448.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                    <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/alonso-classic.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane text-center gallery" id="landscape_studio">
+                                                <!--landscape items-->
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/3x4.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/ber.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/IMG_9239.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane active text-center gallery" id="works">
-                    <div class="row">
-                        <div class="col-md-3 ml-auto">
-                            <!--work = left side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/3x4.jpg" class="rounded round_image"/>
+                <div class="tab-pane text-center gallery" id="works">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <div class="profile-tabs">
+                                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#portrait_works" role="tab" data-toggle="tab">
+                                                <i class="material-icons" style="font-size: large;">camera</i> Portrait
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="#landscape_works" role="tab" data-toggle="tab">
+                                                <i class="material-icons" style="font-size: large;">work</i> Landscape
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="anime">
-                                <img src="/images/fold/IMG_7578.JPG" class="rounded round_image"/>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <!--work = left side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/DSC_0448.JPG" class="rounded round_image"/>
-                            </div>
-                            <div class="anime">
-                                <img src="/images/fold/IMG_9239.JPG" class="rounded round_image"/>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mr-auto">
-                            <!--studio = right side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/DSC_0448.JPG" class="rounded round_image"/>
-                            </div>
-                            <div class="anime">
-                                <img src="/images/fold/IMG_9239.JPG" class="rounded round_image"/>
+                            <div class="col-lg-10">
+                                <div class="container">
+                                    <div class="row justify-content-between">
+                                        <div class="tab-content tab-space">
+                                            <div class="tab-pane text-center active gallery" id="portrait_works">
+                                                <!--portrait items-->
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/IMG_7578.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/DSC_0448.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/alonso-classic.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane text-center gallery" id="landscape_works">
+                                                <!--landscape items-->
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/3x4.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/ber.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/IMG_9239.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane text-center gallery" id="painting">
-                    <div class="row">
-                        <div class="col-md-3 ml-auto">
-                            <!--painting = left side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/pip.jpg" class="rounded round_image"/>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <div class="profile-tabs">
+                                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#portrait_painting" role="tab" data-toggle="tab">
+                                                <i class="material-icons" style="font-size: large;">camera</i> Portrait
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link " href="#landscape_painting" role="tab" data-toggle="tab">
+                                                <i class="material-icons" style="font-size: large;">work</i> Landscape
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="anime">
-                                <img src="/images/fold/justice.jpg" class="rounded round_image"/>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <!--painting = middle side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/PRINT.jpg" class="rounded round_image"/>
-                            </div>
-                            <div class="anime">
-                                <img src="/images/fold/pipp girl.jpg" class="rounded round_image"/>
-                            </div>
-                        </div>
-                        <div class="col-md-3 mr-auto">
-                            <!--painting = right side pictures with class="rounded-->
-                            <div class="anime">
-                                <img src="/images/fold/pip.jpg" class="rounded round_image"/>
-                            </div>
-                            <div class="anime">
-                                <img src="/images/fold/edeq.jpg" class="rounded round_image"/>
+                            <div class="col-lg-10">
+                                <div class="container">
+                                    <div class="row justify-content-between">
+                                        <div class="tab-content tab-space">
+                                            <div class="tab-pane text-center active gallery" id="portrait_painting">
+                                                <!--portrait items-->
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/IMG_7578.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/DSC_0448.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/alonso-classic.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane text-center gallery" id="landscape_painting">
+                                                <!--landscape items-->
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/3x4.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/ber.jpg" alt="">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4">
+                                                            <div class="anime">
+                                                                <img src="/images/fold/IMG_9239.JPG" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

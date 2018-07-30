@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 });
 
 // create home picture
-router.post('/', function (req, res) {
+router.post('/', (req, res) => {
     let pic = req.body.pic;
     let position = req.body.position;
     let newHome = {pic: pic, position: position};
@@ -53,7 +53,7 @@ router.get('/new', middleware.isLoggedIn, (req, res) => {
 
 
 // edit route
-router.get('/:id/edit', middleware.isLoggedIn, function (req, res) {
+router.get('/:id/edit', middleware.isLoggedIn, (req, res) => {
     Home.findById(req.params.id, (err, foundHome) => {
         if (err){
             console.log(err);
@@ -92,32 +92,38 @@ router.delete('/:id', middleware.isLoggedIn, (req, res) => {
 });
 
 // get profile page
-router.get('/profile', function (req, res) {
+router.get('/profile', (req, res) => {
     res.render('profile');
 });
 
 // get contact us page
-router.get('/contact', function (req, res) {
+router.get('/contact', (req, res) => {
     res.render('contact');
 });
 
 // get package us page
-router.get('/package', function (req, res) {
+router.get('/package', (req, res) => {
     res.render('package');
 });
 
 // about route
-router.get('/about', function (req, res) {
+router.get('/about', (req, res) => {
     res.render('about');
 });
 
 // test route
-router.get('/test', function (req, res) {
+router.get('/test', (req, res) => {
     res.render('test');
 });
 
+// blog route
+router.get('/blog', (req, res) => {
+    res.render('blog');
+});
+
+
 //handle unknown address
-router.get('/:id', function (req, res) {
+router.get('/:id', (req, res) => {
     // res.send('Unknown Address');
     req.flash('error', 'Wrong Address');
     res.redirect('/');

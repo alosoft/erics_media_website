@@ -63,8 +63,8 @@
 
 <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100"
      id="sectionsNav" style="padding-bottom: 5px;">
-    <div class="container">
-        <div class="navbar-translate">
+    <div class="container-fluid">
+        <div class="navbar-translate" style="margin-left: 30px;">
             <div data-turbolinks="false">
                 <a href="/" class="navbar-brand">
                     <div class="logo">
@@ -80,7 +80,7 @@
                 <span class="navbar-toggler-icon" style="background: #2284A2;"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse" style="width: 160px;">
+        <div class="collapse navbar-collapse" style="width: 160px; margin-right: 100px">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">
@@ -202,22 +202,33 @@
         <div class="gallery_f_inner row imageGallery1"
              style="position: relative;
              height: 743.234px;">
-            <% picture.forEach((pic) => { %>
-            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
-                <div class="card card-with-border anime" data-background="image" data-src="<%= pic.image %>"
-                     style="height: 340px; width: 210px;">
-                    <div class="header">
-                        <h6 class="category">
-                            <%= pic.name %>
-                        </h6>
+            <%picture.forEach((pic) => {%>
+
+            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%=pic.type%>">
+                <div class="card card-plain card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="#pablo">
+                            <img class="img img-raised thumbnail"
+                                 src="/images/city.jpg">
+                        </a>
+                        <div class="colored-shadow"
+                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
                     </div>
-                    <div class="footer text-center text-sm-center">
-                        <a href="/gallery/<%= pic._id %>" class="btn btn-fill btn-round"
-                           style="background-color: #2284a2; margin-top: 80px;">Read More</a>
+                    <div class="card-body">
+                        <h6 class="card-category text-info"><%=pic.name%></h6>
+                        <h4 class="card-title">
+                            Autodesk looks to future of 3D printing with Project Escher
+                        </h4>
+                        <p class="card-description">
+                            <%=pic.description%>
+                            <a href="/gallery/<%=pic._id%>"> Read More </a>
+                        </p>
                     </div>
-                </div> <!-- end card -->
+                </div>
             </div>
-            <% }) %>
+
+
+            <%})%>
         </div>
         <div class="button_more">
             <a class="btn theme_btn" href="#">Load More Images</a>
@@ -243,12 +254,17 @@
                     <h5>About</h5>
                     <ul class="links-vertical">
                         <li>
-                            <a href="/contact">
-                                Join Us
+                            <a href="/blog">
+                                Blog
                             </a>
                         </li>
                         <li>
                             <a href="/profile">
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about">
                                 About Us
                             </a>
                         </li>

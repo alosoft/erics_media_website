@@ -1,9 +1,10 @@
 <% include ../partials/header.ejs %>
 
-<nav class="navbar navbar-expand-lg"
+
+<nav class="navbar navbar-color-on-scroll navbar-expand-lg" color-on-scroll="100"
      id="sectionsNav" style="padding-bottom: 5px;">
-    <div class="container">
-        <div class="navbar-translate">
+    <div class="container-fluid">
+        <div class="navbar-translate" style="margin-left: 100px">
             <div data-turbolinks="false">
                 <a href="/" class="navbar-brand">
                     <div class="logo">
@@ -19,7 +20,7 @@
                 <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
             </button>
         </div>
-        <div class="collapse navbar-collapse" style="width: 160px;">
+        <div class="collapse navbar-collapse" style="margin-right: 100px;">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">
@@ -28,23 +29,25 @@
                         </i>
                     </a>
                 </li>
-
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Menu
                     </a>
-                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 190px">
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 235px;">
+                        <a href="/gallery" class="dropdown-item">
+                            <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
                         <a href="/package" class="dropdown-item">
                             <i class="material-icons">layers</i> Packages
                         </a>
                         <a href="/profile" class="dropdown-item">
                             <i class="material-icons">content_paste</i> Profile
                         </a>
-                        <a href="/gallery" class="dropdown-item">
-                            <i class="material-icons">add_a_photo</i> Gallery
-                        </a>
                         <a href="/contact" class="dropdown-item">
                             <i class="material-icons">contact_mail</i> Contact Us
+                        </a>
+                        <a href="/about" class="dropdown-item">
+                            <i class="material-icons">person</i> About Us
                         </a>
                     </div>
                 </li>
@@ -59,7 +62,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                       href="#" target="_blank"
+                       href="https://web.facebook.com/erics2017/" target="_blank"
                        data-original-title="Like us on Facebook">
                         <button class="btn btn-just-icon btn-round btn-facebook">
                             <i class="fa fa-facebook"> </i>
@@ -68,7 +71,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                       href="#" target="_blank"
+                       href="https://plus.google.com/110122640636489343713" target="_blank"
                        data-original-title="Follow us on Google Plus">
                         <button class="btn btn-just-icon btn-round btn-google">
                             <i class="fa fa-google"> </i>
@@ -77,7 +80,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
-                       href="https://www.instagram.com/CreativeTimOfficial" target="_blank"
+                       href="https://www.instagram.com/erics_media/" target="_blank"
                        data-original-title="Follow us on Instagram">
                         <button class="btn btn-just-icon btn-round btn-instagram">
                             <i class="fa fa-instagram"></i>
@@ -94,9 +97,10 @@
                         <div class="ripple-container"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <!--<h6 class="dropdown-header">Dropdown header</h6>-->
                         <a href="/profile" class="dropdown-item">Profile</a>
                         <a href="/logout" class="dropdown-item">Sign out</a>
+                        <a href="/new" class="dropdown-item">Add Picture(Home)</a>
+                        <a href="/gallery/new" class="dropdown-item">Add Picture(Gallery)</a>
                     </div>
                 </li>
                 <% } %>
@@ -104,6 +108,7 @@
         </div>
     </div>
 </nav>
+
 
 
 <div class="container">

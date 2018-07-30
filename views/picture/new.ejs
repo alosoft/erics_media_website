@@ -4,7 +4,7 @@
 <div class="page-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-5 ml-auto mr-auto">
+            <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
                 <% if(error && error.length > 0){ %>
                 <div class="alert alert-danger" role="alert">
                     <%= error %>
@@ -61,7 +61,8 @@
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input"  value="painting" name="type" type="checkbox"> Digital Painting
+                                    <input class="form-check-input" value="painting" name="type" type="checkbox">
+                                    Digital Painting
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
@@ -87,6 +88,15 @@
                     </form>
                 </div>
             </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
+                <div class="title">
+                    <h1>Upload Picture</h1>
+                    <p>Generate Link</p>
+                </div>
+                <div class="dropzone">
+                    <div class="info"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -103,6 +113,10 @@
 <script src="/javascripts/jquery.sharrre.js" type="text/javascript"></script>
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
+<!--imgur file upload-->
+<script type="text/javascript" src="/javascripts/imgur.js"></script>
+<script type="text/javascript" src="/javascripts/upload.js"></script>
 <!--<script type="text/javascript">-->
 <!--$(document).ready(function () {-->
 <!--//init DateTimePickers-->
