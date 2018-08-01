@@ -432,3 +432,40 @@ h1 {
 .gold a li p:hover {
     color: blue;
 }
+
+.nav-pills .nav-item .nav-link:hover {
+    background-color: rgba(34, 132, 162, 0.68);
+    color: white;
+}
+
+.fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
+    width: 100% !important;
+}
+
+.show_page {
+    border: 10px solid #b1babf;
+    padding-top: 15px;
+    background: white;
+    border-radius: 10px;
+}
+
+hr.line {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.card-hover-effect {
+    cursor: pointer;
+    -webkit-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -moz-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -o-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    -ms-transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease; }
+.card-hover-effect:hover {
+    box-shadow: 0px 12px 17px -7px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -moz-transform: translateY(-10px); }

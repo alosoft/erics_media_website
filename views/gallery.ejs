@@ -94,9 +94,12 @@
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Menu
                     </a>
-                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 235px;">
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 275px;">
                         <a href="/gallery" class="dropdown-item">
                             <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
+                        <a href="/blog" class="dropdown-item">
+                            <i class="material-icons">format_bold</i> Blog
                         </a>
                         <a href="/package" class="dropdown-item">
                             <i class="material-icons">layers</i> Packages
@@ -150,7 +153,7 @@
                 </li>
                 <% if(activeUser){ %>
                 <li class="dropdown nav-item">
-                    <a class="profile-photo dropdown-toggle nav-link" href="/profile"
+                    <a class="profile-photo dropdown-toggle nav-link" href="#"
                        data-toggle="dropdown">
                         <div class="profile-photo-small">
                             <img class="rounded-circle img-fluid" src="../images/eric.jpg" alt="Circle Image">
@@ -202,36 +205,36 @@
         <div class="gallery_f_inner row imageGallery1"
              style="position: relative;
              height: 743.234px;">
-            <%picture.forEach((pic) => {%>
-
-            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%=pic.type%>">
-                <div class="card card-plain card-blog">
-                    <div class="card-header card-header-image">
-                        <a href="#pablo">
-                            <img class="img img-raised thumbnail"
-                                 src="/images/city.jpg">
-                        </a>
-                        <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-category text-info"><%=pic.name%></h6>
-                        <h4 class="card-title">
-                            Autodesk looks to future of 3D printing with Project Escher
-                        </h4>
-                        <p class="card-description">
-                            <%=pic.description%>
-                            <a href="/gallery/<%=pic._id%>"> Read More </a>
-                        </p>
-                    </div>
+            <% picture.forEach(function(pic){ %>
+                <% let page = pic.page; %>
+                <% if (page === 'gallery'){ %>
+                    <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
+                        <div class="card card-plain card-blog">
+                            <div class="card-header card-header-image">
+                                <a href="<%= pic.image %>" class="light anime">
+                                    <% let orientation = pic.orientation; %>
+                                    <% if (orientation === 'portrait'){ %>
+                                            <img class="img img-raised thumbnail" src="<%= pic.thumbnail %>">
+                                    <% } else { %>
+                                            <img class="img img-raised thumbnail" src="<%= pic.image %>">
+                                    <% } %>
+                                </a>
+                                <div class="colored-shadow"
+                                     style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-description">
+                                    by <%= pic.credit %>
+                                </p>
+                                <a href="/blog" class="nav-link"> Read More </a>
+                            </div>
+                        </div>
                 </div>
-            </div>
-
-
-            <%})%>
+                <% } %>
+            <% }) %>
         </div>
         <div class="button_more">
-            <a class="btn theme_btn" href="#">Load More Images</a>
+            <a class="btn theme_btn" href="/blog">Load More Images</a>
         </div>
     </div>
 </section>

@@ -1,11 +1,10 @@
 <% include ../partials/header.ejs %>
 <% include ../partials/nav.ejs %>
 
-<div class="page-header"
-     style=" background-size: cover; background-position: top center;">
-    <div class="container">
+<div class="page-header">
+    <div class="container" style="margin-top: 500px;">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-5 ml-auto mr-auto">
+            <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
                 <% if(error && error.length > 0){ %>
                 <div class="alert alert-danger" role="alert">
                     <%= error %>
@@ -17,12 +16,24 @@
                 </div>
                 <% } %>
                 <div class="card card-login">
-                    <form class="form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT"
-                          style="min-height: 250px;">
+                    <form class="form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT">
                         <div class="card-header card-header-primary text-center" id="login_color">
-                            <h4 class="card-title">Edit <%= picture.name %></h4>
+                            <h4 class="card-title">Edit <%= picture.title %></h4>
                         </div>
                         <div class="card-body">
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">
+                                                title
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[title]"
+                                           value="<%= picture.title %>">
+                                </div>
+                            </span>
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -40,37 +51,157 @@
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">
-                                            <i class="material-icons">http</i>
+                                            <i class="material-icons">photo_camera</i>
                                         </span>
                                     </div>
                                     <input class="form-control" type="text" name="picture[image]"
                                            value="<%= picture.image %>">
                                 </div>
                             </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[credit]"
+                                           value="<%= picture.credit %>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">photo</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[thumbnail]"
+                                           value="<%= picture.thumbnail %>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">add_location</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[location]"
+                                           value="<%= picture.location %>">
+                                </div>
+                            </span>
+                            <hr>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" value="work" name="picture[type]" type="checkbox"> Works
+                                    <% let page = picture.page; %>
+                                    <% if (page === 'home') { %>
+                                    <input class="form-check-input" value="home" name="picture[page]"
+                                           type="checkbox" checked>
+                                    Home Page
+                                    <% } else { %>
+                                    <input class="form-check-input" value="home" name="picture[page]"
+                                           type="checkbox">
+                                    Home Page
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (page === 'gallery') { %>
+                                    <input class="form-check-input" value="gallery" name="picture[page]"
+                                           type="checkbox" checked>
+                                    Gallery Page
+                                    <% } else { %>
+                                    <input class="form-check-input" value="gallery" name="picture[page]"
+                                           type="checkbox">
+                                    Gallery Page
+                                    <% } %>
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
                                 </label>
                             </div>
+                            <hr>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" value="studio" name="picture[type]" type="checkbox"> Studio
+                                    <% let orientation = picture.orientation; %>
+                                    <% if (orientation === 'landscape') { %>
+                                    <input class="form-check-input" value="landscape" name="picture[orientation]"
+                                           type="checkbox" checked>
+                                    Landscape
+                                    <% } else { %>
+                                    <input class="form-check-input" value="landscape" name="picture[orientation]"
+                                           type="checkbox">
+                                    Landscape
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (orientation === 'portrait') { %>
+                                    <input class="form-check-input" value="portrait" name="picture[orientation]"
+                                           type="checkbox" checked>
+                                    Portrait
+                                    <% } else { %>
+                                    <input class="form-check-input" value="portrait" name="picture[orientation]"
+                                           type="checkbox">
+                                    Portrait
+                                    <% } %>
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
                                 </label>
                             </div>
+                            <hr>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input"  value="painting" name="picture[type]" type="checkbox"> Digital Painting
+                                    <% let type = picture.type; %>
+                                    <% if (type === 'work') { %>
+                                    <input class="form-check-input" value="work" name="picture[type]"
+                                           type="checkbox" checked>
+                                    Works
+                                    <% } else { %>
+                                    <input class="form-check-input" value="work" name="picture[type]"
+                                           type="checkbox">
+                                    Works
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (type === 'studio') { %>
+                                    <input class="form-check-input" value="studio" name="picture[type]"
+                                           type="checkbox" checked>
+                                    Studio
+                                    <% } else { %>
+                                    <input class="form-check-input" value="studio" name="picture[type]"
+                                           type="checkbox">
+                                    Studio
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (type === 'painting') { %>
+                                    <input class="form-check-input" value="painting" name="picture[type]"
+                                           type="checkbox" checked>
+                                    Digital Painting
+                                    <% } else { %>
+                                    <input class="form-check-input" value="painting" name="picture[type]"
+                                           type="checkbox">
+                                    Digital Painting
+                                    <% } %>
                                     <span class="form-check-sign">
                                         <span class="check"></span>
                                     </span>
                                 </label>
                             </div>
+                            <hr>
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -78,16 +209,27 @@
                                             <i class="material-icons">description</i>
                                         </span>
                                     </div>
-                                    <textarea class="form-control" name="picture[description]"><%=picture.description%></textarea>
+                                    <textarea class="form-control"
+                                              name="picture[description]"><%= picture.description %></textarea>
                                 </div>
                             </span>
                         </div>
                         <div class="footer text-center">
                             <button class="btn" style="color: white; background: #2284a2;" role="button">
-                                Save
+                                Edit
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
+                <div class="title">
+                    <h1>Upload Picture</h1>
+                    <p>Generate Link</p>
+                </div>
+                <div class="dropzone">
+                    <div class="info"></div>
                 </div>
             </div>
         </div>
@@ -107,6 +249,9 @@
 <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
 <script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
 
+<!--imgur file upload-->
+<script type="text/javascript" src="/javascripts/imgur.js"></script>
+<script type="text/javascript" src="/javascripts/upload.js"></script>
 
 </body>
 

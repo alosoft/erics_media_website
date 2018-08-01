@@ -36,22 +36,6 @@
 
 <div class="main main-raised">
     <div class="section section-white">
-        <div class="container">
-            <div class="row">
-                <% home.forEach((home) => { %>
-                <div class="col-lg-3">
-                    <div class="card-body">
-                        <img src="<%= home.pic %>" alt="">
-                        <a href="/<%= home._id %>/edit">Edit</a>
-                        <form id="form" action="/<%= home._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                    </div>
-                </div>
-                <% }); %>
-            </div>
-        </div>
-
         <div class="container-fluid" id="gallery">
             <div class="row">
                 <div class="col-md-6 ml-auto mr-auto">
@@ -85,16 +69,13 @@
                         <div class="row">
                             <div class="col-lg-1">
                                 <div class="profile-tabs">
-                                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                                    <ul class="nav nav-pills nav-pills-primary justify-content-center" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#portrait_studio" role="tab" data-toggle="tab">
-                                                <i class="material-icons" style="font-size: large;">camera</i> Portrait
-                                            </a>
+                                            <a class="nav-link active" href="#portrait_studio" data-toggle="tab"
+                                               role="tab">Portrait</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="#landscape_studio" role="tab" data-toggle="tab">
-                                                <i class="material-icons" style="font-size: large;">work</i> Landscape
-                                            </a>
+                                            <a class="nav-link" href="#landscape_studio" data-toggle="tab" role="tab">Landscape</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -107,21 +88,23 @@
                                                 <!--portrait items-->
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/IMG_7578.JPG" alt="">
-                                                            </div>
-                                                        </div>
-                                                    <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/DSC_0448.JPG" alt="">
-                                                            </div>
-                                                        </div>
-                                                    <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/alonso-classic.jpg" alt="">
-                                                            </div>
-                                                        </div>
+                                                        <% picture.forEach(function(pic) { %>
+                                                            <% let orientation = pic.orientation; %>
+                                                            <% let type = pic.type; %>
+                                                            <% let page = pic.page; %>
+                                                            <% if (page === 'home') { %>
+                                                                <% if (type === 'studio'){ %>
+                                                                    <% if (orientation === 'portrait'){ %>
+                                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto">
+                                                                            <div class="anime">
+                                                                                <img src="<%= pic.image %>" alt=""
+                                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
+                                                                            </div>
+                                                                        </div>
+                                                                    <% } %>
+                                                                <% } %>
+                                                            <% } %>
+                                                        <% }); %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,21 +112,24 @@
                                                 <!--landscape items-->
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/3x4.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/ber.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/IMG_9239.JPG" alt="">
-                                                            </div>
-                                                        </div>
+                                                        <% picture.forEach(function(pic) { %>
+                                                            <% let orientation = pic.orientation; %>
+                                                            <% let type = pic.type; %>
+                                                            <% let page = pic.page; %>
+                                                            <% if (page === 'home') { %>
+                                                                <% if (type === 'studio'){ %>
+                                                                    <% if (orientation === 'landscape'){ %>
+                                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
+                                                                             style="margin-top: 25px;">
+                                                                            <div class="anime">
+                                                                                <img src="<%= pic.image %>" alt=""
+                                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
+                                                                            </div>
+                                                                        </div>
+                                                                    <% } %>
+                                                                <% } %>
+                                                            <% } %>
+                                                        <% }); %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,16 +145,13 @@
                         <div class="row">
                             <div class="col-lg-1">
                                 <div class="profile-tabs">
-                                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                                    <ul class="nav nav-pills nav-pills-primary justify-content-center" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#portrait_works" role="tab" data-toggle="tab">
-                                                <i class="material-icons" style="font-size: large;">camera</i> Portrait
-                                            </a>
+                                            <a class="nav-link active" href="#portrait_works" data-toggle="tab"
+                                               role="tab">Portrait</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="#landscape_works" role="tab" data-toggle="tab">
-                                                <i class="material-icons" style="font-size: large;">work</i> Landscape
-                                            </a>
+                                            <a class="nav-link" href="#landscape_works" data-toggle="tab" role="tab">Landscape</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -178,24 +161,23 @@
                                     <div class="row justify-content-between">
                                         <div class="tab-content tab-space">
                                             <div class="tab-pane text-center active gallery" id="portrait_works">
-                                                <!--portrait items-->
+                                                <!--portrait items test-->
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <% picture.forEach(function(pic) { %>
+                                                        <% let orientation = pic.orientation; %>
+                                                        <% let type = pic.type; %>
+                                                        <% if (type === 'work'){ %>
+                                                        <% if (orientation === 'portrait'){ %>
+                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto">
                                                             <div class="anime">
-                                                                <img src="/images/fold/IMG_7578.JPG" alt="">
+                                                                <img src="<%= pic.image %>" alt=""
+                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/DSC_0448.JPG" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/alonso-classic.jpg" alt="">
-                                                            </div>
-                                                        </div>
+                                                        <% } %>
+                                                        <% } %>
+                                                        <% }); %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -203,21 +185,21 @@
                                                 <!--landscape items-->
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <% picture.forEach(function(pic) { %>
+                                                        <% let orientation = pic.orientation; %>
+                                                        <% let type = pic.type; %>
+                                                        <% if (type === 'work'){ %>
+                                                        <% if (orientation === 'landscape'){ %>
+                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
+                                                             style="margin-top: 25px;">
                                                             <div class="anime">
-                                                                <img src="/images/fold/3x4.jpg" alt="">
+                                                                <img src="<%= pic.image %>" alt=""
+                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/ber.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/IMG_9239.JPG" alt="">
-                                                            </div>
-                                                        </div>
+                                                        <% } %>
+                                                        <% } %>
+                                                        <% }); %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,16 +215,13 @@
                         <div class="row">
                             <div class="col-lg-1">
                                 <div class="profile-tabs">
-                                    <ul class="nav nav-pills justify-content-center" role="tablist">
+                                    <ul class="nav nav-pills nav-pills-primary justify-content-center" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#portrait_painting" role="tab" data-toggle="tab">
-                                                <i class="material-icons" style="font-size: large;">camera</i> Portrait
-                                            </a>
+                                            <a class="nav-link active" href="#portrait_painting" data-toggle="tab"
+                                               role="tab">Portrait</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " href="#landscape_painting" role="tab" data-toggle="tab">
-                                                <i class="material-icons" style="font-size: large;">work</i> Landscape
-                                            </a>
+                                            <a class="nav-link" href="#landscape_painting" data-toggle="tab" role="tab">Landscape</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -255,21 +234,20 @@
                                                 <!--portrait items-->
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <% picture.forEach(function(pic) { %>
+                                                        <% let orientation = pic.orientation; %>
+                                                        <% let type = pic.type; %>
+                                                        <% if (type === 'painting'){ %>
+                                                        <% if (orientation === 'portrait'){ %>
+                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto">
                                                             <div class="anime">
-                                                                <img src="/images/fold/IMG_7578.JPG" alt="">
+                                                                <img src="<%= pic.image %>" alt=""
+                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/DSC_0448.JPG" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/alonso-classic.jpg" alt="">
-                                                            </div>
-                                                        </div>
+                                                        <% } %>
+                                                        <% } %>
+                                                        <% }); %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -277,21 +255,21 @@
                                                 <!--landscape items-->
                                                 <div class="container">
                                                     <div class="row">
-                                                        <div class="col-lg-4">
+                                                        <% picture.forEach(function(pic) { %>
+                                                        <% let orientation = pic.orientation; %>
+                                                        <% let type = pic.type; %>
+                                                        <% if (type === 'painting'){ %>
+                                                        <% if (orientation === 'landscape'){ %>
+                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
+                                                             style="margin-top: 25px">
                                                             <div class="anime">
-                                                                <img src="/images/fold/3x4.jpg" alt="">
+                                                                <img src="<%= pic.image %>" alt=""
+                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/ber.jpg" alt="">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="anime">
-                                                                <img src="/images/fold/IMG_9239.JPG" alt="">
-                                                            </div>
-                                                        </div>
+                                                        <% } %>
+                                                        <% } %>
+                                                        <% }); %>
                                                     </div>
                                                 </div>
                                             </div>
@@ -405,7 +383,7 @@
                                                             Wedding Invitation Design and Print
                                                         </li>
                                                         <li>
-                                                            Photo Catalogue Book containing all Wedding Pictures
+                                                            Photo Catalogue Book...
                                                         </li>
                                                         <li>
                                                             Photo Album

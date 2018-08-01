@@ -1,41 +1,134 @@
-<% include partials/header.ejs %>
+<%include partials/header.ejs%>
+<%include partials/nav.ejs%>
 
+<div>
 
-<div class="col-md-4">
-    <div class="btn-group bootstrap-select">
-        <button type="button" class="btn dropdown-toggle select-with-transition" data-toggle="dropdown" role="button" aria-labelledby="undefined" title="I'm a Designer" aria-expanded="false">
-            <span class="filter-option pull-left">Studio</span>&nbsp;
-            <span class="bs-caret">
-                <span class="caret"></span>
-            </span>
-        </button>
-        <div class="dropdown-menu open" role="combobox" x-placement="bottom-start" style="position: absolute; top: 53px; left: 0px; will-change: top, left;">
-            <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
-                <li data-original-index="1" class="selected">
-                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true">
-                        <span class="text">Studio</span>
-                        <span class="material-icons  check-mark"> done </span>
-                    </a>
-                </li>
-                <li data-original-index="2">
-                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                        <span class="text">Works</span>
-                        <span class="material-icons  check-mark"> done </span>
-                    </a>
-                </li>
-                <li data-original-index="3">
-                    <a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false">
-                        <span class="text">Painting</span>
-                        <span class="material-icons  check-mark"> done </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <select class="selectpicker" data-style="select-with-transition" data-size="7" tabindex="-98">
-            <option value="studio">Studio</option>
-            <option value="works">Works</option>
-            <option value="painting">Painting</option>
-        </select></div>
 </div>
+<!-- Register Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-signup" role="document">
+        <div class="modal-content">
+            <div class="card card-signup card-plain">
+                <div class="modal-header">
+                    <h3 class="modal-title card-title">Register</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="material-icons">clear</i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 ml-auto">
+                            <div class="info info-horizontal">
+                                <div class="icon icon-rose">
+                                    <i class="material-icons">timeline</i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Marketing</h4>
+                                    <p class="description">
+                                        We've created the marketing campaign of the website. It was a very interesting collaboration.
+                                    </p>
+                                </div>
+                            </div>
 
-<% include partials/footer.ejs %>
+                            <div class="info info-horizontal">
+                                <div class="icon icon-primary">
+                                    <i class="material-icons">code</i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Fully Coded in HTML5</h4>
+                                    <p class="description">
+                                        We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="info info-horizontal">
+                                <div class="icon icon-info">
+                                    <i class="material-icons">group</i>
+                                </div>
+                                <div class="description">
+                                    <h4 class="info-title">Built Audience</h4>
+                                    <p class="description">
+                                        There is also a Fully Customizable CMS Admin Dashboard for this product.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 mr-auto">
+                            <div class="social text-center">
+                                <button class="btn btn-just-icon btn-round btn-twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </button>
+                                <button class="btn btn-just-icon btn-round btn-dribbble">
+                                    <i class="fa fa-dribbble"></i>
+                                </button>
+                                <button class="btn btn-just-icon btn-round btn-facebook">
+                                    <i class="fa fa-facebook"> </i>
+                                </button>
+                                <h4> or be classical </h4>
+                            </div>
+
+                            <form class="form" method="" action="">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">face</i>
+                                            </span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="First Name...">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">mail</i>
+                                            </span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Email...">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                            </div>
+                                            <input type="password" placeholder="Password..." class="form-control" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" value="" checked>
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                            I agree to the <a href="#something">terms and conditions</a>.
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-center">
+                                    <a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  End Modal -->
+
+
+
+
+
+<%include partials/footer.ejs%>

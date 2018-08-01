@@ -1,29 +1,241 @@
-<div class="thumbnail">
-    <img src="/images/alonso.jpg" alt="">
+<% include ../partials/header.ejs %>
+<% include ../partials/nav.ejs %>
+
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
+                <% if(error && error.length > 0){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
+                </div>
+                <% } %>
+                <% if(success && success.length > 0){ %>
+                <div class="alert alert-success" role="alert">
+                    <%= success %>
+                </div>
+                <% } %>
+                <div class="card card-login">
+                    <form class="form" method="POST" action="/gallery/<%= picture._id %>/edit?_method=PUT"
+                        <div class="card-header card-header-primary text-center" id="login_color">
+                            <h4 class="card-title">Edit <%=picture.title%></h4>
+                        </div>
+                        <div class="card-body">
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">
+                                                perm_identity
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[title]" value="<%=picture.title%>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">
+                                                perm_identity
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[name]" value="<%=picture.name%>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">http</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[image]" value="<%=picture.image%>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">http</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[credit]" value="<%=picture.credit%>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">http</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[location]" placeholder="<%=picture.location%>">
+                                </div>
+                            </span>
+                            <hr>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <% let page = picture.page; %>
+                                    <% if (page === 'home') {%>
+                                        <input class="form-check-input" value="home" name="picture[page]"
+                                               type="checkbox" checked>
+                                    Home Page
+                                    <% } else { %>
+                                        <input class="form-check-input" value="home" name="picture[page]"
+                                               type="checkbox">
+                                    Home Page
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (page === 'gallery') {%>
+                                    <input class="form-check-input" value="gallery" name="picture[page]"
+                                           type="checkbox" checked>
+                                    Gallery Page
+                                    <% } else { %>
+                                    <input class="form-check-input" value="gallery" name="picture[page]"
+                                           type="checkbox">
+                                    Gallery Page
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <hr>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <% let orientation = picture.orientation; %>
+                                    <% if (orientation === 'landscape') {%>
+                                    <input class="form-check-input" value="landscape" name="picture[orientation]"
+                                           type="checkbox" checked>
+                                    Landscape
+                                    <% } else { %>
+                                    <input class="form-check-input" value="landscape" name="picture[orientation]"
+                                           type="checkbox">
+                                    Landscape
+                                    <%}%>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (orientation === 'portrait') {%>
+                                    <input class="form-check-input" value="portrait" name="picture[orientation]"
+                                           type="checkbox" checked>
+                                    Portrait
+                                    <% } else { %>
+                                    <input class="form-check-input" value="portrait" name="picture[orientation]"
+                                           type="checkbox">
+                                    Portrait
+                                    <%}%>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <hr>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <% let type = picture.type; %>
+                                    <% if (type === 'work') {%>
+                                    <input class="form-check-input" value="work" name="picture[type]"
+                                           type="checkbox" checked>
+                                    Works
+                                    <% } else { %>
+                                    <input class="form-check-input" value="work" name="picture[type]"
+                                           type="checkbox">
+                                    Works
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (type === 'studio') {%>
+                                    <input class="form-check-input" value="studio" name="picture[type]"
+                                           type="checkbox" checked>
+                                    Studio
+                                    <% } else { %>
+                                    <input class="form-check-input" value="studio" name="picture[type]"
+                                           type="checkbox">
+                                    Studio
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                                <label class="form-check-label">
+                                    <% if (type === 'painting') {%>
+                                    <input class="form-check-input" value="painting" name="picture[type]"
+                                           type="checkbox" checked>
+                                    Digital Painting
+                                    <% } else { %>
+                                    <input class="form-check-input" value="painting" name="picture[type]"
+                                           type="checkbox">
+                                    Digital Painting
+                                    <% } %>
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                            <hr>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">description</i>
+                                        </span>
+                                    </div>
+                                    <textarea class="form-control" name="picture[description]"
+                                              value="<%=picture.description%>"></textarea>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="footer text-center">
+                            <button class="btn" style="color: white; background: #2284a2;" role="button">
+                                Edit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
+                <div class="title">
+                    <h1>Upload Picture</h1>
+                    <p>Generate Link</p>
+                </div>
+                <div class="dropzone">
+                    <div class="info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<!--<a href="/gallery/1234567890"></a>-->
 
+<script src="/javascripts/core/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/core/popper.min.js" type="text/javascript"></script>
+<script src="/javascripts/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="/javascripts/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="/javascripts/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="/javascripts/nouislider.min.js" type="text/javascript"></script>
+<!--	Plugin for Sharrre btn -->
+<script src="/javascripts/jquery.sharrre.js" type="text/javascript"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
 
+<!--imgur file upload-->
+<script type="text/javascript" src="/javascripts/imgur.js"></script>
+<script type="text/javascript" src="/javascripts/upload.js"></script>
 
-<div class="container">
-    <div id="disqus_thread"></div>
-    <script>
+</body>
 
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-        var disqus_config = function () {
-        this.page.url = 'localhost:3000/gallery/1234567890';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = '/gallery/1234567890'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://erics-media-1.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
+</html>

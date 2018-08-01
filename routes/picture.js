@@ -31,15 +31,33 @@ router.get("/gallery", function (req, res) {
 //CREATE - add new campgrounds to database
 router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     // get data from form and add to campground array
-    let image = req.body.image;
-    let type = req.body.type;
-    let id = req.body._id;
+    let title = req.body.title;
     let name = req.body.name;
+    let image = req.body.image;
+    let credit = req.body.credit;
+    let thumbnail = req.body.thumbnail;
+    let location = req.body.location;
+    let type = req.body.type;
     let description = req.body.description;
-    let newPicture = {image: image, type: type, id: id, name: name, description: description};
+    let orientation = req.body.orientation;
+    let page = req.body.page;
+    let id = req.body._id;
+    let newPicture = {
+        title: title,
+        name: name,
+        image: image,
+        credit: credit,
+        thumbnail: thumbnail,
+        location: location,
+        type: type,
+        description: description,
+        orientation: orientation,
+        page: page,
+        id: id,
+    };
     // console.log(req.user);
     //create a new campground and save to database
-    Picture.create(newPicture, function (err) {
+    Picture.create(newPicture, function (err, newlyCreated) {
         if (err) {
             console.log(err);
         } else {
@@ -77,7 +95,7 @@ router.get("/gallery/:id", function (req, res) {
 });
 
 //EDIT ROUTE
-router.get('/gallery/:id/edit',middleware.isLoggedIn, function (req, res) {
+router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
     // res.send('welcome');
     //is user logged in
     Picture.findById(req.params.id, function (err, foundPicture) {
@@ -117,5 +135,6 @@ router.delete("/gallery/:id", middleware.isLoggedIn, function (req, res) {
         }
     });
 });
+
 
 module.exports = router;

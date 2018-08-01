@@ -1,13 +1,13 @@
 let express = require('express');
 let router = express.Router();
-let Home = require('../models/home');
+let Picture = require('../models/picture');
 let methodOverride = require('method-override');
 let middleware = require('../middleware');
 
 console.log('routes users');
 
 // var data = {pic: 'i love you', position: 'right'};
-// Home.remove({}, (err) => {
+// Picture.remove({}, (err) => {
 //     if (err) {
 //         console.log(err);
 //     } else {
@@ -17,32 +17,32 @@ console.log('routes users');
 
 // get home page
 router.get('/', (req, res) => {
-    Home.find({}, (err, home) => {
+    Picture.find({}, (err, newPicture) => {
         if (err){
             console.log(err);
         } else {
             res.render('home',
                 {
-                    home: home
+                    picture: newPicture
                 });
         }
     })
 });
 
 // create home picture
-router.post('/', (req, res) => {
-    let pic = req.body.pic;
-    let position = req.body.position;
-    let newHome = {pic: pic, position: position};
-    Home.create(newHome, (err) => {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log(newHome);
-            res.redirect('/')
-        }
-    });
-});
+// router.post('/', (req, res) => {
+//     let pic = req.body.pic;
+//     let position = req.body.position;
+//     let newPicture = {pic: pic, position: position};
+//     Picture.create(newPicture, (err) => {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log(newPicture);
+//             res.redirect('/')
+//         }
+//     });
+// });
 
 
 //NEW - show new home picture form
@@ -54,13 +54,13 @@ router.get('/new', middleware.isLoggedIn, (req, res) => {
 
 // edit route
 router.get('/:id/edit', middleware.isLoggedIn, (req, res) => {
-    Home.findById(req.params.id, (err, foundHome) => {
+    Picture.findById(req.params.id, (err, foundPicture) => {
         if (err){
             console.log(err);
         } else {
             res.render('home/edit',
                 {
-                    home: foundHome
+                    home: foundPicture
                 })
         }
     })
@@ -69,7 +69,7 @@ router.get('/:id/edit', middleware.isLoggedIn, (req, res) => {
 
 // update home picture
 router.put ('/:id/edit', middleware.isLoggedIn, (req, res) => {
-    Home.findByIdAndUpdate(req.params.id, req.body.home, (err) => {
+    Picture.findByIdAndUpdate(req.params.id, req.body.home, (err) => {
         if (err) {
             console.log(err);
         } else {
@@ -82,7 +82,7 @@ router.put ('/:id/edit', middleware.isLoggedIn, (req, res) => {
 
 // destroy route
 router.delete('/:id', middleware.isLoggedIn, (req, res) => {
-    Home.findByIdAndRemove(req.params.id, (err) => {
+    Picture.findByIdAndRemove(req.params.id, (err) => {
         if (err) {
             console.log(err);
         } else {
@@ -118,7 +118,16 @@ router.get('/test', (req, res) => {
 
 // blog route
 router.get('/blog', (req, res) => {
-    res.render('blog');
+    Picture.find({}, (err, newPicture) => {
+        if (err){
+            console.log(err);
+        } else {
+            res.render('blog',
+                {
+                    picture: newPicture
+                });
+        }
+    })
 });
 
 

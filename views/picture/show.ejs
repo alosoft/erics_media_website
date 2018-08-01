@@ -1,7 +1,18 @@
 <% include ../partials/header.ejs %>
 
+<body>
+<!--facebook like plugin-->
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=2065288493720931&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
-<nav class="navbar navbar-color-on-scroll navbar-expand-lg" color-on-scroll="100"
+<nav class="navbar navbar-expand-lg" color-on-scroll="100"
      id="sectionsNav" style="padding-bottom: 5px;">
     <div class="container-fluid">
         <div class="navbar-translate" style="margin-left: 100px">
@@ -33,9 +44,12 @@
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <i class="material-icons">apps</i> Menu
                     </a>
-                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 235px;">
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 275px;">
                         <a href="/gallery" class="dropdown-item">
                             <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
+                        <a href="/blog" class="dropdown-item">
+                            <i class="material-icons">format_bold</i> Blog
                         </a>
                         <a href="/package" class="dropdown-item">
                             <i class="material-icons">layers</i> Packages
@@ -110,12 +124,10 @@
 </nav>
 
 
-
 <div class="container">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-5 mr-auto">
-            <div class="thumbnail">
-                <img class="img-responsive" src="<%= picture.image %>">
+        <div class="col-lg-8 col-md-6 col-sm-5 col-xs-12 mr-auto show_page">
+                <img class="img-responsive" src="<%= picture.image %>" style="width: 100%;">
                 <div class="caption-full">
                     <h4><a href=""><%= picture.name %></a></h4>
                     <% if (activeUser){ %>
@@ -127,7 +139,8 @@
                     </form>
                     <% } %>
                 </div>
-            </div>
+            <div class="fb-like" data-href="http://192.168.43.2:3000/gallery/<%=picture._id%>" data-layout="standard" data-action="like"
+                 data-size="small" data-show-faces="true" data-share="true"></div>
             <div id="fb-root"></div>
             <script>(function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0];
@@ -139,7 +152,11 @@
                 }(document, 'script', 'facebook-jssdk'));
             </script>
 
-            <div class="fb-comments" data-href="http://localhost:3000/gallery/<%= picture._id %>" data-numposts="10"></div>
+            <div class="fb-comments" data-href="http://localhost:3000/gallery/<%= picture._id %>"
+                 data-numposts="10"></div>
+
+        </div>
+        <div class="col-lg-4">
 
         </div>
     </div>

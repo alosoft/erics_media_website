@@ -1,8 +1,117 @@
 <% include partials/header.ejs %>
-<% include partials/nav.ejs %>
+
+<nav class="navbar-expand-lg navbar" color-on-scroll="100"
+     id="sectionsNav" style="padding-bottom: 5px;">
+    <div class="container-fluid">
+        <div class="navbar-translate" style="margin-left: 30px;">
+            <div data-turbolinks="false">
+                <a href="/" class="navbar-brand">
+                    <div class="logo">
+                        <img src="/images/logo.png" width="200" height="50">
+                    </div>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
+                <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
+                <span class="navbar-toggler-icon" style="background: #2284a2;"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" style="margin-right: 100px;">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="material-icons">
+                            home
+                        </i>
+                    </a>
+                </li>
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                        <i class="material-icons">apps</i> Menu
+                    </a>
+                    <div class="dropdown-menu dropdown-with-icons main-menu" style="height: 235px;">
+                        <a href="/gallery" class="dropdown-item">
+                            <i class="material-icons">add_a_photo</i> Gallery
+                        </a>
+                        <a href="/package" class="dropdown-item">
+                            <i class="material-icons">layers</i> Packages
+                        </a>
+                        <a href="/profile" class="dropdown-item">
+                            <i class="material-icons">content_paste</i> Profile
+                        </a>
+                        <a href="/contact" class="dropdown-item">
+                            <i class="material-icons">contact_mail</i> Contact Us
+                        </a>
+                        <a href="/about" class="dropdown-item">
+                            <i class="material-icons">person</i> About Us
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="#" target="_blank"
+                       data-original-title="Follow us on Twitter">
+                        <button class="btn btn-just-icon btn-round btn-twitter">
+                            <i class="fa fa-twitter"></i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="https://web.facebook.com/erics2017/" target="_blank"
+                       data-original-title="Like us on Facebook">
+                        <button class="btn btn-just-icon btn-round btn-facebook">
+                            <i class="fa fa-facebook"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="https://plus.google.com/110122640636489343713" target="_blank"
+                       data-original-title="Follow us on Google Plus">
+                        <button class="btn btn-just-icon btn-round btn-google">
+                            <i class="fa fa-google"> </i>
+                        </button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="" data-placement="bottom"
+                       href="https://www.instagram.com/erics_media/" target="_blank"
+                       data-original-title="Follow us on Instagram">
+                        <button class="btn btn-just-icon btn-round btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </button>
+                    </a>
+                </li>
+                <% if(activeUser){ %>
+                <li class="dropdown nav-item">
+                    <a class="profile-photo dropdown-toggle nav-link" href="#"
+                       data-toggle="dropdown">
+                        <div class="profile-photo-small">
+                            <img class="rounded-circle img-fluid" src="/images/alonso.jpg" alt="Circle Image">
+                        </div>
+                        <div class="ripple-container"></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="/profile" class="dropdown-item">Profile</a>
+                        <a href="/logout" class="dropdown-item">Sign out</a>
+                        <a href="/new" class="dropdown-item">Add Picture(Home)</a>
+                        <a href="/gallery/new" class="dropdown-item">Add Picture(Gallery)</a>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 
 <body class="index-page">
-<div class="page-header" data-parallax="true" id="erics_media" style="background-image: url('/original/home (4).jpg')">
+
+<div class="page-header" data-parallax="true" id="erics_media" style="background-image: url('/images/blog.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-md-8 ml-auto mr-auto">
@@ -18,7 +127,7 @@
                 <% } %>
                 <div class="brand">
                     <h1 style="font-family: 'Ubuntu', cursive;" id="logo_color"
-                        class="text_shadow align-content-center ">Welcome to the Blog page</h1>
+                        class="text_shadow align-content-center ">Blog</h1>
                 </div>
             </div>
         </div>
@@ -29,155 +138,82 @@
 <div class="main-raised">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-2 col-md-4">
+            <% picture.forEach((pic) => { %>
+            <div class="col-lg-8 col-md-10 col-sm-10 col-xs-6 ml-auto mr-auto" id="<%= pic.title %>">
                 <div class="card card-plain card-blog">
                     <div class="card-header card-header-image">
-                        <a href="#pablo">
+                        <a href="/gallery/<%=pic._id%>">
                             <img class="img img-raised"
-                                 src="https://scontent.facc1-1.fna.fbcdn.net/v/t1.0-9/37141258_474644126329774_3981747219572195328_n.jpg?_nc_cat=0&oh=6e282e62ccce56f09de65af3f6c9bd6f&oe=5BC9193A">
+                                 src="<%= pic.image %>">
                         </a>
                         <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
+                             style="background-image: url(&quot;<%= pic.image %>&quot;); opacity: 1;"></div>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-category text-info">Enterprise</h6>
+                        <h6 class="card-category text-info">Model: <%= pic.name %></h6>
                         <h4 class="card-title">
-                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
+                            <a href="/gallery/<%= pic._id %>"><%= pic.title %>
+                                <!--<hr class="line">-->
+                            </a>
                         </h4>
                         <p class="card-description">
-                            Like so many organizations these days, Autodesk is a company in transition. It was until
-                            recently a
-                            traditional boxed software company selling licenses.
-                            <a href="#pablo"> Read More </a>
+                            <%= pic.description %>
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4">
-                <div class="card card-plain card-blog">
-                    <div class="card-header card-header-image">
-                        <a href="#pablo">
-                            <img class="img img-raised"
-                                 src="https://scontent.facc1-1.fna.fbcdn.net/v/t1.0-9/37141258_474644126329774_3981747219572195328_n.jpg?_nc_cat=0&oh=6e282e62ccce56f09de65af3f6c9bd6f&oe=5BC9193A">
+                        <a class="btn btn-default" style="margin: 10px; background: #2284ae;"
+                           href="/gallery/<%= pic._id %>">Read More
                         </a>
-                        <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-category text-info">Enterprise</h6>
-                        <h4 class="card-title">
-                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                        </h4>
-                        <p class="card-description">
-                            Like so many organizations these days, Autodesk is a company in transition. It was until
-                            recently a
-                            traditional boxed software company selling licenses.
-                            <a href="#pablo"> Read More </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4">
-                <div class="card card-plain card-blog">
-                    <div class="card-header card-header-image">
-                        <a href="#pablo">
-                            <img class="img img-raised"
-                                 src="https://scontent.facc1-1.fna.fbcdn.net/v/t1.0-9/37141258_474644126329774_3981747219572195328_n.jpg?_nc_cat=0&oh=6e282e62ccce56f09de65af3f6c9bd6f&oe=5BC9193A">
+                        <% if (activeUser){ %>
+                        <a class="btn btn-primary" style="margin: 10px"
+                           href="/gallery/<%= pic._id %>/edit">Edit
                         </a>
-                        <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
+                        <form id="form" action="/gallery/<%= picture._id %>?_method=DELETE" method="POST"
+                              style="display: inline; margin: 10px;">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                        <% } %>
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ml-auto mr-auto">
+                                <div id="fb-root"></div>
+                                <script>(function (d, s, id) {
+                                        var js, fjs = d.getElementsByTagName(s)[0];
+                                        if (d.getElementById(id)) return;
+                                        js = d.createElement(s);
+                                        js.id = id;
+                                        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+                                        fjs.parentNode.insertBefore(js, fjs);
+                                    }(document, 'script', 'facebook-jssdk'));
+                                </script>
+
+                                <div class="fb-comments" data-href="http://localhost:3000/gallery/<%= pic._id %>"
+                                     data-numposts="10"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h6 class="card-category text-info">Enterprise</h6>
-                        <h4 class="card-title">
-                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                        </h4>
-                        <p class="card-description">
-                            Like so many organizations these days, Autodesk is a company in transition. It was until
-                            recently a
-                            traditional boxed software company selling licenses.
-                            <a href="#pablo"> Read More </a>
-                        </p>
-                    </div>
+                    <hr class="line">
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4">
-                <div class="card card-plain card-blog">
-                    <div class="card-header card-header-image">
-                        <a href="#pablo">
-                            <img class="img img-raised"
-                                 src="https://scontent.facc1-1.fna.fbcdn.net/v/t1.0-9/37141258_474644126329774_3981747219572195328_n.jpg?_nc_cat=0&oh=6e282e62ccce56f09de65af3f6c9bd6f&oe=5BC9193A">
-                        </a>
-                        <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-category text-info">Enterprise</h6>
-                        <h4 class="card-title">
-                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                        </h4>
-                        <p class="card-description">
-                            Like so many organizations these days, Autodesk is a company in transition. It was until
-                            recently a
-                            traditional boxed software company selling licenses.
-                            <a href="#pablo"> Read More </a>
-                        </p>
-                    </div>
-                </div>
+            <div class="col-lg-2 col-md-10 ml-auto mr-auto">
+
             </div>
-            <div class="col-lg-2 col-md-4">
-                <div class="card card-plain card-blog">
-                    <div class="card-header card-header-image">
-                        <a href="#pablo">
-                            <img class="img img-raised"
-                                 src="https://scontent.facc1-1.fna.fbcdn.net/v/t1.0-9/37141258_474644126329774_3981747219572195328_n.jpg?_nc_cat=0&oh=6e282e62ccce56f09de65af3f6c9bd6f&oe=5BC9193A">
-                        </a>
-                        <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-category text-info">Enterprise</h6>
-                        <h4 class="card-title">
-                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                        </h4>
-                        <p class="card-description">
-                            Like so many organizations these days, Autodesk is a company in transition. It was until
-                            recently a
-                            traditional boxed software company selling licenses.
-                            <a href="#pablo"> Read More </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-4">
-                <div class="card card-plain card-blog">
-                    <div class="card-header card-header-image">
-                        <a href="#pablo">
-                            <img class="img img-raised"
-                                 src="https://scontent.facc1-1.fna.fbcdn.net/v/t1.0-9/37141258_474644126329774_3981747219572195328_n.jpg?_nc_cat=0&oh=6e282e62ccce56f09de65af3f6c9bd6f&oe=5BC9193A">
-                        </a>
-                        <div class="colored-shadow"
-                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-category text-info">Enterprise</h6>
-                        <h4 class="card-title">
-                            <a href="#pablo">Autodesk looks to future of 3D printing with Project Escher</a>
-                        </h4>
-                        <p class="card-description">
-                            Like so many organizations these days, Autodesk is a company in transition. It was until
-                            recently a
-                            traditional boxed software company selling licenses.
-                            <a href="#pablo"> Read More </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <% }) %>
         </div>
     </div>
 </div>
 
-</body>
+<nav id="cd-vertical-nav">
+    <ul>
+        <% let count = 1; %>
+        <% picture.forEach((pic) => { %>
+        <li>
+            <a href="#<%= pic.title %>" data-number="<%= count %>">
+                <span class="cd-dot"></span>
+                <span class="cd-label"><%= pic.title %></span>
+            </a>
+        </li>
+        <% count += 1; %>
+        <% }) %>
+    </ul>
+</nav>
 
 
 <% include partials/footer.ejs %>
