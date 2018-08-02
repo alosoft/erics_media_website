@@ -37,6 +37,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     let credit = req.body.credit;
     let thumbnail = req.body.thumbnail;
     let location = req.body.location;
+    let coordinate = req.body.coordinate;
     let type = req.body.type;
     let description = req.body.description;
     let orientation = req.body.orientation;
@@ -49,6 +50,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
         credit: credit,
         thumbnail: thumbnail,
         location: location,
+        coordinate: coordinate,
         type: type,
         description: description,
         orientation: orientation,

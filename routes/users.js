@@ -3,17 +3,9 @@ let router = express.Router();
 let Picture = require('../models/picture');
 let methodOverride = require('method-override');
 let middleware = require('../middleware');
+let nodemailer = require('nodemailer');
 
 console.log('routes users');
-
-// var data = {pic: 'i love you', position: 'right'};
-// Picture.remove({}, (err) => {
-//     if (err) {
-//         console.log(err);
-//     } else {
-//         console.log('removed all home pics')
-//     }
-// });
 
 // get home page
 router.get('/', (req, res) => {
@@ -29,27 +21,11 @@ router.get('/', (req, res) => {
     })
 });
 
-// create home picture
-// router.post('/', (req, res) => {
-//     let pic = req.body.pic;
-//     let position = req.body.position;
-//     let newPicture = {pic: pic, position: position};
-//     Picture.create(newPicture, (err) => {
-//         if (err) {
-//             console.log(err);
-//         } else {
-//             console.log(newPicture);
-//             res.redirect('/')
-//         }
-//     });
-// });
-
 
 //NEW - show new home picture form
 router.get('/new', middleware.isLoggedIn, (req, res) => {
     res.render('home/new')
 });
-
 
 
 // edit route
@@ -137,5 +113,50 @@ router.get('/:id', (req, res) => {
     req.flash('error', 'Wrong Address');
     res.redirect('/');
 });
+
+
+router.post('/contact', (req, res) => {
+    const output = `
+        <p>You have a new contact request</p>
+        <h3>Contact Details</h3>
+        <ul>
+            <li>Name: ${req.body.name}</li>
+            <li>Email: ${req.body.email}</li>
+            <li>Phone: ${req.body.phone}</li>
+        </ul>
+        <p>${req.body.message}</p>
+    `;
+
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'alosoftinc@gmail.com',
+            pass: '@Allo2020'
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+        from: '"Erics Media Website" <admin@ericsmedia.com>', // sender address
+        to: 'ericsmedia307@gmail.com', // list of receivers
+        subject: 'New Contact Request', // Subject line
+        html: output // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message sent: %s', info.messageId);
+        console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    });
+    res.redirect('/');
+});
+
 
 module.exports = router;

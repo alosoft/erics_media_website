@@ -7,6 +7,7 @@ const pictureSchema = new mongoose.Schema({
     credit: String,
     thumbnail: String,
     location: String,
+    coordinate: String,
     type: String,
     description: String,
     orientation: String,

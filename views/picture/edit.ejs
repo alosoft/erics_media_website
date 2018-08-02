@@ -69,6 +69,8 @@
                                            value="<%= picture.credit %>">
                                 </div>
                             </span>
+                            <% let thumb = picture.thumbnail; %>
+                            <% if (thumb) { %>
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -77,9 +79,22 @@
                                         </span>
                                     </div>
                                     <input class="form-control" type="text" name="picture[thumbnail]"
-                                           value="<%= picture.thumbnail %>">
+                                           value="<%=picture.thumbnail%>">
                                 </div>
                             </span>
+                            <% } else { %>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">photo</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[thumbnail]"
+                                           placeholder="thumbnail">
+                                </div>
+                            </span>
+                            <% } %>
                             <span class="bmd-form-group">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -89,6 +104,17 @@
                                     </div>
                                     <input class="form-control" type="text" name="picture[location]"
                                            value="<%= picture.location %>">
+                                </div>
+                            </span>
+                            <span class="bmd-form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">my_location</i>
+                                        </span>
+                                    </div>
+                                    <input class="form-control" type="text" name="picture[coordinate]"
+                                           value="<%= picture.coordinate %>">
                                 </div>
                             </span>
                             <hr>
@@ -223,8 +249,8 @@
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-5 ml-auto mr-auto">
-                <h1>Upload Picture</h1>
                 <div class="title">
+                    <h1>Upload Picture</h1>
                     <p>Generate Picture Link</p>
                 </div>
                 <div class="dropzone">
