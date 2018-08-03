@@ -1,7 +1,6 @@
 let express = require('express');
 let router = express.Router();
 let Picture = require('../models/picture');
-let methodOverride = require('method-override');
 let middleware = require('../middleware');
 let nodemailer = require('nodemailer');
 
@@ -154,6 +153,7 @@ router.post('/contact', (req, res) => {
         }
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        req.flash('success', 'Message received, we will get back to you. Thank You.');
     });
     res.redirect('/');
 });
