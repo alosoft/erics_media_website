@@ -5,3 +5,6 @@ http://maps.google.com/maps?q=24.197611,120.780512
 Why not  http://www.google.com/maps/place/lat,lng I think this is the simplest way
 
 http://www.google.com/maps/place/49.46800006494457,17.11514008755796
+
+
+use animate css
