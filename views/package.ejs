@@ -1,4 +1,54 @@
-<% include partials/header.ejs %>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>
+        Erics Media
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+          name='viewport'/>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/stylesheets/material-kit.min.css">
+    <link href="/stylesheets/material-kit.css?v=2.0.4" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/vertical-nav.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/custom1.css">
+    <link rel="stylesheet" href="/stylesheets/style-imgur.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chela+One|Merienda" rel="stylesheet">
+    <!-- Google Adsense -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7184261840828523",
+            enable_page_level_ads: true
+        });
+    </script>
+
+
+    <!--Git Site Control plugin-->
+    <script>
+        (function (w, i, d, g, e, t, s) {
+            w[d] = w[d] || [];
+            t = i.createElement(g);
+            t.async = 1;
+            t.src = e;
+            s = i.getElementsByTagName(g)[0];
+            s.parentNode.insertBefore(t, s);
+        })(window, document, '_gscq', 'script', '//widgets.getsitecontrol.com/146775/script.js');
+    </script>
+</head>
+
 <% include partials/nav.ejs %>
 
 <body class="index-page">
@@ -639,5 +689,102 @@ background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+
     </div>
 </div>
 
+<footer class="footer footer-white footer-big" id="footer">
+    <div class="container">
 
-<% include partials/footer.ejs %>
+        <div class="content">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <a href="#"><h5>Erics Media</h5></a>
+                    <p>#################<br>
+                        #################<br>
+                        #################<br>
+                        #################
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>About</h5>
+                    <ul class="links-vertical">
+                        <li>
+                            <a href="/blog">
+                                Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/profile">
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/contact">
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Subscribe to Our News Channel</h5>
+                    <p>
+                        Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about
+                        this.
+                    </p>
+                    <form class="form form-newsletter"
+                          action="/contact"
+                          method="post">
+                        <div class="form-group bmd-form-group">
+                            <input class="form-control email" type="email" value="" name="sub"
+                                   placeholder="Your email...." required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-just-icon">
+                            <i class="material-icons" style="background: #2284a2">mail</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <ul class="social-buttons">
+            <li>
+                <a href="https://web.facebook.com/erics2017/" class="btn btn-just-icon btn-link btn-facebook">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://plus.google.com/110122640636489343713" class="btn btn-just-icon btn-link btn-google">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="copyright pull-center">
+            Copyright ©
+            <script>document.write(new Date().getFullYear())</script>
+            Alosoft Inc. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<!--   Core JS Files   -->
+<script src="/javascripts/core/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/core/popper.min.js" type="text/javascript"></script>
+<script src="/javascripts/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+<script src="/javascripts/moment.min.js"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="/javascripts/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="/javascripts/nouislider.min.js" type="text/javascript"></script>
+<!--	Plugin for Sharrre btn -->
+<script src="/javascripts/jquery.sharrre.js" type="text/javascript"></script>
+<!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+<script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
+
+</body>
+
+</html>
