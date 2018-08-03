@@ -18,11 +18,11 @@
                     <%= success %>
                 </div>
                 <% } %>
-                <div class="brand">
+                <div class="brand animated lightSpeedIn delay-1s">
                     <h1 style="font-family: 'Ubuntu', cursive;" id="logo_color"
-                        class="text_shadow align-content-center ">Erics Media</h1>
-                    <hr id="hr">
-                    <h3 class="yfont">We are at Your Service. </h3>
+                        class="text_shadow align-content-center animated flipInX delay-2s">Erics Media</h1>
+                    <hr id="hr" class="animated lightSpeedIn rollIn delay-2s">
+                    <h3 class="yfont animated flipInX delay-2s">We are at Your Service. </h3>
                     <a href="#gallery">
                         <i class="material-icons">
                             arrow_drop_down_circle
@@ -89,21 +89,21 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <% picture.forEach(function(pic) { %>
-                                                            <% let orientation = pic.orientation; %>
-                                                            <% let type = pic.type; %>
-                                                            <% let page = pic.page; %>
-                                                            <% if (page === 'home') { %>
-                                                                <% if (type === 'studio'){ %>
-                                                                    <% if (orientation === 'portrait'){ %>
-                                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto">
-                                                                            <div class="anime">
-                                                                                <img src="<%= pic.image %>" alt=""
-                                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                            </div>
-                                                                        </div>
-                                                                    <% } %>
-                                                                <% } %>
-                                                            <% } %>
+                                                        <% let orientation = pic.orientation; %>
+                                                        <% let type = pic.type; %>
+                                                        <% let page = pic.page; %>
+                                                        <% if (page === 'home') { %>
+                                                        <% if (type === 'studio'){ %>
+                                                        <% if (orientation === 'portrait'){ %>
+                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto">
+                                                            <div class="anime">
+                                                                <img src="<%= pic.image %>" alt=""
+                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                        <% } %>
+                                                        <% } %>
                                                         <% }); %>
                                                     </div>
                                                 </div>
@@ -113,22 +113,22 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <% picture.forEach(function(pic) { %>
-                                                            <% let orientation = pic.orientation; %>
-                                                            <% let type = pic.type; %>
-                                                            <% let page = pic.page; %>
-                                                            <% if (page === 'home') { %>
-                                                                <% if (type === 'studio'){ %>
-                                                                    <% if (orientation === 'landscape'){ %>
-                                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
-                                                                             style="margin-top: 25px;">
-                                                                            <div class="anime">
-                                                                                <img src="<%= pic.image %>" alt=""
-                                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                            </div>
-                                                                        </div>
-                                                                    <% } %>
-                                                                <% } %>
-                                                            <% } %>
+                                                        <% let orientation = pic.orientation; %>
+                                                        <% let type = pic.type; %>
+                                                        <% let page = pic.page; %>
+                                                        <% if (page === 'home') { %>
+                                                        <% if (type === 'studio'){ %>
+                                                        <% if (orientation === 'landscape'){ %>
+                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
+                                                             style="margin-top: 25px;">
+                                                            <div class="anime">
+                                                                <img src="<%= pic.image %>" alt=""
+                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                        <% } %>
+                                                        <% } %>
                                                         <% }); %>
                                                     </div>
                                                 </div>
@@ -545,31 +545,31 @@
 
 <nav id="cd-vertical-nav">
     <ul>
-        <li>
+        <li class="animated slideInDown">
             <a href="#erics_media" data-number="1" class="">
                 <span class="cd-dot"></span>
                 <span class="cd-label">Home</span>
             </a>
         </li>
-        <li>
+        <li class="animated slideInLeft">
             <a href="#gallery" data-number="2" class="">
                 <span class="cd-dot"></span>
                 <span class="cd-label">Gallery</span>
             </a>
         </li>
-        <li>
+        <li class="animated flash">
             <a href="#package" data-number="3" class="">
                 <span class="cd-dot"></span>
                 <span class="cd-label">Package</span>
             </a>
         </li>
-        <li>
+        <li class="animated slideInRight">
             <a href="#cards" data-number="4">
                 <span class="cd-dot"></span>
                 <span class="cd-label">Cards</span>
             </a>
         </li>
-        <li>
+        <li class="animated slideInUp">
             <a href="#footer" data-number="5" class="">
                 <span class="cd-dot"></span>
                 <span class="cd-label">Footer</span>
