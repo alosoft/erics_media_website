@@ -88,7 +88,17 @@ router.get('/about', (req, res) => {
 
 // test route
 router.get('/test', (req, res) => {
-    res.render('test');
+    Picture.find({}, (err, newPicture) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render('test',
+                {
+                    picture: newPicture
+                });
+        }
+    });
+    // res.render('test');
 });
 
 // blog route

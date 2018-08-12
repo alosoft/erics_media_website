@@ -42,7 +42,6 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     let description = req.body.description;
     let orientation = req.body.orientation;
     let page = req.body.page;
-    let id = req.body._id;
     let newPicture = {
         title: title,
         name: name,
@@ -55,16 +54,15 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
         description: description,
         orientation: orientation,
         page: page,
-        id: id,
     };
     // console.log(req.user);
-    //create a new campground and save to database
+    //create a new picture and save to database
     Picture.create(newPicture, function (err, newlyCreated) {
         if (err) {
             console.log(err);
         } else {
             //redirect back to campgrounds page
-            // console.log(newlyCreated);
+            console.log(newlyCreated);
             res.redirect("/gallery");
         }
     });

@@ -194,6 +194,7 @@
                 <li data-filter=".painting"><a href="#">Digital Painting</a></li>
                 <li data-filter=".studio"><a href="#">Studio</a></li>
                 <li data-filter=".work"><a href="#">Works</a></li>
+                <li data-filter=".video"><a href="#">Videos</a></li>
             </ul>
         </div>
     </div>
@@ -202,33 +203,51 @@
              style="position: relative;
              height: 743.234px;">
             <% picture.forEach(function(pic){ %>
-                <% let page = pic.page; %>
-                <% if (page === 'gallery'){ %>
-                    <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
-                        <div class="card card-plain card-blog">
-                            <div class="card-header card-header-image">
-                                <a href="<%= pic.image %>" class="light anime">
-                                    <% let orientation = pic.orientation; %>
-                                    <% if (orientation === 'portrait'){ %>
-                                            <img class="img img-raised thumbnail" src="<%= pic.thumbnail %>">
-                                    <% } else { %>
-                                            <img class="img img-raised thumbnail" src="<%= pic.image %>">
-                                    <% } %>
-                                </a>
-                                <div class="colored-shadow"
-                                     style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-description">
-                                    by <%= pic.credit %>
-                                </p>
-                                <a href="/blog" class="nav-link"> Read More </a>
-                            </div>
-                        </div>
+            <% let page = pic.page; %>
+            <% if (page === 'gallery'){ %>
+            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
+                <div class="card card-plain card-blog">
+                    <div class="card-header card-header-image">
+                        <a href="<%= pic.image %>" class="light anime">
+                            <% let orientation = pic.orientation; %>
+                            <% if (orientation === 'portrait'){ %>
+                            <img class="img img-raised thumbnail" src="<%= pic.thumbnail %>">
+                            <% } else { %>
+                            <img class="img img-raised thumbnail" src="<%= pic.image %>">
+                            <% } %>
+                        </a>
+                        <div class="colored-shadow"
+                             style="background-image: url(&quot;/images/alonso.jpg&quot;); opacity: 1;"></div>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">
+                            by <%= pic.credit %>
+                        </p>
+                        <a href="/blog" class="nav-link"> Read More </a>
+                    </div>
                 </div>
-                <% } %>
+            </div>
+            <% } %>
             <% }) %>
+            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto video">
+                <div class="card card-plain card-blog">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qJyqc5Mq-jg"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">
+                            by Erics Media
+                        </p>
+                    </div>
+                    <a href="https://www.youtube.com/embed/qJyqc5Mq-jg" class="light anime">
+                    </a>
+
+                </div>
+            </div>
         </div>
+
+    </div>
         <div class="button_more">
             <a class="btn theme_btn" href="/blog">Load More Images</a>
         </div>
@@ -299,15 +318,26 @@
         <hr>
 
         <ul class="social-buttons">
+            <h5>Share on Social Media</h5>
             <li>
-                <a href="https://web.facebook.com/erics2017/" class="btn btn-just-icon btn-link btn-facebook">
-                    <i class="fa fa-facebook-square"></i>
+                <a title="Share on Facebook"
+                   href="http://www.facebook.com/sharer.php?u=http://erics-media-website.herokuapp.com"
+                   target="_blank">
+                    <button class="btn btn-just-icon btn btn-facebook">
+                        <i class="fa fa-facebook"> </i>
+                    </button>
                 </a>
             </li>
             <li>
-                <a href="https://plus.google.com/110122640636489343713" class="btn btn-just-icon btn-link btn-google">
-                    <i class="fa fa-google-plus"></i>
+
+                <a title="Share on Twitter" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                   class="twitter-share-button"
+                   data-show-count="false">
+                    <button class="btn btn-just-icon btn btn-twitter">
+                        <!--<i class="fa fa-twitter"></i>-->
+                    </button>
                 </a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </li>
         </ul>
 

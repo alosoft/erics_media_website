@@ -185,6 +185,13 @@
                 <div class="brand">
                     <h1 style="font-family: 'Ubuntu', cursive;" id="logo_color"
                         class="text_shadow align-content-center ">Blog</h1>
+                    <a title="Share on Facebook"
+                       href="http://www.facebook.com/sharer.php?u=http://erics-media-website.herokuapp.com"
+                       target="_blank">
+                        <button class="btn btn-just-icon btn btn-facebook">
+                            <i class="fa fa-facebook"> </i>
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -192,14 +199,23 @@
 </div>
 
 
-<div class="main-raised">
+<div class="main">
     <div class="container-fluid">
         <div class="row">
-            <% picture.forEach((pic) => { %>
+            <% function gloria(array) {
+                let arr = [];
+                for (var i = array.length - 1; i >= 0; --i) {
+                    arr.push(array[i]);
+                }
+                return arr;
+            } %>
+
+            <% let database = gloria(picture); %>
+            <% database.forEach((pic) => { %>
             <div class="col-lg-8 col-md-10 col-sm-10 col-xs-6 ml-auto mr-auto" id="<%= pic.title %>">
                 <div class="card card-plain card-blog card-hover-effect">
                     <div class="card-header card-header-image">
-                        <a href="/gallery/<%=pic._id%>">
+                        <a href="/gallery/<%= pic._id %>">
                             <img class="img img-raised"
                                  src="<%= pic.image %>">
                         </a>
@@ -207,32 +223,40 @@
                              style="background-image: url(&quot;<%= pic.image %>&quot;); opacity: 1;"></div>
                     </div>
                     <div class="card-body">
+                        <% if (pic.type !== 'work') { %>
                         <h6 class="card-category text-info">Model: <%= pic.name %></h6>
+                        <% } %>
                         <h4 class="card-title">
-                            <a href="/gallery/<%= pic._id %>"><%= pic.title %>
-                                <!--<hr class="line">-->
+                            <a href="/gallery/<%= pic._id %>">
+                                <%= pic.title %>
                             </a>
                         </h4>
-                        <p class="card-description">
+                        <p class="bold">
                             <%= pic.description %>
                         </p>
+                        <% if (pic.created){ %>
+                        <% let convertedDate = String(pic.created); %>
+                        <% let createdDate = new Date(convertedDate); %>
+                        <p class="quote"><%= createdDate.toDateString() %></p>
+                        <% } %>
+                        <% console.log(pic.created); %>
                         <a class="btn btn-default" style="margin: 10px; background: #2284ae;"
                            href="/gallery/<%= pic._id %>">Read More
                         </a>
                         <% let gps = pic.coordinate; %>
                         <% if (gps) { %>
-                        <a href="http://maps.google.com/maps?q=<%=pic.coordinate%>" class="btn-link" target="_blank">
+                        <a href="http://maps.google.com/maps?q=<%= pic.coordinate %>" class="btn-link" target="_blank">
                             <i class="material-icons">pin_drop</i>
-                            <%=pic.location.toUpperCase()%>
+                            <%= pic.location.toUpperCase() %>
                         </a>
                         <% } else { %>
-                            <p class="">Location: <%= pic.location.toUpperCase() %></p>
+                        <p class="">Location: <%= pic.location.toUpperCase() %></p>
                         <% } %>
                         <% if (activeUser){ %>
                         <a class="btn btn-primary" style="margin: 10px"
                            href="/gallery/<%= pic._id %>/edit">Edit
                         </a>
-                        <form id="form" action="/gallery/<%= picture._id %>?_method=DELETE" method="POST"
+                        <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE" method="POST"
                               style="display: inline; margin: 10px;">
                             <button class="btn btn-danger">Delete</button>
                         </form>
@@ -250,7 +274,8 @@
                                     }(document, 'script', 'facebook-jssdk'));
                                 </script>
 
-                                <div class="fb-comments" data-href="http://erics-media-website.herokuapp.com/gallery/<%= pic._id %>"
+                                <div class="fb-comments"
+                                     data-href="http://erics-media-website.herokuapp.com/gallery/<%= pic._id %>"
                                      data-numposts="10"></div>
                             </div>
                         </div>
@@ -269,7 +294,7 @@
 <nav id="cd-vertical-nav">
     <ul>
         <% let count = 1; %>
-        <% picture.forEach((pic) => { %>
+        <% database.forEach((pic) => { %>
         <li>
             <a href="#<%= pic.title %>" data-number="<%= count %>">
                 <span class="cd-dot"></span>

@@ -8,6 +8,7 @@ const pictureSchema = new mongoose.Schema({
     thumbnail: String,
     location: String,
     coordinate: String,
+    created: {type: Date, default: Date.now},
     type: String,
     description: String,
     orientation: String,
