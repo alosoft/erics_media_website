@@ -8,3 +8,5 @@ http://www.google.com/maps/place/49.46800006494457,17.11514008755796
 
 
 use animate css
+
+https://handyman.dulare.com/switching-from-google-maps-to-openstreetmap/
