@@ -469,3 +469,7 @@ hr.line {
     -ms-transform: translateY(-10px);
     -moz-transform: translateY(-10px);
 }
+
+a:hover {
+    color: #2284ae;
+}
