@@ -11,6 +11,8 @@ router.get('/', (req, res) => {
     Picture.find({}, (err, newPicture) => {
         if (err){
             console.log(err);
+            req.flash('error', 'Sorry, No Pictures Found');
+            res.redirect('/');
         } else {
             res.render('home',
                 {
@@ -32,6 +34,8 @@ router.get('/:id/edit', middleware.isLoggedIn, (req, res) => {
     Picture.findById(req.params.id, (err, foundPicture) => {
         if (err){
             console.log(err);
+            req.flash('error', 'Sorry, No Pictures Found');
+            res.redirect('/');
         } else {
             res.render('home/edit',
                 {
@@ -47,6 +51,8 @@ router.put ('/:id/edit', middleware.isLoggedIn, (req, res) => {
     Picture.findByIdAndUpdate(req.params.id, req.body.home, (err) => {
         if (err) {
             console.log(err);
+            req.flash('error', 'Sorry, Could not Update Picture');
+            res.redirect('/');
         } else {
             console.log(req.body.home);
             res.redirect('/');
@@ -60,6 +66,8 @@ router.delete('/:id', middleware.isLoggedIn, (req, res) => {
     Picture.findByIdAndRemove(req.params.id, (err) => {
         if (err) {
             console.log(err);
+            req.flash('error', 'Sorry, Could not Update Picture');
+            res.redirect('/');
         } else {
             res.redirect('/');
         }
@@ -91,6 +99,8 @@ router.get('/test', (req, res) => {
     Picture.find({}, (err, newPicture) => {
         if (err) {
             console.log(err);
+            req.flash('error', 'Sorry, No Pictures Found');
+            res.redirect('/');
         } else {
             res.render('test',
                 {
@@ -106,6 +116,8 @@ router.get('/blog', (req, res) => {
     Picture.find({}, (err, newPicture) => {
         if (err){
             console.log(err);
+            req.flash('error', 'Sorry, No Pictures Found');
+            res.redirect('/');
         } else {
             res.render('blog',
                 {
@@ -117,13 +129,14 @@ router.get('/blog', (req, res) => {
 
 
 //handle unknown address
-router.get('/:id', (req, res) => {
-    // res.send('Unknown Address');
-    req.flash('error', 'Wrong Address');
-    res.redirect('/');
-});
+// router.get('/:id', (req, res) => {
+//     // res.send('Unknown Address');
+//     req.flash('error', 'Wrong Address');
+//     res.redirect('/');
+// });
 
 
+// handle contact forms
 router.post('/contact', (req, res) => {
     if (req.body.sub){
         const subscribe = `

@@ -69,10 +69,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 /////////////////////////////////////
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    next(createError(404));
+// app.use(function (req, res, next) {
+//     next(createError(404));
+// });
+
+// Handle 404
+app.use(function (req, res) {
+    req.flash('error', 'Wrong Address');
+    res.redirect('/');
 });
 
+// Handle 500
+app.use(function (error, req, res, next) {
+    res.send('500: Internal Server Error', 500);
+});
 
 // error handler
 app.use(function (err, req, res) {

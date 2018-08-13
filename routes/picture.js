@@ -17,6 +17,8 @@ router.get("/gallery", function (req, res) {
     Picture.find({}, function (err, picture) {
         if (err) {
             console.log(err);
+            req.flash('error', 'Sorry, No Pictures Found');
+            res.redirect('/');
         } else {
             // console.log(picture);
             res.render("gallery",
@@ -60,6 +62,8 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     Picture.create(newPicture, function (err, newlyCreated) {
         if (err) {
             console.log(err);
+            req.flash('error', 'Could not create Picture');
+            res.redirect('/');
         } else {
             //redirect back to campgrounds page
             console.log(newlyCreated);
@@ -80,7 +84,8 @@ router.get("/gallery/:id", function (req, res) {
     Picture.findById(req.params.id).populate('comments').exec(function (err, foundPicture) {
         if (err) {
             console.log(err);
-            res.send(err);
+            req.flash('error', 'Wrong Address');
+            res.redirect('/');
         } else {
             // res.send(foundPicture);
             res.render("picture/show",
@@ -100,10 +105,9 @@ router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
     //is user logged in
     Picture.findById(req.params.id, function (err, foundPicture) {
         if (err) {
-            req.flash('error', "Picture not found");
             console.log(err);
-            res.send("error in picture edit route")
-            // res.redirect('campgrounds/login');
+            req.flash('error', "Picture not found");
+            res.redirect('/');
         } else {
             res.render('picture/edit', {picture: foundPicture});
         }
@@ -116,6 +120,7 @@ router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
     Picture.findByIdAndUpdate(req.params.id, req.body.picture, function (err) {
         if (err) {
             console.log(err);
+            req.flash('error', 'Could not Update Picture');
             res.redirect('/gallery');
         } else {
             console.log(req.body.picture);
@@ -129,6 +134,8 @@ router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
 router.delete("/gallery/:id", middleware.isLoggedIn, function (req, res) {
     Picture.findByIdAndRemove(req.params.id, function (err) {
         if (err) {
+            console.log(err);
+            req.flash('error', 'Could not remove Picture');
             res.redirect('/gallery');
         } else {
             res.redirect('/gallery');

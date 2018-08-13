@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script type="text/javascript">
+        // var n = [23,33,15,66,51,35,80];
+        var n = [
+            {name: 'Alonso', age: new Date('Apr 2 1994')},
+            {name: 'Jules', age: new Date('Dec 7 1992')},
+            {name: 'Suzzy', age: new Date('Mar 15 1996')},
+            {name: 'Gloria', age: new Date('Jan 20 1999')}
+        ];
+        for (var i = 0; i < n.length; i++) {
+            for (var j = i + 1; j < n.length; j++) {
+                if (n[i].age.getTime() < n[j].age.getTime()) {
+                    t = n[i].age.getTime();
+                    n[i].age = n[j].age;
+                    n[j].age = t;
+                }
+            }
+        }
+        document.writeln(n[0]);
+        n.forEach(function (data) {
+            document.writeln(data[0]);
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

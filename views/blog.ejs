@@ -226,6 +226,11 @@
                         <% if (pic.type !== 'work') { %>
                         <h6 class="card-category text-info">Model: <%= pic.name %></h6>
                         <% } %>
+                        <% if (pic.created){ %>
+                        <% let convertedDate = String(pic.created); %>
+                        <% let createdDate = new Date(convertedDate); %>
+                        <p class="quote" style="float: right;"><%= createdDate.toDateString() %></p>
+                        <% } %>
                         <h4 class="card-title">
                             <a href="/gallery/<%= pic._id %>">
                                 <%= pic.title %>
@@ -234,11 +239,6 @@
                         <p class="bold">
                             <%= pic.description %>
                         </p>
-                        <% if (pic.created){ %>
-                        <% let convertedDate = String(pic.created); %>
-                        <% let createdDate = new Date(convertedDate); %>
-                        <p class="quote"><%= createdDate.toDateString() %></p>
-                        <% } %>
                         <% console.log(pic.created); %>
                         <a class="btn btn-default" style="margin: 10px; background: #2284ae;"
                            href="/gallery/<%= pic._id %>">Read More
