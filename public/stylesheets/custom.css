@@ -178,6 +178,10 @@
     padding-top: 40vh;
 }
 
+.icons {
+    color: #2284a2;
+}
+
 .slideshow {
     position: fixed;
     width: 100%;
@@ -193,7 +197,7 @@
 .slideshow li {
     width: 100%;
     height: 100%;
-    /*position: absolute;*/
+    position: absolute;
     top: 0;
     left: 0;
     background-size: cover;
@@ -204,23 +208,28 @@
     animation: imageAnimation 50s linear infinite;
 }
 
-.icons {
-    color: #2284a2;
-}
-
 .slideshow li:nth-child(1) {
-    background-image: url('/original/home (2).jpg');
-    animation-delay: 5s;
+    background-image: url(http://i.imgur.com/K3mPv14.jpg);
 }
 
 .slideshow li:nth-child(2) {
-    background-image: url('/original/home (4).jpg');
-    animation-delay: 15s;
+    background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+    animation-delay: 8s;
 }
 
 .slideshow li:nth-child(3) {
-    background-image: url('/original/home (1).jpg');
-    animation-delay: 25s;
+    background-image: url(http://i.imgur.com/emvhOnb.jpg);
+    animation-delay: 16s;
+}
+
+.slideshow li:nth-child(4) {
+    background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+    animation-delay: 24s;
+}
+
+.slideshow li:nth-child(5) {
+    background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+    animation-delay: 32s;
 }
 
 @keyframes imageAnimation {
@@ -230,13 +239,15 @@
     }
     10% {
         opacity: 1;
-        animation-timing-function: revert;
+        animation-timing-function: ease-out;
     }
     20% {
-        opacity: 1
+        opacity: 1;
+        animation-timing-function: ease-out;
     }
     30% {
-        opacity: 0
+        opacity: 0;
+        animation-timing-function: ease-out;
     }
 }
 
@@ -244,6 +255,7 @@
 .no-cssanimations .slideshow li {
     opacity: 1;
 }
+
 
 .testing {
     box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
@@ -358,22 +370,11 @@
     transform: scale(1.05);
 }
 
-.page-header {
-    background-image: url('/images/city.jpg');
-}
 
 .page-header {
-    background-image: url('/images/city.jpg');
+    /*background-image: url('/images/city.jpg');*/
     background-size: cover;
     background-position: top center;
-}
-
-.page-header {
-    background-image: url('/images/city.jpg');
-}
-
-.page-header {
-    background-image: url('/images/background.jpg');
 }
 
 .carousel .carousel-indicators li {
@@ -472,4 +473,11 @@ hr.line {
 
 a:hover {
     color: #2284ae;
+}
+
+.caro {
+    background-size: cover;
+    background-position: center top;
+    width: 100%;
+    height: 100%;
 }

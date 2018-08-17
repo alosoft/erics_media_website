@@ -28,6 +28,16 @@ router.get('/new', middleware.isLoggedIn, (req, res) => {
     res.render('home/new')
 });
 
+//test2
+router.get('/test2', function (req, res) {
+    res.render('test2');
+});
+
+
+//test3
+router.get('/test3', function (req, res) {
+    res.render('test3');
+});
 
 // edit route
 router.get('/:id/edit', middleware.isLoggedIn, (req, res) => {

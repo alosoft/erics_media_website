@@ -43,6 +43,7 @@
 
     <link href="/stylesheets/vertical-nav.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/animate.css">
 
 
     <!-- Google Tag Manager -->
@@ -107,9 +108,31 @@
                 <a href="/" class="navbar-brand">
                     <div class="logo">
                         <img src="/images/logo.png" width="200" height="50">
+                        <!--<a href="#contact" data-number="1" class="">-->
+                        <!--<i class="fas fa-angle-double-down" style="color: red;"></i>-->
+                        <!--</a>-->
+
                     </div>
+
                     <!--<p>Erics <br> Media</p>-->
                 </a>
+                <!--<a title="Scroll Down" class="nav-link" href="#contact">-->
+                <!--<i class="material-icons " style="color: red;">-->
+                <!--keyboard_arrow_down-->
+                <!--</i>-->
+                <!--</a>-->
+                <nav id="cd-vertical-nav" style="position: fixed; ">
+                    <ul>
+                        <li class="animated slideInDown delay-2s">
+                            <a title="Scroll Down" href="#contact" data-number="1" class="">
+                                <!--<span class="cd-dot animated flash delay-5s" style="height: 40px; width: 40px;"></span>-->
+                                <i class="material-icons animated flash delay-5s"
+                                   style="color: white; font-size: 30px; background-color: #2284ae; border-radius: 10px;">arrow_downward</i>
+                                <span class="cd-label">Scroll down</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -213,13 +236,11 @@
     </div>
 </nav>
 
-<!--<div id="map" class="big-map"></div>-->
-<div id="mapDiv" class="page-header" data-parallax="true" id="erics_media">
-    <!--<div id="mapDiv" style="width: 1200px; height: 1500px"></div>-->
+<div class="page-header" id="mapDiv" data-parallax="true">
 
 </div>
 
-<div class="main main-raised">
+<div class="main main-raised" id="contact">
     <div class="contact-content">
         <div class="container">
             <h2 class="title">Send us a message</h2>
@@ -240,7 +261,7 @@
                         </div>
                         <div class="form-group">
                             <label for="phone" class="bmd-label-floating">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone">
+                            <input type="number" class="form-control" id="phone" name="phone">
                         </div>
                         <div class="form-group label-floating">
                             <label class="form-control-label bmd-label-floating" for="message"> Your message</label>
@@ -297,6 +318,7 @@
         </div>
     </div>
 </div>
+
 
 <footer class="footer footer-white footer-big" id="footer">
     <div class="container">
