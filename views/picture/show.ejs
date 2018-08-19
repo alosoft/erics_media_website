@@ -1,56 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>
-        Erics Media
-    </title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-          name='viewport'/>
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="/stylesheets/material-kit.min.css">
-    <link href="/stylesheets/material-kit.css?v=2.0.4" rel="stylesheet"/>
-    <link rel="stylesheet" href="/stylesheets/vertical-nav.css">
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <!--<link href="./assets/demo/demo.css" rel="stylesheet"/>-->
-    <!--<link href="https://fonts.googleapis.com/css?family=Chela+One" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/custom.css">
-    <link rel="stylesheet" href="/stylesheets/custom1.css">
-    <link rel="stylesheet" href="/stylesheets/style-imgur.css" type="text/css">
-    <!--<link rel="stylesheet" href="/stylesheets/mobile-style.css">-->
-    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Chela+One|Merienda" rel="stylesheet">
-    <!-- Google Adsense -->
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-7184261840828523",
-            enable_page_level_ads: true
-        });
-    </script>
-
-    <!--Git Site Control plugin-->
-    <script>
-        (function (w, i, d, g, e, t, s) {
-            w[d] = w[d] || [];
-            t = i.createElement(g);
-            t.async = 1;
-            t.src = e;
-            s = i.getElementsByTagName(g)[0];
-            s.parentNode.insertBefore(t, s);
-        })(window, document, '_gscq', 'script', '//widgets.getsitecontrol.com/146775/script.js');
-    </script>
-</head>
+<% include ../partials/header.ejs %>
 
 
 <body>
@@ -65,13 +13,13 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-<nav class="navbar navbar-expand-lg" color-on-scroll="100"
+<nav class="navbar navbar-color-on-scroll navbar-expand-lg" color-on-scroll="100"
      id="sectionsNav" style="padding-bottom: 5px;">
     <div class="container-fluid">
-        <div class="navbar-translate" style="margin-left: 100px">
+        <div class="navbar-translate" style="margin-left: 30px;">
             <div data-turbolinks="false">
                 <a href="/" class="navbar-brand">
-                    <div class="logo">
+                    <div class="logo animated flash">
                         <img src="/images/logo.png" width="200" height="50">
                     </div>
                 </a>
@@ -156,18 +104,18 @@
                 </li>
                 <% if(activeUser){ %>
                 <li class="dropdown nav-item">
-                    <a class="profile-photo dropdown-toggle nav-link" href="/profile"
+                    <a class="profile-photo dropdown-toggle nav-link" href="#"
                        data-toggle="dropdown">
                         <div class="profile-photo-small">
-                            <img class="rounded-circle img-fluid" src="../images/alonso.jpg" alt="Circle Image">
+                            <img class="rounded-circle img-fluid" src="/images/alonso.jpg" alt="Circle Image">
                         </div>
                         <div class="ripple-container"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="/profile" class="dropdown-item">Profile</a>
                         <a href="/logout" class="dropdown-item">Sign out</a>
-                        <a href="/new" class="dropdown-item">Add Picture(Home)</a>
-                        <a href="/gallery/new" class="dropdown-item">Add Picture(Gallery)</a>
+                        <a href="/new" class="dropdown-item">Add Video</a>
+                        <a href="/gallery/new" class="dropdown-item">Add Picture</a>
                     </div>
                 </li>
                 <% } %>

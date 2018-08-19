@@ -44,6 +44,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     let description = req.body.description;
     let orientation = req.body.orientation;
     let page = req.body.page;
+  let video = req.body.video;
     let newPicture = {
         title: title,
         name: name,
@@ -56,6 +57,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
         description: description,
         orientation: orientation,
         page: page,
+      video: video,
     };
     // console.log(req.user);
     //create a new picture and save to database

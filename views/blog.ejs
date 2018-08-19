@@ -157,8 +157,8 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="/profile" class="dropdown-item">Profile</a>
                         <a href="/logout" class="dropdown-item">Sign out</a>
-                        <a href="/new" class="dropdown-item">Add Picture(Home)</a>
-                        <a href="/gallery/new" class="dropdown-item">Add Picture(Gallery)</a>
+                        <a href="/new" class="dropdown-item">Add Video</a>
+                        <a href="/gallery/new" class="dropdown-item">Add Picture</a>
                     </div>
                 </li>
                 <% } %>
@@ -214,6 +214,8 @@
 
             <% let database = gloria(picture); %>
             <% database.forEach((pic) => { %>
+            <% let render = pic.type; %>
+            <% if (render !== 'video') { %>
             <div class="col-lg-8 col-md-10 col-sm-10 col-xs-6 ml-auto mr-auto" id="<%= pic.title %>">
                 <div class="card card-plain card-blog card-hover-effect">
                     <div class="card-header card-header-image">
@@ -285,6 +287,7 @@
                     <hr class="line">
                 </div>
             </div>
+            <% } %>
             <div class="col-lg-2 col-md-10 ml-auto mr-auto">
 
             </div>
@@ -297,12 +300,15 @@
     <ul>
         <% let count = 1; %>
         <% database.forEach((pic) => { %>
+        <% let render = pic.type; %>
+        <% if (render !== 'video') { %>
         <li>
             <a href="#<%= pic.title %>" data-number="<%= count %>">
                 <span class="cd-dot"></span>
                 <span class="cd-label"><%= pic.title %></span>
             </a>
         </li>
+        <% } %>
         <% count += 1; %>
         <% }) %>
     </ul>

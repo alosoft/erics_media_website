@@ -158,15 +158,15 @@
                     <a class="profile-photo dropdown-toggle nav-link" href="#"
                        data-toggle="dropdown">
                         <div class="profile-photo-small">
-                            <img class="rounded-circle img-fluid" src="../images/eric.jpg" alt="Circle Image">
+                            <img class="rounded-circle img-fluid" src="/images/alonso.jpg" alt="Circle Image">
                         </div>
                         <div class="ripple-container"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="/profile" class="dropdown-item">Profile</a>
                         <a href="/logout" class="dropdown-item">Sign out</a>
-                        <a href="/new" class="dropdown-item">Add Picture(Home)</a>
-                        <a href="/gallery/new" class="dropdown-item">Add Picture(Gallery)</a>
+                        <a href="/new" class="dropdown-item">Add Video</a>
+                        <a href="/gallery/new" class="dropdown-item">Add Picture</a>
                     </div>
                 </li>
                 <% } %>
@@ -206,6 +206,33 @@
              height: 743.234px;">
             <% picture.forEach(function(pic){ %>
             <% let page = pic.page; %>
+            <% let video = pic.video; %>
+            <% if (video) { %>
+            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
+                <div class="card card-plain card-blog">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="<%= pic.video %>"
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-description">
+                            by <%= pic.name %>
+                        </p>
+                    </div>
+                    <a href="<%= pic.video %>" class="light anime">
+                    </a>
+                </div>
+                <% if (activeUser){ %>
+                <a class="btn btn-primary" style="margin: 10px"
+                   href="/gallery/<%= pic._id %>/edit_video">Edit
+                </a>
+                <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE" method="POST"
+                      style="display: inline; margin: 10px;">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                <% } %>
+            </div>
+            <% } %>
             <% if (page === 'gallery'){ %>
             <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto <%= pic.type %>">
                 <div class="card card-plain card-blog">
@@ -227,26 +254,35 @@
                         </p>
                         <a href="/blog" class="nav-link"> Read More </a>
                     </div>
+                    <% if (activeUser){ %>
+                    <a class="btn btn-primary" style="margin: 10px"
+                       href="/gallery/<%= pic._id %>/edit">Edit
+                    </a>
+                    <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE" method="POST"
+                          style="display: inline; margin: 10px;">
+                        <button class="btn btn-d    anger">Delete</button>
+                    </form>
+                    <% } %>
                 </div>
             </div>
             <% } %>
             <% }) %>
-            <div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto video">
-                <div class="card card-plain card-blog">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qJyqc5Mq-jg"
-                                allowfullscreen></iframe>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-description">
-                            by Erics Media
-                        </p>
-                    </div>
-                    <a href="https://www.youtube.com/embed/qJyqc5Mq-jg" class="light anime">
-                    </a>
+            <!--<div class="card-box col-lg-3 col-md-4 col-sm-6 ml-auto mr-auto video">-->
+            <!--<div class="card card-plain card-blog">-->
+            <!--<div class="embed-responsive embed-responsive-16by9">-->
+            <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/qJyqc5Mq-jg"-->
+            <!--allowfullscreen></iframe>-->
+            <!--</div>-->
+            <!--<div class="card-body">-->
+            <!--<p class="card-description">-->
+            <!--by Erics Media-->
+            <!--</p>-->
+            <!--</div>-->
+            <!--<a href="https://www.youtube.com/embed/qJyqc5Mq-jg" class="light anime">-->
+            <!--</a>-->
 
-                </div>
-            </div>
+            <!--</div>-->
+            <!--</div>-->
         </div>
 
     </div>

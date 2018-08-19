@@ -215,19 +215,18 @@
                 </li>
                 <% if(activeUser){ %>
                 <li class="dropdown nav-item">
-                    <a class="profile-photo dropdown-toggle nav-link" href="/profile"
+                    <a class="profile-photo dropdown-toggle nav-link" href="#"
                        data-toggle="dropdown">
                         <div class="profile-photo-small">
-                            <img class="rounded-circle img-fluid" src="../images/alonso.jpg" alt="Circle Image">
+                            <img class="rounded-circle img-fluid" src="/images/alonso.jpg" alt="Circle Image">
                         </div>
                         <div class="ripple-container"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <!--<h6 class="dropdown-header">Dropdown header</h6>-->
                         <a href="/profile" class="dropdown-item">Profile</a>
                         <a href="/logout" class="dropdown-item">Sign out</a>
-                        <a href="/new" class="dropdown-item">Add Picture(Home)</a>
-                        <a href="/gallery/new" class="dropdown-item">Add Picture(Gallery)</a>
+                        <a href="/new" class="dropdown-item">Add Video</a>
+                        <a href="/gallery/new" class="dropdown-item">Add Picture</a>
                     </div>
                 </li>
                 <% } %>

@@ -25,7 +25,22 @@ router.get('/', (req, res) => {
 
 //NEW - show new home picture form
 router.get('/new', middleware.isLoggedIn, (req, res) => {
-    res.render('home/new')
+  res.render('video/new')
+});
+
+// EDIT - show video edit form
+router.get('/gallery/:id/edit_video', middleware.isLoggedIn, function (req, res) {
+  // res.send('welcome');
+  //is user logged in
+  Picture.findById(req.params.id, function (err, foundPicture) {
+    if (err) {
+      console.log(err);
+      req.flash('error', "Picture not found");
+      res.redirect('/');
+    } else {
+      res.render('video/edit', {picture: foundPicture});
+    }
+  })
 });
 
 //test2

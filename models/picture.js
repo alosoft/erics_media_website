@@ -13,6 +13,7 @@ const pictureSchema = new mongoose.Schema({
     description: String,
     orientation: String,
     page: String,
+  video: String,
     id: {
         type: mongoose.Schema.Types.ObjectId,
     },
