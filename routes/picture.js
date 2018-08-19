@@ -44,7 +44,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
     let description = req.body.description;
     let orientation = req.body.orientation;
     let page = req.body.page;
-  let video = req.body.video;
+    let video = req.body.video;
     let newPicture = {
         title: title,
         name: name,
@@ -68,7 +68,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
             res.redirect('/');
         } else {
             //redirect back to campgrounds page
-            console.log(newlyCreated);
+            // console.log(newlyCreated);
             res.redirect("/gallery");
         }
     });
@@ -94,7 +94,7 @@ router.get("/gallery/:id", function (req, res) {
                 {
                     picture: foundPicture
                 });
-            console.log(foundPicture);
+            // console.log(foundPicture);
             //render show template with that campground
         }
     });
@@ -125,7 +125,7 @@ router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
             req.flash('error', 'Could not Update Picture');
             res.redirect('/gallery');
         } else {
-            console.log(req.body.picture);
+            // console.log(req.body.picture);
             res.redirect('/gallery');
         }
     });

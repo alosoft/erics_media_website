@@ -79,7 +79,7 @@ router.put ('/:id/edit', middleware.isLoggedIn, (req, res) => {
             req.flash('error', 'Sorry, Could not Update Picture');
             res.redirect('/');
         } else {
-            console.log(req.body.home);
+            // console.log(req.body.home);
             res.redirect('/');
         }
     })
