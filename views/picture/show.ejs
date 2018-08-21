@@ -1,7 +1,7 @@
 <% include ../partials/header.ejs %>
 
 
-<body>
+<body style="background-image: url('/images/background.jpg');">
 <!--facebook like plugin-->
 <div id="fb-root"></div>
 <script>(function (d, s, id) {
@@ -128,7 +128,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-6 col-sm-5 col-xs-12 mr-auto show_page">
-            <img class="img-responsive" src="<%= picture.image %>" style="width: 100%;">
+            <img class="img-responsive" src="<%= picture.image %>" style="width: 100%; margin-top: 10px">
             <div class="caption-full">
                 <h4><a href=""><%= picture.name %></a></h4>
                 <% if (activeUser){ %>
@@ -154,7 +154,9 @@
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
             </script>
-
+            <p class="bold">
+                <%= picture.description %>
+            </p>
             <div class="fb-comments" data-href="http://ericsmedia.net/gallery/<%= picture._id %>"
                  data-numposts="10"></div>
 

@@ -214,83 +214,84 @@
 
             <% let database = gloria(picture); %>
             <% database.forEach((pic) => { %>
-            <% let render = pic.type; %>
-            <% if (render !== 'video') { %>
-            <div class="col-lg-8 col-md-10 col-sm-10 col-xs-6 ml-auto mr-auto" id="<%= pic.title %>">
-                <div class="card card-plain card-blog card-hover-effect">
-                    <div class="card-header card-header-image">
-                        <a href="/gallery/<%= pic._id %>">
-                            <img class="img img-raised"
-                                 src="<%= pic.image %>">
-                        </a>
-                        <div class="colored-shadow"
-                             style="background-image: url('<%= pic.image %>'); opacity: 1;"></div>
-                    </div>
-                    <div class="card-body">
-                        <% if (pic.type !== 'work') { %>
-                        <h6 class="card-category text-info">Model: <%= pic.name %></h6>
-                        <% } %>
-                        <% if (pic.created){ %>
-                        <% let convertedDate = String(pic.created); %>
-                        <% let createdDate = new Date(convertedDate); %>
-                        <p class="quote" style="float: right;"><%= createdDate.toDateString() %></p>
-                        <% } %>
-                        <h4 class="card-title">
+                <% let render = pic.type; %>
+                <% if (render !== 'video') { %>
+                <div class="col-lg-8 col-md-10 col-sm-10 col-xs-6 ml-auto mr-auto" id="<%= pic.title %>">
+                    <div class="card card-plain card-blog card-hover-effect">
+                        <div class="card-header card-header-image">
                             <a href="/gallery/<%= pic._id %>">
-                                <%= pic.title %>
+                                <img class="img img-raised"
+                                    src="<%= pic.image %>">
                             </a>
-                        </h4>
-                        <p class="bold">
-                            <%= pic.description %>
-                        </p>
-                        <% console.log(pic.created); %>
-                        <a class="btn btn-default" style="margin: 10px; background: #2284ae;"
-                           href="/gallery/<%= pic._id %>">Read More
-                        </a>
-                        <% let gps = pic.coordinate; %>
-                        <% if (gps) { %>
-                        <a href="http://maps.google.com/maps?q=<%= pic.coordinate %>" class="btn-link" target="_blank">
-                            <i class="material-icons">pin_drop</i>
-                            <%= pic.location.toUpperCase() %>
-                        </a>
-                        <% } else { %>
-                        <p class="">Location: <%= pic.location.toUpperCase() %></p>
-                        <% } %>
-                        <% if (activeUser){ %>
-                        <a class="btn btn-primary" style="margin: 10px"
-                           href="/gallery/<%= pic._id %>/edit">Edit
-                        </a>
-                        <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE" method="POST"
-                              style="display: inline; margin: 10px;">
-                            <button class="btn btn-danger">Delete</button>
-                        </form>
-                        <% } %>
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ml-auto mr-auto">
-                                <div id="fb-root"></div>
-                                <script>(function (d, s, id) {
-                                        var js, fjs = d.getElementsByTagName(s)[0];
-                                        if (d.getElementById(id)) return;
-                                        js = d.createElement(s);
-                                        js.id = id;
-                                        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
-                                        fjs.parentNode.insertBefore(js, fjs);
-                                    }(document, 'script', 'facebook-jssdk'));
-                                </script>
+                            <div class="colored-shadow"
+                                style="background-image: url('<%= pic.image %>'); opacity: 1;"></div>
+                        </div>
+                        <div class="card-body">
+                            <% if (pic.type !== 'work') { %>
+                            <h6 class="card-category text-info">Model: <%= pic.name %></h6>
+                            <% } %>
+                            <%# if (pic.created){ %>
+                                <% let date = pic.created; %>
+                                <p class="pull-right"><%=date%></p>
+                            <%# } %>
+                            <h4 class="card-title">
+                                <a href="/gallery/<%= pic._id %>">
+                                    <%= pic.title %>
+                                </a>
+                            </h4>
+                            <p class="bold">
+                                
+                                <!-- word.split(',')[0] + '.....' -->
+                                <%= pic.description.split(',')[0] + '......' %>
+                            </p>
+                            <a class="btn btn-default" style="margin: 10px; background: #2284ae;"
+                            href="/gallery/<%= pic._id %>">Read More
+                            </a>
+                            <% let gps = pic.coordinate; %>
+                            <% let location = pic.location; %>
+                            <% if (gps) { %>
+                            <a href="http://maps.google.com/maps?q=<%= pic.coordinate %>" class="btn-link" target="_blank">
+                                <i class="material-icons">pin_drop</i>
+                                <%= pic.location.toUpperCase() %>
+                            </a>
+                            <% } else if(location) { %>
+                            <p class="">Location: <%= pic.location.toUpperCase() %></p>
+                            <% } %>
+                            <% if (activeUser){ %>
+                            <a class="btn btn-primary" style="margin: 10px"
+                            href="/gallery/<%= pic._id %>/edit">Edit
+                            </a>
+                            <form id="form" action="/gallery/<%= pic._id %>?_method=DELETE" method="POST"
+                                style="display: inline; margin: 10px;">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                            <% } %>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ml-auto mr-auto">
+                                    <div id="fb-root"></div>
+                                    <script>(function (d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s);
+                                            js.id = id;
+                                            js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));
+                                    </script>
 
-                                <div class="fb-comments"
-                                     data-href="http://ericsmedia.net/gallery/<%= pic._id %>"
-                                     data-numposts="10"></div>
+                                    <div class="fb-comments"
+                                        data-href="http://ericsmedia.net/gallery/<%= pic._id %>"
+                                        data-numposts="10"></div>
+                                </div>
                             </div>
                         </div>
+                        <hr class="line">
                     </div>
-                    <hr class="line">
                 </div>
-            </div>
-            <% } %>
-            <div class="col-lg-2 col-md-10 ml-auto mr-auto">
-
-            </div>
+                <div class="col-lg-2 col-md-10 ml-auto mr-auto">
+                        
+                    </div>
+                <% } %>
             <% }) %>
         </div>
     </div>

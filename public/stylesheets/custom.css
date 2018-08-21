@@ -441,10 +441,9 @@ h1 {
 }
 
 .show_page {
-    border: 10px solid #b1babf;
-    padding-top: 15px;
-    background: white;
     border-radius: 10px;
+    border: 1px solid beige;
+    background-color: beige;
 }
 
 hr.line {

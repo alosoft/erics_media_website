@@ -57,7 +57,8 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
         description: description,
         orientation: orientation,
         page: page,
-      video: video,
+        created: new Date().toDateString(),
+        video: video,
     };
     // console.log(req.user);
     //create a new picture and save to database
