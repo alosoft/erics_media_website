@@ -70,7 +70,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
         } else {
             //redirect back to campgrounds page
             // console.log(newlyCreated);
-            res.redirect("/gallery");
+            res.redirect("/");
         }
     });
 });
