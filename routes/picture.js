@@ -13,7 +13,7 @@ router.use(methodOverride("_method"));
 //index - route //show all images
 router.get("/gallery", function (req, res) {
     console.log(req.user);
-    // get all campgrounds from data base
+    // get all pictures from data base
     Picture.find({}, function (err, picture) {
         if (err) {
             console.log(err);
@@ -30,9 +30,9 @@ router.get("/gallery", function (req, res) {
 });
 
 
-//CREATE - add new campgrounds to database
+//CREATE - add new pictures to database
 router.post("/gallery", middleware.isLoggedIn, function (req, res) {
-    // get data from form and add to campground array
+    // get data from form and add to pictures array
     let title = req.body.title;
     let name = req.body.name;
     let image = req.body.image;
@@ -68,7 +68,7 @@ router.post("/gallery", middleware.isLoggedIn, function (req, res) {
             req.flash('error', 'Could not create Picture');
             res.redirect('/');
         } else {
-            //redirect back to campgrounds page
+            //redirect back to pictures page
             // console.log(newlyCreated);
             res.redirect("/");
         }
@@ -83,7 +83,7 @@ router.get('/gallery/new', middleware.isLoggedIn, function (req, res) {
 
 //SHOW - shows more info about one picture
 router.get("/gallery/:id", function (req, res) {
-    //find the campground with provided id
+    //find the pictures with provided id
     Picture.findById(req.params.id).populate('comments').exec(function (err, foundPicture) {
         if (err) {
             console.log(err);
@@ -96,10 +96,10 @@ router.get("/gallery/:id", function (req, res) {
                     picture: foundPicture
                 });
             // console.log(foundPicture);
-            //render show template with that campground
+            //render show template with that pictures
         }
     });
-    //and then render show template with that campground
+    //and then render show template with that pictures
 });
 
 //EDIT ROUTE
@@ -118,7 +118,7 @@ router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
 });
 
 
-//UPDATE CAMPGROUND
+//UPDATE pictures
 router.put('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
     Picture.findByIdAndUpdate(req.params.id, req.body.picture, function (err) {
         if (err) {
