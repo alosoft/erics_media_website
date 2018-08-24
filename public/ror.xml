@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:ror="http://rorweb.com/0.1/" >
+<channel>
+  <title>ROR Sitemap for http://ericsmedia.net/</title>
+  <link>http://ericsmedia.net/</link>
+
+<item>
+     <link>http://www.ericsmedia.net/</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/gallery</link>
+     <title>Erics Media</title>
+     <description>Erics Media</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/blog</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/package</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/profile</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/contact</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/about</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/gallery/5b7c83e202f2540014203651</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/gallery/5b7c873402f2540014203652</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/gallery/5b7c8a5802f2540014203653</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/gallery/5b7c8c2b02f2540014203654</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+<item>
+     <link>http://www.ericsmedia.net/gallery/5b7c8d6202f2540014203655</link>
+     <title>
+        Erics Media
+    </title>
+     <description>
+        Erics Media
+    </description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>1</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
+</channel>
+</rss>
+  

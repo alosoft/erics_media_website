@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>http://www.ericsmedia.net/</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/gallery</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/blog</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/package</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/profile</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/contact</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/about</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/gallery/5b7c83e202f2540014203651</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/gallery/5b7c873402f2540014203652</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/gallery/5b7c8a5802f2540014203653</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/gallery/5b7c8c2b02f2540014203654</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.ericsmedia.net/gallery/5b7c8d6202f2540014203655</loc>
+  <lastmod>2018-08-24T01:41:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
