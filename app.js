@@ -35,6 +35,7 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 
+
 //PASSPORT CONFIGURATION
 app.use(require('express-session')({
     secret: 'Puppy was 14 years before he died',
