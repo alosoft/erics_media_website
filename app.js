@@ -17,6 +17,7 @@ let User = require('./models/user');
 let indexRouter = require('./routes/index');
 let pictureRouter = require('./routes/picture');
 let userRouter = require('./routes/users');
+let dashboardRouter = require('./routes/dashboard');
 
 let app = express();
 //Seed the database
@@ -32,6 +33,7 @@ mongoose.connect('mongodb://alosoftinc:alosoft20@ds243441.mlab.com:43441/erics_m
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(flash());
+
 
 //PASSPORT CONFIGURATION
 app.use(require('express-session')({
@@ -59,6 +61,7 @@ app.use(function (req, res, next) {
 app.use(indexRouter);
 app.use(pictureRouter);
 app.use(userRouter);
+app.use(dashboardRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -81,6 +84,8 @@ app.use(function (req, res) {
 
 // Handle 500
 app.use(function (error, req, res, next) {
+    console.log(error);
+    res.send(error);
     res.send('500: Internal Server Error', 500);
 });
 

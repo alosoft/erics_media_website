@@ -112,7 +112,7 @@ router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
             req.flash('error', "Picture not found");
             res.redirect('/');
         } else {
-            res.render('picture/edit', {picture: foundPicture});
+            res.render('dashboard/edit', {picture: foundPicture});
         }
     })
 });
