@@ -1,0 +1,63 @@
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+/* .grid {
+  background: #DDD;
+} */
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33%;
+  height: auto;
+  margin: 1px;
+}
+
+  /* Farro: Tweak the Blog List Grid */
+@media only screen and (max-width: 1440px) {  
+  .grid-sizer, .grid-item {
+    width: 33%;
+  }
+}
+@media only screen and (max-width: 960px) {  
+  .grid-sizer, .grid-item {
+    width: 49%;
+  }
+}
+/* 
+@media only screen and (max-width: 768px) {
+  .grid-sizer, .grid-item {
+    width: 10%;
+  }
+} */
+
+@media only screen and (max-width: 640px) {  
+  .grid-sizer, .grid-item {
+    width: 100%;
+  }
+}
+
+
+.grid-item {
+  float: left;
+  /* height: auto; */
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}

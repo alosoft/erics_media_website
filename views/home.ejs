@@ -1,6 +1,62 @@
-<% let page = 'Home'; %>
+<!doctype html>
+<html lang="en">
 
-<% include partials/header.ejs %>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="msvalidate.01" content="93FC97C58BEE9EB899A3321FB3203CBB" />
+    <title>
+        Erics Media | Home
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+          name='viewport'/>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/stylesheets/material-kit.min.css">
+    <link href="/stylesheets/material-kit.css?v=2.0.4" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesheets/vertical-nav.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/custom.css">
+    <link rel="stylesheet" href="/stylesheets/custom1.css">
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+    <link rel="stylesheet" href="/stylesheets/style-imgur.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Chela+One|Merienda" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Adsense -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-7184261840828523",
+            enable_page_level_ads: true
+        });
+    </script>
+
+
+    <!--Git Site Control plugin-->
+    <script>
+        (function (w, i, d, g, e, t, s) {
+            w[d] = w[d] || [];
+            t = i.createElement(g);
+            t.async = 1;
+            t.src = e;
+            s = i.getElementsByTagName(g)[0];
+            s.parentNode.insertBefore(t, s);
+        })(window, document, '_gscq', 'script', '//widgets.getsitecontrol.com/146775/script.js');
+    </script>
+</head>
+
+
 <% include partials/nav.ejs %>
 
 
@@ -69,231 +125,66 @@
             <div class="tab-content tab-space">
                 <div class="tab-pane text-center gallery active" id="studio">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-1">
-                                <div class="profile-tabs">
-                                    <ul class="nav nav-pills nav-pills-primary justify-content-center" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#portrait_studio" data-toggle="tab"
-                                               role="tab" id="btn-shake">Portrait</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#landscape_studio" data-toggle="tab" role="tab" id="btn-shake">Landscape</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <div class="tab-content tab-space">
-                                            <div class="tab-pane text-center active gallery" id="portrait_studio">
-                                                <!--portrait items-->
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <% picture.forEach(function(pic) { %>
-                                                        <% let orientation = pic.orientation; %>
-                                                        <% let type = pic.type; %>
-                                                        <% let page = pic.page; %>
-                                                        <% if (page === 'home') { %>
-                                                        <% if (type === 'studio'){ %>
-                                                        <% if (orientation === 'portrait'){ %>
-                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto"
-                                                             style="margin-top: 25px">
-                                                            <div class="anime">
-                                                                <a href="/gallery/<%= pic._id %>">
-                                                                     <img src="<%= pic.image %>" alt=""
-                                                                          style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                 </a>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% }); %>
-                                                    </div>
-                                                </div>
+                        <div class="tz-gallery">
+                            <div class="grid">
+                                <div class="grid-sizer"></div>
+                                <% picture.forEach(function(pic) { %>
+                                    <% let type = pic.type; %>
+                                    <% let page = pic.page; %>
+                                    <% if (page === 'home') { %>
+                                        <% if (type === 'studio'){ %>
+                                            <div class="grid-item">
+                                                <a href="/gallery/<%= pic._id %>">
+                                                    <img src="<%= pic.image %>" alt="">
+                                                </a>
                                             </div>
-                                            <div class="tab-pane text-center gallery" id="landscape_studio">
-                                                <!--landscape items-->
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <% picture.forEach(function(pic) { %>
-                                                        <% let orientation = pic.orientation; %>
-                                                        <% let type = pic.type; %>
-                                                        <% let page = pic.page; %>
-                                                        <% if (page === 'home') { %>
-                                                        <% if (type === 'studio'){ %>
-                                                        <% if (orientation === 'landscape'){ %>
-                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
-                                                             style="margin-top: 25px;">
-                                                            <div class="anime">
-                                                                 <a href="/gallery/<%= pic._id %>">
-                                                                     <img src="<%= pic.image %>" alt=""
-                                                                          style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                 </a>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% }); %>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <% } %>
+                                    <% } %>
+                                <% }); %>
                             </div>
-                        </div>
+                        </div>        
                     </div>
                 </div>
                 <div class="tab-pane text-center gallery" id="works">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-1">
-                                <div class="profile-tabs">
-                                    <ul class="nav nav-pills nav-pills-primary justify-content-center" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#portrait_works" data-toggle="tab"
-                                               role="tab" id="btn-shake">Portrait</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#landscape_works" data-toggle="tab" role="tab" id="btn-shake">Landscape</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <div class="tab-content tab-space">
-                                            <div class="tab-pane text-center active gallery" id="portrait_works">
-                                                <!--portrait items test-->
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <% picture.forEach(function(pic) { %>
-                                                        <% let orientation = pic.orientation; %>
-                                                        <% let type = pic.type; %>
-                                                        <% if (type === 'work'){ %>
-                                                        <% if (orientation === 'portrait'){ %>
-                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto"
-                                                             style="margin-top: 25px">
-                                                            <div class="anime">
-                                                                 <a href="/gallery/<%= pic._id %>">
-                                                                     <img src="<%= pic.image %>" alt=""
-                                                                          style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                 </a>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% }); %>
-                                                    </div>
-                                                </div>
+                        <div class="tz-gallery">
+                            <div class="grid">
+                                <div class="grid-sizer"></div>
+                                <% picture.forEach(function(pic) { %>
+                                    <% let type = pic.type; %>
+                                    <% let page = pic.page; %>
+                                    <% if (page === 'home') { %>
+                                        <% if (type === 'work'){ %>
+                                            <div class="grid-item">
+                                                <a href="/gallery/<%= pic._id %>">
+                                                    <img src="<%= pic.image %>" alt="">
+                                                </a>
                                             </div>
-                                            <div class="tab-pane text-center gallery" id="landscape_works">
-                                                <!--landscape items-->
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <% picture.forEach(function(pic) { %>
-                                                        <% let orientation = pic.orientation; %>
-                                                        <% let type = pic.type; %>
-                                                        <% if (type === 'work'){ %>
-                                                        <% if (orientation === 'landscape'){ %>
-                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
-                                                             style="margin-top: 25px;">
-                                                            <div class="anime">
-                                                                 <a href="/gallery/<%= pic._id %>">
-                                                                     <img src="<%= pic.image %>" alt=""
-                                                                          style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                 </a>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% }); %>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <% } %>
+                                    <% } %>
+                                <% }); %>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tab-pane text-center gallery" id="painting">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-lg-1">
-                                <div class="profile-tabs">
-                                    <ul class="nav nav-pills nav-pills-primary justify-content-center" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#portrait_painting" data-toggle="tab"
-                                               role="tab" id="btn-shake">Portrait</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#landscape_painting" data-toggle="tab" role="tab" id="btn-shake">Landscape</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-10">
-                                <div class="container">
-                                    <div class="row justify-content-between">
-                                        <div class="tab-content tab-space">
-                                            <div class="tab-pane text-center active gallery" id="portrait_painting">
-                                                <!--portrait items-->
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <% picture.forEach(function(pic) { %>
-                                                        <% let orientation = pic.orientation; %>
-                                                        <% let type = pic.type; %>
-                                                        <% if (type === 'painting'){ %>
-                                                        <% if (orientation === 'portrait'){ %>
-                                                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 ml-auto mr-auto"
-                                                             style="margin-top: 25px">
-                                                            <div class="anime">
-                                                                 <a href="/gallery/<%= pic._id %>">
-                                                                     <img src="<%= pic.image %>" alt=""
-                                                                          style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                                 </a>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% }); %>
-                                                    </div>
-                                                </div>
+                        <div class="tz-gallery">
+                            <div class="grid">
+                                <div class="grid-sizer"></div>
+                                <% picture.forEach(function(pic) { %>
+                                    <% let type = pic.type; %>
+                                    <% let page = pic.page; %>
+                                    <% if (page === 'home') { %>
+                                        <% if (type === 'painting'){ %>
+                                            <div class="grid-item">
+                                                <a href="/gallery/<%= pic._id %>">
+                                                    <img src="<%= pic.image %>" alt="">
+                                                </a>
                                             </div>
-                                            <div class="tab-pane text-center gallery" id="landscape_painting">
-                                                <!--landscape items-->
-                                                <div class="container">
-                                                    <div class="row">
-                                                        <% picture.forEach(function(pic) { %>
-                                                        <% let orientation = pic.orientation; %>
-                                                        <% let type = pic.type; %>
-                                                        <% if (type === 'painting'){ %>
-                                                        <% if (orientation === 'landscape'){ %>
-                                                        <div class="col-lg-6 col-md-6 col-sm-10 col-xs-6 ml-auto mr-auto"
-                                                             style="margin-top: 25px">
-                                                            <div class="anime">
-                                                            <a href="/gallery/<%= pic._id %>">
-                                                                <img src="<%= pic.image %>" alt=""
-                                                                     style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
-                                                            </a>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                        <% } %>
-                                                        <% }); %>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <% } %>
+                                    <% } %>
+                                <% }); %>
                             </div>
                         </div>
                     </div>
@@ -607,4 +498,131 @@
     </ul>
 </nav>
 
-<% include partials/footer.ejs %>
+<footer class="footer footer-white footer-big" id="footer">
+        <div class="container">
+    
+            <div class="content">
+                <div class="row">
+    
+                    <div class="col-md-4">
+                        <a href="/"><h5>Erics Media</h5></a>
+                        <p style="font-size: 16px; line-height: 1.5;">The Home of quality<br>
+                            Media Services<br>
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>About</h5>
+                        <ul class="links-vertical">
+                            <li>
+                                <a href="/blog">
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/profile">
+                                    Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/package">
+                                    Package
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/gallery">
+                                    Gallery
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/about">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Subscribe to Our News Channel</h5>
+                        <p>
+                            Join our newsletter and get news in your inbox every week! We hate spam too, so no worries about
+                            this.
+                        </p>
+                        <form class="form form-newsletter"
+                              action="/contact"
+                              method="post">
+                            <div class="form-group bmd-form-group">
+                                <input class="form-control email" type="email" value="" name="sub"
+                                       placeholder="Your email...." required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-just-icon">
+                                <i class="material-icons" style="background: #2284a2">mail</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    
+            <hr>
+            <ul class="social-buttons">
+                <h5>Share on Social Media</h5>
+                <li>
+                    <a title="Share on Facebook"
+                       href="http://www.facebook.com/sharer.php?u=http://ericsmedia.net"
+                       target="_blank">
+                        <i class="fab fa-facebook-f card-hover-effect" style="font-size: 30px;"></i>
+                    </a>
+                </li>
+                <!--<li>-->
+                <!--<a title="Share on Twitter" href="https://twitter.com/share?"-->
+                <!--data-show-count="false" target="_blank">-->
+                <!--<i class="fab fa-twitter" style="font-size: 30px"></i>-->
+                <!--</a>-->
+                <!--&lt;!&ndash;<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>&ndash;&gt;-->
+                <!--</li>-->
+            </ul>
+    
+            <div class="copyright pull-center">
+                Copyright ©
+                <script>document.write(new Date().getFullYear())</script>
+                Alosoft Inc. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!--   Core JS Files   -->
+    <script src="/javascripts/core/jquery.min.js" type="text/javascript"></script>
+    <script src="/javascripts/core/popper.min.js" type="text/javascript"></script>
+    <script src="/javascripts/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+    <script src="/javascripts/moment.min.js"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="/javascripts/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="/javascripts/nouislider.min.js" type="text/javascript"></script>
+    <!--	Plugin for Sharrre btn -->
+    <script src="/javascripts/jquery.sharrre.js" type="text/javascript"></script>
+    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+    <script src="/javascripts/material-kit.js?v=2.0.4" type="text/javascript"></script>
+        <!-- Masonry / Isotopes -->
+        <script src='/js/masonry.pkgd.js'></script>
+        <script src='/js/imagesloaded.pkgd.js'></script>
+        <script  src="/js/index.js"></script>
+        <!-- lightbox -->
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" -->
+        <!-- crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" -->
+        <!-- crossorigin="anonymous"></script> -->
+       <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+        <script>
+            baguetteBox.run('.tz-gallery');
+        </script> -->
+
+
+    </body>
+    
+    </html>
