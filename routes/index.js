@@ -6,7 +6,7 @@ var router = express.Router();
 console.log('routes index');
 
 //show register form
-/*router.get('/register', function (req, res) {
+router.get('/register', function (req, res) {
     // res.send('welcome to the register route');
     res.render('register');
 });
@@ -28,7 +28,7 @@ router.post('/register', function (req, res) {
     })
 });
 
-*/
+
 //show login form
 router.get('/login', function (req, res) {
     res.render('login');
