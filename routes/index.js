@@ -6,10 +6,10 @@ var router = express.Router();
 console.log('routes index');
 
 //show register form
-// router.get('/register', function (req, res) {
-//     // res.send('welcome to the register route');
-//     res.render('register');
-// });
+router.get('/register', function (req, res) {
+    // res.send('welcome to the register route');
+    res.render('register');
+});
 
 // /////////////handle sign up logic////////////////
 // router.post('/register', function (req, res) {
@@ -29,25 +29,25 @@ console.log('routes index');
 // });
 
 
-// //show login form
-// router.get('/login', function (req, res) {
-//     res.render('login');
-// });
+//show login form
+router.get('/login', function (req, res) {
+    res.render('login');
+});
 
-// ///////////////handle login logic//////////////
-// router.post('/login', passport.authenticate('local', {
-//     successRedirect: '/',
-//     failureRedirect: '/login',
-// }), function (req, res, err) {
+///////////////handle login logic//////////////
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+}), function (req, res, err) {
 
-// });
+});
 
-// /////////////handle logout/////////////
-// router.get('/logout', function (req, res) {
-//     req.logout();
-//     req.flash('success', 'Logged You out');
-//     res.redirect('/');
-// });
+/////////////handle logout/////////////
+router.get('/logout', function (req, res) {
+    req.logout();
+    req.flash('success', 'Logged You out');
+    res.redirect('/');
+});
 
 
 module.exports = router;
