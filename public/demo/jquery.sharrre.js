@@ -519,9 +519,9 @@
   ================================================== */
   Plugin.prototype.shorterTotal = function (num) {
     if (num >= 1e6){
-      num = (num / 1e6).toFixed(2) + "M"
+      num = (num / 1e6).toFixed(2) + "M";
     } else if (num >= 1e3){
-      num = (num / 1e3).toFixed(1) + "k"
+      num = (num / 1e3).toFixed(1) + "k";
     }
     return num;
   };

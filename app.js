@@ -14,10 +14,10 @@ let createError = require('http-errors'),
 //USER Routes REQUIRES
 // let seedDB = require('./seeds');
 let User = require('./models/user');
-let indexRouter = require('./routes/index');
-let pictureRouter = require('./routes/picture');
-let userRouter = require('./routes/users');
-let dashboardRouter = require('./routes/dashboard');
+// let indexRouter = require('./routes/index');
+// let pictureRouter = require('./routes/picture');
+// let userRouter = require('./routes/users');
+// let dashboardRouter = require('./routes/dashboard');
 
 let app = express();
 //Seed the database
@@ -59,10 +59,10 @@ app.use(function (req, res, next) {
 });
 //////********************************//
 // app.use('/', indexRouter);
-app.use(indexRouter);
-app.use(pictureRouter);
-app.use(userRouter);
-app.use(dashboardRouter);
+// app.use(indexRouter);
+// app.use(pictureRouter);
+// app.use(userRouter);
+// app.use(dashboardRouter);
 
 app.use(logger('dev'));
 app.use(express.json());
