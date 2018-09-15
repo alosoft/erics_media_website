@@ -79,8 +79,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Handle 404
 app.use(function (req, res) {
-    req.flash('error', 'Wrong Address');
-    res.redirect('/');
+    res.render('404');
 });
 
 // Handle 500

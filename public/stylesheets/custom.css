@@ -9,6 +9,7 @@
 
 #logo_color {
     color: #2284A2;
+    font-family: 'Ubuntu', cursive;
 }
 
 .name-color {
@@ -288,6 +289,8 @@
     background-image: url('/images/package2.jpg');
     -webkit-background-size: cover;
     background-size: cover;
+    padding: unset;
+    margin: 0 -15px;
 }
 
 /*.price_button {*/
@@ -511,4 +514,42 @@ a#btn-shake {
 #dash_edit {
     background-image: url(/images/background.jpg);
     background-size: cover;
+}
+
+#erics_media {
+    margin-top: -20px;
+    background-image: url('/images/blog.jpg')
+}
+
+.custom_gradient {
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 0 -30px;
+}
+
+.rotating-card-container {
+    margin-bottom: 30px;
+}
+
+.annie {
+    width: 330px;
+    background-image: url('https://i.imgur.com/68rnWum.jpg');
+    background-size: cover
+}
+
+.ansel {
+    width: 330px;
+    background-image: url('https://i.imgur.com/HFEiQDH.jpg');
+    background-size: cover
+}
+
+.vinci {
+    width: 330px;
+    background-image: url('https://i.imgur.com/fIErZzb.jpg');
+    background-size: cover
+}
+
+.back {
+    width: 330px;
 }
