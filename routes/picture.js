@@ -26,7 +26,7 @@ router.get("/gallery", function (req, res) {
                     picture: picture
                 });
         }
-    })
+    });
 });
 
 
@@ -114,7 +114,7 @@ router.get('/gallery/:id/edit', middleware.isLoggedIn, function (req, res) {
         } else {
             res.render('dashboard/edit', {picture: foundPicture});
         }
-    })
+    });
 });
 
 

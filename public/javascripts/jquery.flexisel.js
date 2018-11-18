@@ -227,7 +227,7 @@
             scroll: function(reverse) {
 
                 if (typeof reverse === 'undefined') {
-                    reverse = true
+                    reverse = true;
                 }
 
                 if (canNavigate == true) {
@@ -330,7 +330,7 @@
 
             offsetItemsToBeginning: function(number) {
                 if (typeof number === 'undefined') {
-                    number = 1
+                    number = 1;
                 }
                 for (var i = 0; i < number; i++) {
                     object.children().last().insertBefore(object.children().first());
@@ -339,7 +339,7 @@
 
             offsetItemsToEnd: function(number) {
                 if (typeof number === 'undefined') {
-                    number = 1
+                    number = 1;
                 }
                 for (var i = 0; i < number; i++) {
                     object.children().first().insertAfter(object.children().last());
